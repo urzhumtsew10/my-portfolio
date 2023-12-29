@@ -1,0 +1,113 @@
+@import "../../index.scss";
+
+.hireMeBlock {
+  width: 100%;
+  height: 100vh;
+  background-color: #f2f4f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+}
+.hireMeBlock__blockMyPhoto {
+  margin-top: 90px;
+  position: relative;
+  width: 400px;
+  height: 405px;
+  border-radius: 60px;
+  background-color: #feb273;
+  display: flex;
+  justify-content: center;
+}
+.hireMeBlock__blockMyPhoto.active {
+  animation-name: animation-my-photo;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes animation-my-photo {
+  0% {
+    opacity: 0;
+    margin-right: 300px;
+  }
+  100% {
+    opacity: 1;
+    margin-right: 0;
+  }
+}
+.blockMyPhoto__img {
+  position: absolute;
+  bottom: 0;
+  height: 550px;
+}
+.hireMeBlock__blockMyInfo {
+  margin-left: 200px;
+  display: flex;
+  flex-direction: column;
+}
+.hireMeBlock__blockMyInfo.active {
+  animation-name: animation-my-info;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes animation-my-info {
+  0% {
+    opacity: 0;
+    margin-left: 300px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 200px;
+  }
+}
+.blockMyInfo__title {
+  font-size: 64px;
+  font-weight: 600;
+  color: $color_dark_blue;
+}
+.blockMyInfo__title__span {
+  color: $color_orange;
+}
+.blockMyInfo__text {
+  margin-top: 47px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #98a2b3;
+}
+.blockMyInfo__achievement {
+  margin-top: 47px;
+  display: flex;
+  align-items: center;
+}
+.achievement {
+  margin-right: 176px;
+  display: flex;
+  flex-direction: column;
+}
+.achievement__count {
+  font-size: 36px;
+  font-weight: 500;
+  color: #1d2939;
+}
+.achievement__name {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #667085;
+}
+.blockMyInfo__btn {
+  margin-top: 47px;
+  width: 233px;
+  height: 108px;
+  border: 1px solid #151515;
+  border-radius: 32px;
+
+  font-size: 32px;
+  font-weight: 600;
+  color: #151515;
+}
+.blockMyInfo__btn:hover {
+  animation-name: btn-hireMe;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@include animation-btn-hover("btn-hireMe", #151515, #fff, transparent);

@@ -1,0 +1,66 @@
+@import "./reset.scss";
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "Urbanist";
+}
+
+$color_black: #171717;
+$color_orange: #fd853a;
+$color_dark_blue: #344054;
+
+@mixin animation-btn-hover(
+  $animation-name,
+  $background,
+  $color,
+  $border-color
+) {
+  @keyframes #{$animation-name} {
+    0% {
+      margin-left: 5px;
+    }
+    10% {
+      margin-left: 0;
+      margin-right: 5px;
+    }
+    20% {
+      margin-right: 0;
+      margin-left: 5px;
+    }
+    30% {
+      margin-left: 0;
+      margin-right: 5px;
+    }
+    40% {
+      margin-right: 0;
+      margin-left: 5px;
+    }
+    50% {
+      margin-left: 0;
+      margin-right: 5px;
+    }
+    60% {
+      margin-right: 0;
+      margin-left: 5px;
+    }
+    70% {
+      margin-left: 0;
+      margin-right: 5px;
+    }
+    80% {
+      margin-right: 0;
+      margin-left: 5px;
+    }
+    90% {
+      margin-left: 0;
+      margin-right: 5px;
+    }
+    100% {
+      margin-left: 0;
+      margin-right: 0;
+      color: $color;
+      background-color: $background;
+      border: 1px solid $border-color;
+    }
+  }
+}

@@ -1,0 +1,148 @@
+@import "../../index.scss";
+
+.services__contentServices {
+  width: 100%;
+  height: 878px;
+  background-color: $color_black;
+  border-radius: 50px;
+  position: relative;
+}
+.contentServices__lights {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 790px;
+  border-bottom-right-radius: 50px;
+}
+.contentServices__titleBlock {
+  margin: 116px 70.5px 0 70.5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.titleBlock__titleServices {
+  font-size: 48px;
+  font-weight: 500;
+  color: #fff;
+}
+.titleServices__span {
+  color: $color_orange;
+}
+.titleBlock__text {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+}
+.services__serviceCardsBlock {
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+.serviceCardsBlock__serviceCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 416px;
+  height: 508px;
+  background-color: rgba(104, 104, 104, 0.2);
+  backdrop-filter: blur(7.5px);
+  border: 2px solid rgba(255, 255, 255, 0.432);
+  border-radius: 50px;
+  opacity: 0;
+}
+.serviceCardsBlock__serviceCard.active {
+  animation-name: animation-service-cards;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+.serviceCardsBlock__serviceCard:nth-child(1) {
+  animation-delay: 0s;
+}
+.serviceCardsBlock__serviceCard:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.serviceCardsBlock__serviceCard:nth-child(3) {
+  animation-delay: 1s;
+}
+@keyframes animation-service-cards {
+  0% {
+    width: 100px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 416px;
+    opacity: 1;
+  }
+}
+.serviceCard__titleCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.432);
+  display: flex;
+  align-items: center;
+  padding: 10px 0 0 37px;
+
+  font-size: 32px;
+  font-weight: 500;
+  color: #fff;
+}
+.serviceCard__frontLayer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 307px;
+  background-color: #fff;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.frontLayer__img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+}
+.serviceCard__middleLayer {
+  position: absolute;
+  bottom: 0;
+  width: 374px;
+  height: 307px;
+  background-color: #9e9d9d;
+  border-radius: 50px;
+  margin-bottom: 22px;
+}
+.serviceCard__lastLayer {
+  position: absolute;
+  bottom: 0;
+  width: 328px;
+  height: 307px;
+  background-color: #757575;
+  opacity: 0.5;
+  border-radius: 50px;
+  margin-bottom: 44px;
+}
+.cardButton__btn {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 121px;
+  height: 121px;
+  border-radius: 50%;
+  background-color: #1d2939;
+}
+.cardButton__img {
+  width: 72px;
+  height: 72px;
+  transition: 0.3s;
+}
+.cardButton__btn:hover .cardButton__img {
+  transform: scale(1.2);
+}

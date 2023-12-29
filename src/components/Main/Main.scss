@@ -1,0 +1,255 @@
+@import "../../index.scss";
+
+.mainSection {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mainSection__greeting {
+  margin-top: 55px;
+  position: relative;
+  width: 103px;
+  height: 45px;
+  border: 1px solid $color_black;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.greeting__text {
+  font-size: 20px;
+  font-weight: 500;
+  color: $color_black;
+}
+.greeting__img {
+  position: absolute;
+  right: -23px;
+  top: -24px;
+}
+.mainSection__aboutMe {
+  position: relative;
+}
+.aboutMe__title {
+  text-align: center;
+  font-size: 95px;
+  font-weight: 600;
+  color: $color_black;
+}
+.title__span {
+  color: $color_orange;
+}
+.aboutMe__img {
+  position: absolute;
+  width: 70px;
+  bottom: -45px;
+  left: -55px;
+  transform: rotate(180deg);
+}
+.mainSection__myImage {
+  position: relative;
+  width: 952px;
+  height: 520px;
+  display: flex;
+  justify-content: center;
+}
+.myImage__ellipse {
+  position: absolute;
+  bottom: 0;
+  width: 811px;
+  height: 385px;
+  animation: animation-ellipse 2s linear infinite;
+}
+.myImage__photo {
+  z-index: 3;
+  position: absolute;
+  bottom: 0;
+  height: 675px;
+  animation: animation-photo 2s linear infinite;
+}
+@keyframes animation-photo {
+  50% {
+    transform: scale(1.05);
+    bottom: 15px;
+  }
+}
+@keyframes animation-ellipse {
+  50% {
+    transform: scale(1.05);
+  }
+}
+.myImage__actionsBlock {
+  z-index: 4;
+  position: absolute;
+  bottom: 45px;
+  width: 367px;
+  height: 82px;
+  border-radius: 50px;
+  border: 2px solid #fff;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(7.5px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.actionsBlock__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  background-color: $color_orange;
+  width: 208px;
+  height: 62px;
+  border-radius: 50px;
+}
+.actionsBlock__buttonText {
+  font-size: 25px;
+  font-weight: 500;
+  color: #fff;
+}
+.actionsBlock__text {
+  cursor: pointer;
+  margin-right: 30px;
+  font-size: 25px;
+  font-weight: 300;
+  color: #fff;
+}
+.actionsBlock__img {
+  width: 42px;
+  height: 42px;
+}
+.mainSection__notation {
+  position: absolute;
+  top: 433px;
+  left: 71px;
+}
+.notation__img {
+  width: 36px;
+  height: 36px;
+}
+.notation__text {
+  margin-top: 24px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.mainSection__myExperience {
+  position: absolute;
+  top: 433px;
+  right: 71px;
+}
+.myExperience__stars {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+.myExperience__aboutExperience {
+  margin-top: 10px;
+  font-size: 47px;
+  font-weight: 700;
+  color: $color_black;
+}
+.aboutExperience__span {
+  text-align: right;
+  font-size: 20px;
+  font-weight: 400;
+}
+@media (max-width: 1530px) {
+  .aboutMe__title {
+    font-size: calc(80px + (95 - 80) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .aboutMe__img {
+    bottom: calc(-45px + (-45 - -45) * ((100vw - 767px) / (1530 - 767)));
+    left: calc(-45px + (-55 - -45) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .mainSection__notation {
+    top: calc(390px + (433 - 390) * ((100vw - 767px) / (1530 - 767)));
+    left: calc(33px + (71 - 33) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .notation__text {
+    font-size: calc(15px + (20 - 15) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .mainSection__myExperience {
+    top: calc(390px + (433 - 390) * ((100vw - 767px) / (1530 - 767)));
+    right: calc(35px + (71 - 35) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .myImage__photo {
+    height: calc(610px + (675 - 610) * ((100vw - 767px) / (1530 - 767)));
+    animation: none;
+    animation: animation-photo-mobile 2s linear infinite;
+  }
+}
+@keyframes animation-photo-mobile {
+  50% {
+    transform: scale(1.04);
+    bottom: 10px;
+  }
+}
+.myImage__ellipse {
+  z-index: -1;
+  height: calc(340px + (385 - 340) * ((100vw - 767px) / (1530 - 767)));
+  width: calc(695px + (811 - 695) * ((100vw - 767px) / (1530 - 767)));
+}
+.mainSection__myImage {
+  width: calc(767px + (952 - 767) * ((100vw - 767px) / (1530 - 767)));
+}
+
+@media (max-width: 767px) {
+  .mainSection__notation,
+  .mainSection__myExperience {
+    display: none;
+  }
+  .aboutMe__title {
+    font-size: calc(34px + (80 - 34) * ((100vw - 320px) / (767 - 320)));
+  }
+  .aboutMe__img {
+    display: none;
+  }
+  .mainSection__myImage {
+    width: calc(320px + (767 - 320) * ((100vw - 320px) / (767 - 320)));
+    height: calc(303px + (520 - 303) * ((100vw - 320px) / (767 - 320)));
+  }
+  .myImage__photo {
+    height: calc(365px + (610 - 365) * ((100vw - 320px) / (767 - 320)));
+  }
+  .myImage__ellipse {
+    width: calc(310px + (695 - 310) * ((100vw - 320px) / (767 - 320)));
+    height: calc(138px + (340 - 138) * ((100vw - 320px) / (767 - 320)));
+  }
+  .mainSection__greeting {
+    margin-top: calc(30px + (55 - 30) * ((100vw - 320px) / (767 - 320)));
+    width: calc(70px + (103 - 70) * ((100vw - 320px) / (767 - 320)));
+    height: calc(35px + (45 - 35) * ((100vw - 320px) / (767 - 320)));
+  }
+  .greeting__text {
+    font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (767 - 320)));
+  }
+  .greeting__img {
+    width: calc(20px + (25 - 20) * ((100vw - 320px) / (767 - 320)));
+    height: calc(20px + (25 - 20) * ((100vw - 320px) / (767 - 320)));
+    right: calc(-15px + (-23 - -15) * ((100vw - 320px) / (767 - 320)));
+    top: calc(-15px + (-24 - -15) * ((100vw - 320px) / (767 - 320)));
+  }
+  .myImage__actionsBlock {
+    bottom: calc(20px + (45 - 20) * ((100vw - 320px) / (767 - 320)));
+    width: calc(195px + (367 - 195) * ((100vw - 320px) / (767 - 320)));
+  }
+  .actionsBlock__btn {
+    width: calc(115px + (208 - 115) * ((100vw - 320px) / (767 - 320)));
+    border-radius: calc(30px + (50 - 30) * ((100vw - 320px) / (767 - 320)));
+    margin-left: calc(5px + (10 - 5) * ((100vw - 320px) / (767 - 320)));
+  }
+  .actionsBlock__buttonText {
+    font-size: calc(17px + (25 - 17) * ((100vw - 320px) / (767 - 320)));
+  }
+  .actionsBlock__img {
+    width: calc(30px + (42 - 30) * ((100vw - 320px) / (767 - 320)));
+    height: calc(30px + (42 - 30) * ((100vw - 320px) / (767 - 320)));
+  }
+  .actionsBlock__text {
+    font-size: calc(17px + (25 - 17) * ((100vw - 320px) / (767 - 320)));
+    margin-right: calc(10px + (30 - 10) * ((100vw - 320px) / (767 - 320)));
+  }
+}

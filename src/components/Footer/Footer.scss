@@ -1,0 +1,278 @@
+@import "../../index.scss";
+
+.footer {
+  padding: 25px 71px 25px 71px;
+  width: 100%;
+  height: 685px;
+  border-radius: 27px 27px 0 0;
+  background-color: #272727;
+}
+.footer__hireMeBlock {
+  margin-top: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hireMeBlock__title {
+  font-size: 64px;
+  font-weight: 600;
+  color: #fcfcfd;
+}
+.hireMeBlock__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 202px;
+  height: 64px;
+  border-radius: 60px;
+  background-color: $color_orange;
+
+  color: #fff;
+  font-size: 25px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.btn__arrow {
+  width: 42px;
+  height: 42px;
+}
+.hireMeBlock__btn:hover {
+  animation-name: btn-footerHireMe;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.hireMeBlock__btn:hover .btn__arrow {
+  display: none;
+}
+@include animation-btn-hover(
+  "btn-footerHireMe",
+  #fff,
+  $color_orange,
+  $color_orange
+);
+.footer__footerInfo {
+  margin-top: 55px;
+  width: 100%;
+  display: flex;
+  padding: 55px 0 55px 0;
+  border-top: 2px solid #475467;
+  border-bottom: 2px solid #475467;
+}
+.footerInfo__firstColumn {
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.firstColumn__logo {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  margin-right: 15px;
+  width: 46px;
+  height: 46px;
+  background-color: $color_orange;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 25px;
+  font-weight: 600;
+  color: #fff;
+}
+.logo__text {
+  font-size: 25px;
+  font-weight: 500;
+  color: #fff;
+}
+.firstColumn__text {
+  font-size: 20px;
+  font-weight: 400;
+  color: #fcfcfd;
+  margin: 65px 0 34px 0;
+}
+.socialNetworks__img {
+  cursor: pointer;
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  filter: invert(100%);
+  transition: 0.3s;
+}
+.socialNetworks__img:hover {
+  transform: scale(1.2);
+}
+.footerInfo__secondColumn {
+  margin-right: 60px;
+  display: flex;
+  flex-direction: column;
+}
+.footer_title {
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  color: $color_orange;
+}
+.footer_text {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fcfcfd;
+  transition: 0.3s;
+}
+.footer_text:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.footerInfo__thirdColumn {
+  margin-right: 60px;
+}
+.thirdColumn__title {
+  margin-bottom: 28px;
+}
+.fourthColumn__footerInputBlock {
+  display: flex;
+  align-items: center;
+}
+.fourthColumn__title {
+  margin-bottom: 28px;
+}
+.footerInputBlock__input {
+  padding-left: 14px;
+  width: 260px;
+  height: 51px;
+  border-radius: 14px 0 0 14px;
+  background-color: #fff;
+
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+}
+.footerInputBlock__btn {
+  width: 46px;
+  height: 51px;
+  border-radius: 0 14px 14px 0;
+  background-color: $color_orange;
+}
+.btn__img {
+  width: 24px;
+  height: 24px;
+  transition: 0.3s;
+}
+.btn__img:hover {
+  transform: scale(1.2);
+}
+.footer__textBlock {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.textBlock__text {
+  margin-top: 85px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+@media (max-width: 1530px) {
+  .footer {
+    height: auto;
+    padding-left: calc(20px + (71 - 20) * ((100vw - 767px) / (1530 - 767)));
+    padding-right: calc(20px + (71 - 20) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .hireMeBlock__title {
+    font-size: calc(45px + (64 - 45) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .hireMeBlock__btn {
+    width: calc(185px + (202 - 185) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .footer_title {
+    font-size: calc(18px + (20 - 18) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .footer_text {
+    font-size: calc(14px + (16 - 14) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .logo__text {
+    font-size: calc(20px + (25 - 20) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .footerInfo__secondColumn,
+  .footerInfo__thirdColumn {
+    margin-right: calc(30px + (60 - 30) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .firstColumn__text {
+    font-size: calc(13px + (20 - 13) * ((100vw - 767px) / (1530 - 767)));
+    margin-top: calc(35px + (64 - 35) * ((100vw - 767px) / (1530 - 767)));
+    margin-bottom: calc(30px + (34 - 30) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .textBlock__text {
+    font-size: calc(15px + (20 - 15) * ((100vw - 767px) / (1530 - 767)));
+    margin-top: calc(75px + (85 - 75) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .footerInputBlock__input {
+    width: calc(190px + (260 - 190) * ((100vw - 767px) / (1530 - 767)));
+  }
+}
+@media (max-width: 767px) {
+  .footer__footerInfo {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    row-gap: 40px;
+    padding-top: calc(35px + (55 - 35) * ((100vw - 320px) / (767 - 320)));
+    padding-bottom: calc(35px + (55 - 35) * ((100vw - 320px) / (767 - 320)));
+  }
+  .hireMeBlock__title {
+    font-size: calc(22px + (45 - 22) * ((100vw - 320px) / (767 - 320)));
+  }
+  .hireMeBlock__btn {
+    font-size: calc(16px + (25 - 16) * ((100vw - 320px) / (767 - 320)));
+    width: calc(125px + (185 - 125) * ((100vw - 320px) / (767 - 320)));
+    height: calc(50px + (64 - 50) * ((100vw - 320px) / (767 - 320)));
+  }
+  .btn__arrow {
+    width: calc(25px + (42 - 25) * ((100vw - 320px) / (767 - 320)));
+    height: calc(25px + (42 - 25) * ((100vw - 320px) / (767 - 320)));
+  }
+  .footer {
+    padding-left: calc(20px + (20 - 20) * ((100vw - 320px) / (767 - 320)));
+    padding-right: calc(20px + (20 - 20) * ((100vw - 320px) / (767 - 320)));
+  }
+  .logo__text {
+    font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (767 - 320)));
+  }
+  .logo {
+    width: calc(35px + (46 - 35) * ((100vw - 320px) / (767 - 320)));
+    height: calc(35px + (46 - 35) * ((100vw - 320px) / (767 - 320)));
+    font-size: calc(16px + (25 - 16) * ((100vw - 320px) / (767 - 320)));
+    margin-right: calc(10px + (15 - 10) * ((100vw - 320px) / (767 - 320)));
+  }
+  .footer_title {
+    font-size: calc(18px + (18 - 18) * ((100vw - 320px) / (767 - 320)));
+  }
+  .footer_text {
+    font-size: calc(14px + (14 - 14) * ((100vw - 320px) / (767 - 320)));
+    margin-top: calc(10px + (20 - 10) * ((100vw - 320px) / (767 - 320)));
+  }
+  .firstColumn__text {
+    font-size: calc(10px + (13 - 10) * ((100vw - 320px) / (767 - 320)));
+    margin-top: calc(15px + (35 - 15) * ((100vw - 320px) / (767 - 320)));
+    margin-bottom: calc(15px + (30 - 15) * ((100vw - 320px) / (767 - 320)));
+  }
+  .footerInputBlock__input {
+    width: calc(80px + (206 - 80) * ((100vw - 320px) / (767 - 320)));
+    height: calc(40px + (51 - 40) * ((100vw - 320px) / (767 - 320)));
+    font-size: calc(10px + (16 - 10) * ((100vw - 320px) / (767 - 320)));
+    padding-left: calc(8px + (14 - 8) * ((100vw - 320px) / (767 - 320)));
+  }
+  .footerInputBlock__btn {
+    width: calc(35px + (46 - 35) * ((100vw - 320px) / (767 - 320)));
+    height: calc(40px + (51 - 40) * ((100vw - 320px) / (767 - 320)));
+  }
+  .textBlock__text {
+    margin-top: calc(50px + (85 - 50) * ((100vw - 320px) / (767 - 320)));
+    font-size: calc(9px + (20 - 9) * ((100vw - 320px) / (767 - 320)));
+  }
+}

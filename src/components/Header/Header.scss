@@ -1,0 +1,275 @@
+@import "../../index.scss";
+.header {
+  margin-top: 40px;
+  width: 100%;
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 6;
+}
+.header__controlBlock {
+  position: relative;
+  height: 100%;
+  width: 1300px;
+  background-color: $color_black;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.controlBlock__leftList,
+.controlBlock__rightList {
+  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 64px;
+}
+.controlBlock__leftList {
+  margin-left: 50px;
+}
+.controlBlock__rightList {
+  margin-right: 50px;
+}
+.rightList__item,
+.leftList__item {
+  z-index: 1;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.controlBlock__hoverPage {
+  position: absolute;
+  width: 136px;
+  height: 66px;
+  background-color: $color_orange;
+  border-radius: 50px;
+  transition: 0.5s;
+}
+.controlBlock__hoverPage.home {
+  left: calc(17px + (10 - 17) * ((100vw - 767px) / (1530 - 767)));
+}
+.controlBlock__hoverPage.about {
+  left: calc(107px + (135 - 107) * ((100vw - 767px) / (1530 - 767)));
+}
+.controlBlock__hoverPage.service {
+  left: calc(202px + (270 - 202) * ((100vw - 767px) / (1530 - 767)));
+}
+.controlBlock__hoverPage.resume {
+  left: calc(415px + (875 - 415) * ((100vw - 767px) / (1530 - 767)));
+}
+.controlBlock__hoverPage.project {
+  left: calc(505px + (1006 - 505) * ((100vw - 767px) / (1530 - 767)));
+}
+.controlBlock__hoverPage.contact {
+  left: calc(605px + (1147 - 605) * ((100vw - 767px) / (1530 - 767)));
+}
+
+.header__logo {
+  margin-left: 10px;
+  z-index: 2;
+  width: 56px;
+  height: 56px;
+  background-color: $color_orange;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+  font-weight: 900;
+  color: #fff;
+}
+.header__headerMobile {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  background-color: #272727;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+@mixin animation-menu-active($name, $deg) {
+  @keyframes #{$name} {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate($deg);
+    }
+  }
+}
+@mixin animation-menu-unactive($name, $deg) {
+  @keyframes #{$name} {
+    0% {
+      transform: rotate($deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+}
+@include animation-menu-active(animation-before, -45deg);
+@include animation-menu-active(animation-after, 45deg);
+
+@include animation-menu-unactive(animation-before-unactive, -45deg);
+@include animation-menu-unactive(animation-after-unactive, 45deg);
+
+.headerMobile__menuBurger {
+  z-index: 6;
+  transition: 0.3s;
+  cursor: pointer;
+  position: relative;
+  width: 32px;
+  height: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 40px;
+}
+.headerMobile__menuBurger::after,
+.headerMobile__menuBurger::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+.menuBurger__span {
+  transition: 0.3s;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+.headerMobile__menuBurger.active span {
+  opacity: 0;
+}
+.headerMobile__menuBurger.active::after {
+  animation-name: animation-after;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  position: absolute;
+  bottom: 12.5px;
+}
+.headerMobile__menuBurger.active::before {
+  position: static;
+  animation-name: animation-before;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+.headerMobile__menuBurger.unactive::after {
+  animation-name: animation-after-unactive;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  position: absolute;
+  bottom: 0;
+}
+.headerMobile__menuBurger.unactive::before {
+  position: static;
+  animation-name: animation-before-unactive;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  position: absolute;
+  top: 0;
+}
+.headerMobile__logo {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color_orange;
+  border-radius: 50px;
+
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+.headerMobile__title {
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+.menuMobile {
+  transition: 0.3s;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff39;
+  opacity: 0;
+  margin-left: -215%;
+}
+.menuMobile.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  margin-left: 0;
+  opacity: 1;
+}
+.menuMobile__mobileHeaderContent {
+  transition: 0.5s;
+  margin-left: -100%;
+  width: 300px;
+  height: 100vh;
+  background-color: #272727;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menuMobile.active .menuMobile__mobileHeaderContent {
+  margin-left: 0;
+}
+.mobileHeaderContent__item:nth-child(1) {
+  margin-top: 100px;
+}
+.mobileHeaderContent__item {
+  margin-top: 15px;
+  font-size: 28px;
+  font-weight: 500;
+  color: #fff;
+}
+.mobileHeaderContent__item:hover {
+  transition: 0.3s;
+  text-decoration: underline;
+}
+@media (max-width: 1530px) {
+  .header__controlBlock {
+    width: calc(740px + (1300 - 740) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .controlBlock__leftList,
+  .controlBlock__rightList {
+    gap: calc(30px + (64 - 30) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .rightList__item,
+  .leftList__item {
+    font-size: calc(18px + (20 - 18) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .controlBlock__hoverPage {
+    width: calc(110px + (136 - 110) * ((100vw - 767px) / (1530 - 767)));
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+  }
+  .header__controlBlock {
+    display: none;
+  }
+  .header__headerMobile {
+    display: flex;
+  }
+  .headerMobile__menuBurger {
+    left: calc(30px + (40 - 30) * ((100vw - 320px) / (767 - 320)));
+  }
+}

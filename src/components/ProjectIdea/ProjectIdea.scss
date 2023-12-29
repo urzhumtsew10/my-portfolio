@@ -1,0 +1,95 @@
+@import "../../index.scss";
+
+.projectIdeaBlock {
+  width: 100%;
+  height: 476px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.projectIdeaBlock__title {
+  text-align: center;
+  font-size: 64px;
+  font-weight: 600;
+  color: $color_dark_blue;
+}
+.projectIdeaBlock__title__span {
+  color: $color_orange;
+}
+.projectIdeaBlock__projectIdea {
+  width: 832px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.projectIdea__inputBlock {
+  padding: 0 14px 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 86px;
+  border-radius: 50px;
+  border: 1px solid #e4e7ec;
+  backdrop-filter: blur(7.5px);
+}
+.inputBlock__imgBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50px;
+  background: #ffead5;
+}
+.imgBlock__img {
+  width: 32px;
+  height: 32px;
+}
+.inputBlock__btn {
+  width: 126px;
+  height: 64px;
+  border-radius: 60px;
+  background-color: $color_orange;
+
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  color: #fff;
+  transition: 0.3s;
+}
+.inputBlock__btn:hover {
+  background-color: #fff;
+  color: $color_orange;
+  border: 1px solid $color_orange;
+}
+.inputBlock__input {
+  margin: 0 17px 0 17px;
+  width: 600px;
+  height: 60px;
+
+  font-size: 20px;
+  font-weight: 500;
+  color: #000;
+}
+.projectIdea__blockInfo {
+  margin-top: 10px;
+  width: 92%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.blockInfo__content {
+  display: flex;
+  align-items: center;
+}
+.content__img {
+  width: 24px;
+  height: 24px;
+}
+.content__text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+}
