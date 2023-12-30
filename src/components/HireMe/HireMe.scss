@@ -56,7 +56,7 @@
   }
   100% {
     opacity: 1;
-    margin-left: 200px;
+    // margin-left: 200px;
   }
 }
 .blockMyInfo__title {
@@ -111,3 +111,66 @@
   animation-fill-mode: forwards;
 }
 @include animation-btn-hover("btn-hireMe", #151515, #fff, transparent);
+
+@media (max-width: 1530px) {
+  .hireMeBlock__blockMyPhoto {
+    width: calc(370px + (405 - 370) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .hireMeBlock__blockMyInfo {
+    width: calc(345px + (600 - 345) * ((100vw - 767px) / (1530 - 767)));
+    margin-left: calc(25px + (200 - 25) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .blockMyInfo__title {
+    font-size: calc(52px + (64 - 52) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .achievement {
+    margin-right: calc(145px + (176 - 145) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .blockMyInfo__btn {
+    width: calc(220px + (233 - 220) * ((100vw - 767px) / (1530 - 767)));
+    height: calc(100px + (108 - 100) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .hireMeBlock {
+    height: calc(650px + (650 - 650) * ((100vw - 767px) / (1530 - 767)));
+  }
+}
+@media (max-width: 767px) {
+  .hireMeBlock {
+    height: 1000px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hireMeBlock__blockMyInfo {
+    margin-left: 0;
+    width: 100%;
+    align-items: center;
+  }
+  .hireMeBlock__blockMyPhoto {
+    width: calc(300px + (370 - 300) * ((100vw - 320px) / (767 - 320)));
+    height: calc(285px + (405 - 285) * ((100vw - 320px) / (767 - 320)));
+  }
+  .blockMyPhoto__img {
+    height: calc(400px + (550 - 400) * ((100vw - 320px) / (767 - 320)));
+  }
+  .hireMeBlock {
+    margin-left: 0;
+    width: 100%;
+    align-items: center;
+  }
+  .blockMyInfo__title {
+    text-align: center;
+    margin-top: 10px;
+    font-size: calc(43px + (52 - 43) * ((100vw - 320px) / (767 - 320)));
+  }
+  .blockMyInfo__text {
+    text-align: center;
+  }
+  .achievement {
+    margin-right: 0;
+    align-items: center;
+    width: 115px;
+  }
+  .achievement__name {
+    text-align: center;
+  }
+}
