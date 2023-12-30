@@ -35,7 +35,7 @@ export const Footer: FC<{}> = () => {
                 alt="icon"
               />
             </a>
-            <a href="@urzhumtsew" target="_black">
+            <a href="https://t.me/urzhumtsew" target="_black">
               <img
                 className="socialNetworks__img"
                 src={icon_telegram}
