@@ -17,7 +17,8 @@
 }
 
 .skillsBlock__skillsList {
-  margin: 75px 0 0 75px;
+  margin: 75px 0 0 0;
+  padding-left: 75px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: start;
@@ -68,4 +69,37 @@
   font-size: 25px;
   font-weight: 600;
   color: $color_dark_blue;
+}
+@media (max-width: 1530px) {
+  .skillsBlock__skillsList {
+    width: 100%;
+    margin-left: 0;
+    grid-template-columns: repeat(
+      auto-fit,
+      calc(210px + (420 - 210) * ((100vw - 767px) / (1530 - 767)))
+    );
+    padding-left: calc(25px + (75 - 25) * ((100vw - 767px) / (1530 - 767)));
+    column-gap: 50px;
+    justify-content: center;
+  }
+  .skillCard__name {
+    font-size: calc(20px + (25 - 20) * ((100vw - 767px) / (1530 - 767)));
+    margin-left: calc(10px + (15 - 10) * ((100vw - 767px) / (1530 - 767)));
+  }
+}
+@media (max-width: 767px) {
+  .skillsBlock__skillsList {
+    grid-template-columns: repeat(
+      auto-fit,
+      calc(150px + (210 - 150) * ((100vw - 320px) / (767 - 320)))
+    );
+    column-gap: calc(10px + (50 - 10) * ((100vw - 320px) / (767 - 320)));
+    margin-top: calc(50px + (75 - 50) * ((100vw - 320px) / (767 - 320)));
+  }
+  .skillCard__name {
+    column-gap: calc(20px + (20 - 20) * ((100vw - 320px) / (767 - 320)));
+  }
+  .skillsBlock__title {
+    margin-top: calc(75px + (85 - 75) * ((100vw - 320px) / (767 - 320)));
+  }
 }

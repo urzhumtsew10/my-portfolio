@@ -178,6 +178,7 @@
     font-size: calc(40px + (48 - 40) * ((100vw - 767px) / (1530 - 767)));
   }
   .titleBlock__text {
+    max-width: 345px;
     font-size: calc(16px + (20 - 16) * ((100vw - 767px) / (1530 - 767)));
   }
 }
@@ -216,5 +217,9 @@
   }
   .contentServices__titleBlock {
     flex-direction: column;
+  }
+  .titleBlock__text {
+    text-align: center;
+    margin-top: 10px;
   }
 }

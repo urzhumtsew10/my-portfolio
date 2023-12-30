@@ -18,8 +18,8 @@ const Services: FC<{}> = () => {
           My <span className="titleServices__span">Services</span>
         </h2>
         <p className="titleBlock__text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis <br />{" "}
-          lacus nunc, posuere in justo vulputate, bibendum sodales
+          Here you can choose the type of service you need and write more
+          details about the order
         </p>
       </div>
       <div className="services__serviceCardsBlock">

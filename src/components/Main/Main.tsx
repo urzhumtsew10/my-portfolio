@@ -57,8 +57,8 @@ const Main: FC<{}> = () => {
         <p className="aboutExperience__span">Experience</p>
       </div>
       <Services />
-      {/* <Skills />
-      <HireMe />
+      <Skills />
+      {/* <HireMe />
       <Portfolio />
       <Ticker />
       <ProjectIdea /> */}
