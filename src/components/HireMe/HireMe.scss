@@ -68,6 +68,7 @@
   color: $color_orange;
 }
 .blockMyInfo__text {
+  max-width: 585px;
   margin-top: 47px;
   font-size: 20px;
   font-weight: 400;
@@ -131,14 +132,16 @@
     height: calc(100px + (108 - 100) * ((100vw - 767px) / (1530 - 767)));
   }
   .hireMeBlock {
-    height: calc(650px + (650 - 650) * ((100vw - 767px) / (1530 - 767)));
+    height: calc(750px + (650 - 750) * ((100vw - 767px) / (1530 - 767)));
   }
 }
 @media (max-width: 767px) {
   .hireMeBlock {
-    height: 1000px;
+    height: 1100px;
     flex-direction: column;
     align-items: center;
+    margin-left: 0;
+    width: 100%;
   }
   .hireMeBlock__blockMyInfo {
     margin-left: 0;
@@ -152,11 +155,7 @@
   .blockMyPhoto__img {
     height: calc(400px + (550 - 400) * ((100vw - 320px) / (767 - 320)));
   }
-  .hireMeBlock {
-    margin-left: 0;
-    width: 100%;
-    align-items: center;
-  }
+
   .blockMyInfo__title {
     text-align: center;
     margin-top: 10px;
@@ -164,6 +163,7 @@
   }
   .blockMyInfo__text {
     text-align: center;
+    max-width: 285px;
   }
   .achievement {
     margin-right: 0;

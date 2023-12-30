@@ -19,8 +19,9 @@ export const HireMe: FC<{}> = () => {
           Why <span className="blockMyInfo__title__span">Hire me</span>?
         </h2>
         <p className="blockMyInfo__text">
-          Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit. Duis
-          lacus nunc, posuere in justo <br /> vulputate, bibendum sodales
+          I have experience working with websites of different types and
+          complexities, I quickly find common ground and requirements from me, I
+          develop high-quality, optimized and easily maintainable code.
         </p>
         <div className="blockMyInfo__achievement">
           <div className="achievement">
