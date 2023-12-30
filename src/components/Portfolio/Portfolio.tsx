@@ -10,7 +10,7 @@ export const Portfolio: FC<{}> = () => {
       category: "Online Store",
       technology: "React.js",
       data: "3 Dec, 2023",
-      description: "Store of electrical goods: React/Express/MongoDB.",
+      description: "Electrical store: React/Express/MongoDB.",
       url: "https://electricity-store.vercel.app/",
     },
     {
@@ -28,7 +28,7 @@ export const Portfolio: FC<{}> = () => {
       category: "Online store",
       technology: "JavaScript",
       data: "30 Aug, 2023",
-      description: "Online store clothes: JavaScript/Express/MongoDB.",
+      description: "Online store clothes: JScript/Express/MongoDB.",
       url: "https://clothes-frontend-lilac.vercel.app/",
     },
   ];

@@ -59,8 +59,8 @@ const Main: FC<{}> = () => {
       <Services />
       <Skills />
       <HireMe />
-      {/* <Portfolio />
-      <Ticker />
+      <Portfolio />
+      {/* <Ticker />
       <ProjectIdea /> */}
     </div>
   );

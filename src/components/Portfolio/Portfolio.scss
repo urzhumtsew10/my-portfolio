@@ -2,7 +2,6 @@
 
 .portfolioBlock {
   width: 100%;
-  height: 100vh;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -120,3 +119,50 @@
   color: #344054;
 }
 @include animation-btn-hover("btn-seeAll", #fff, $color_orange, $color_orange);
+
+@media (max-width: 1530px) {
+  .portfolioBlock__myProjects {
+    padding: 48px 0 0 0;
+    justify-content: center;
+    grid-template-columns: repeat(
+      auto-fit,
+      calc(360px + (460 - 360) * ((100vw - 767px) / (1530 - 767)))
+    );
+    gap: calc(10px + (15 - 10) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .myProject__projectCard {
+    width: calc(330px + (416 - 330) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .projectData__info {
+    font-size: calc(30px + (32 - 30) * ((100vw - 767px) / (1530 - 767)));
+  }
+}
+@media (max-width: 767px) {
+  .projectImg__button {
+    width: calc(90px + (110 - 90) * ((100vw - 320px) / (767 - 320)));
+    height: calc(90px + (110 - 90) * ((100vw - 320px) / (767 - 320)));
+    bottom: calc(-30px + (-20 - -30) * ((100vw - 320px) / (767 - 320)));
+    right: calc(-15px + (-20 - -15) * ((100vw - 320px) / (767 - 320)));
+  }
+  .projectCard__projectCategory {
+    width: calc(160px + (196 - 160) * ((100vw - 320px) / (767 - 320)));
+    height: calc(50px + (54 - 50) * ((100vw - 320px) / (767 - 320)));
+    font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (767 - 320)));
+  }
+  .dataBlock__title {
+    font-size: calc(17px + (20 - 17) * ((100vw - 320px) / (767 - 320)));
+  }
+  .projectData__info {
+    font-size: calc(24px + (30 - 24) * ((100vw - 320px) / (767 - 320)));
+  }
+  .portfolioBlock__myProjects {
+    gap: calc(65px + (10 - 65) * ((100vw - 320px) / (767 - 320)));
+  }
+  .mainBlock__title {
+    font-size: calc(40px + (48 - 40) * ((100vw - 320px) / (767 - 320)));
+  }
+  .mainBlock__btn {
+    width: calc(115px + (144 - 115) * ((100vw - 320px) / (767 - 320)));
+    height: calc(55px + (66 - 55) * ((100vw - 320px) / (767 - 320)));
+  }
+}
