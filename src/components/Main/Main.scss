@@ -197,6 +197,9 @@
 }
 
 @media (max-width: 767px) {
+  .mainSection {
+    margin-top: 65px;
+  }
   .mainSection__notation,
   .mainSection__myExperience {
     display: none;
@@ -212,10 +215,10 @@
     height: calc(303px + (520 - 303) * ((100vw - 320px) / (767 - 320)));
   }
   .myImage__photo {
-    height: calc(365px + (610 - 365) * ((100vw - 320px) / (767 - 320)));
+    height: calc(350px + (610 - 350) * ((100vw - 320px) / (767 - 320)));
   }
   .myImage__ellipse {
-    width: calc(310px + (695 - 310) * ((100vw - 320px) / (767 - 320)));
+    width: calc(300px + (695 - 300) * ((100vw - 320px) / (767 - 320)));
     height: calc(138px + (340 - 138) * ((100vw - 320px) / (767 - 320)));
   }
   .mainSection__greeting {

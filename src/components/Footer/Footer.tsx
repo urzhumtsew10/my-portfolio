@@ -28,16 +28,20 @@ export const Footer: FC<{}> = () => {
             adipiscing elit. Sed lobortis orci elementum egestas lobortis
           </p>
           <div className="firstColumn__socialNetworks">
-            <img
-              className="socialNetworks__img"
-              src={icon_instagram}
-              alt="icon"
-            />
-            <img
-              className="socialNetworks__img"
-              src={icon_telegram}
-              alt="icon"
-            />
+            <a href="https://www.instagram.com/urzhumtsew/" target="_black">
+              <img
+                className="socialNetworks__img"
+                src={icon_instagram}
+                alt="icon"
+              />
+            </a>
+            <a href="@urzhumtsew" target="_black">
+              <img
+                className="socialNetworks__img"
+                src={icon_telegram}
+                alt="icon"
+              />
+            </a>
           </div>
         </div>
         <div className="footerInfo__secondColumn">

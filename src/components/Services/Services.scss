@@ -2,10 +2,10 @@
 
 .services__contentServices {
   width: 100%;
-  height: 878px;
   background-color: $color_black;
   border-radius: 50px;
   position: relative;
+  padding-bottom: 50px;
 }
 .contentServices__lights {
   position: absolute;
@@ -35,11 +35,11 @@
   color: #fff;
 }
 .services__serviceCardsBlock {
-  position: absolute;
-  bottom: 100px;
+  margin-top: 100px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
   justify-items: center;
 }
 .serviceCardsBlock__serviceCard {
@@ -47,8 +47,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 416px;
   height: 508px;
+  width: 416px;
   background-color: rgba(104, 104, 104, 0.2);
   backdrop-filter: blur(7.5px);
   border: 2px solid rgba(255, 255, 255, 0.432);
@@ -75,7 +75,6 @@
     opacity: 0.5;
   }
   100% {
-    width: 416px;
     opacity: 1;
   }
 }
@@ -89,7 +88,6 @@
   display: flex;
   align-items: center;
   padding: 10px 0 0 37px;
-
   font-size: 32px;
   font-weight: 500;
   color: #fff;
@@ -145,4 +143,78 @@
 }
 .cardButton__btn:hover .cardButton__img {
   transform: scale(1.2);
+}
+@media (max-width: 1530px) {
+  .services__serviceCardsBlock {
+    grid-template-columns: repeat(
+      auto-fit,
+      calc(320px + (416 - 320) * ((100vw - 767px) / (1530 - 767)))
+    );
+    gap: calc(60px + (60 - 60) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .serviceCardsBlock__serviceCard {
+    width: calc(340px + (416 - 340) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .serviceCard__lastLayer {
+    width: calc(285px + (328 - 285) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .serviceCard__middleLayer {
+    width: calc(310px + (374 - 310) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .cardButton__btn {
+    width: calc(110px + (121 - 110) * ((100vw - 767px) / (1530 - 767)));
+    height: calc(110px + (121 - 110) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .contentServices__titleBlock {
+    margin-top: calc(60px + (116 - 60) * ((100vw - 767px) / (1530 - 767)));
+    margin-left: calc(
+      28.5px + (70.5 - 28.5) * ((100vw - 767px) / (1530 - 767))
+    );
+    margin-right: calc(
+      28.5px + (70.5 - 28.5) * ((100vw - 767px) / (1530 - 767))
+    );
+  }
+  .titleBlock__titleServices {
+    font-size: calc(40px + (48 - 40) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .titleBlock__text {
+    font-size: calc(16px + (20 - 16) * ((100vw - 767px) / (1530 - 767)));
+  }
+}
+@media (max-width: 767px) {
+  .services__contentServices {
+    border-radius: calc(20px + (50 - 20) * ((100vw - 320px) / (767 - 320)));
+  }
+  .contentServices__lights {
+    display: none;
+  }
+  .services__serviceCardsBlock {
+    gap: calc(35px + (60 - 35) * ((100vw - 320px) / (767 - 320)));
+  }
+  .serviceCardsBlock__serviceCard {
+    width: calc(310px + (340 - 310) * ((100vw - 320px) / (767 - 320)));
+    height: calc(420px + (508 - 420) * ((100vw - 320px) / (767 - 320)));
+  }
+  .serviceCard__titleCard {
+    height: calc(85px + (100 - 85) * ((100vw - 320px) / (767 - 320)));
+  }
+  .serviceCard__frontLayer {
+    height: calc(250px + (307 - 250) * ((100vw - 320px) / (767 - 320)));
+  }
+  .serviceCard__middleLayer {
+    width: calc(280px + (310 - 280) * ((100vw - 320px) / (767 - 320)));
+    height: calc(250px + (307 - 250) * ((100vw - 320px) / (767 - 320)));
+  }
+  .serviceCard__lastLayer {
+    width: calc(260px + (285 - 260) * ((100vw - 320px) / (767 - 320)));
+    height: calc(250px + (307 - 250) * ((100vw - 320px) / (767 - 320)));
+  }
+  .cardButton__btn {
+    width: calc(90px + (110 - 90) * ((100vw - 320px) / (767 - 320)));
+    height: calc(90px + (110 - 90) * ((100vw - 320px) / (767 - 320)));
+    right: calc(-5px + (-20 - -5) * ((100vw - 320px) / (767 - 320)));
+  }
+  .contentServices__titleBlock {
+    flex-direction: column;
+  }
 }
