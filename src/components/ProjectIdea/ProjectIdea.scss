@@ -93,3 +93,49 @@
   font-weight: 400;
   color: #000;
 }
+@media (max-width: 1530px) {
+  .projectIdeaBlock__title {
+    font-size: calc(60px + (64 - 60) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .projectIdeaBlock__projectIdea {
+    width: calc(700px + (832 - 700) * ((100vw - 767px) / (1530 - 767)));
+  }
+  .inputBlock__imgBlock {
+    width: calc(80px + (64 - 80) * ((100vw - 767px) / (1530 - 767)));
+  }
+}
+@media (max-width: 767px) {
+  .projectIdeaBlock {
+    height: calc(310px + (476 - 310) * ((100vw - 320px) / (767 - 320)));
+  }
+  .projectIdeaBlock__title {
+    font-size: calc(27px + (60 - 27) * ((100vw - 320px) / (767 - 320)));
+  }
+  .projectIdeaBlock__projectIdea {
+    margin-top: 15px;
+    width: calc(300px + (700 - 300) * ((100vw - 320px) / (767 - 320)));
+  }
+  .projectIdea__inputBlock {
+    padding-right: calc(5px + (14 - 5) * ((100vw - 320px) / (767 - 320)));
+    padding-left: calc(20px + (14 - 20) * ((100vw - 320px) / (767 - 320)));
+    height: calc(76px + (86 - 76) * ((100vw - 320px) / (767 - 320)));
+  }
+  .inputBlock__imgBlock {
+    display: none;
+  }
+  .inputBlock__input {
+    margin: 0;
+    width: calc(170px + (600 - 170) * ((100vw - 320px) / (767 - 320)));
+    font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (767 - 320)));
+  }
+  .inputBlock__btn {
+    width: calc(100px + (126 - 100) * ((100vw - 320px) / (767 - 320)));
+  }
+  .content__img {
+    width: calc(20px + (24 - 20) * ((100vw - 320px) / (767 - 320)));
+    height: calc(20px + (24 - 20) * ((100vw - 320px) / (767 - 320)));
+  }
+  .content__text {
+    font-size: calc(9px + (16 - 9) * ((100vw - 320px) / (767 - 320)));
+  }
+}

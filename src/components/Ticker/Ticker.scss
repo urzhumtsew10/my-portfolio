@@ -47,3 +47,22 @@
   font-weight: 400;
   color: #000;
 }
+@media (max-width: 767px) {
+  .tickerBlock {
+    height: calc(105px + (167 - 105) * ((100vw - 320px) / (767 - 320)));
+  }
+  .tickerBlock__ticker {
+    height: calc(50px + (63 - 50) * ((100vw - 320px) / (767 - 320)));
+  }
+
+  .content__title {
+    font-size: 25px;
+  }
+  .content__star {
+    width: 30px;
+    height: 30px;
+  }
+  .ticker__content {
+    width: 436%;
+  }
+}
