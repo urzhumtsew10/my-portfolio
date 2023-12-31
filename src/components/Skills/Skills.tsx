@@ -30,7 +30,7 @@ export const Skills: FC<{}> = () => {
   });
 
   return (
-    <div className="skillsBlock">
+    <div id="about" className="skillsBlock">
       <h2 className="skillsBlock__title">
         My <span className="skillsBlock__title__span">Skills</span>
       </h2>

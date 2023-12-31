@@ -10,7 +10,7 @@ export const HireMe: FC<{}> = () => {
   });
 
   return (
-    <div ref={ref} className="hireMeBlock">
+    <div id="resume" ref={ref} className="hireMeBlock">
       <div className={`hireMeBlock__blockMyPhoto ${inView && "active"}`}>
         <img className="blockMyPhoto__img" src={my_photo} alt="my photo" />
       </div>

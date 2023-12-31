@@ -11,7 +11,7 @@ const Services: FC<{}> = () => {
   ];
 
   return (
-    <div className="services__contentServices">
+    <div id="service" className="services__contentServices">
       <img className="contentServices__lights" src={lights} alt="lights" />
       <div className="contentServices__titleBlock">
         <h2 className="titleBlock__titleServices">

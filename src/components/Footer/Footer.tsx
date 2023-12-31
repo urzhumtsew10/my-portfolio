@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { BaseSyntheticEvent, FC, useState } from "react";
 import "../Footer/Footer.scss";
 import arrow from "../../img/arrow.svg";
 import icon_instagram from "../../img/instagram.svg";
@@ -6,8 +6,26 @@ import icon_telegram from "../../img/telegram.svg";
 import icon_send from "../../img/icon-send.svg";
 
 export const Footer: FC<{}> = () => {
+  const [selectPage, setSelectPage] = useState("home");
+
+  const changeSelectedPage = (event: BaseSyntheticEvent) => {
+    const namePage: string = event.target.innerText;
+    setSelectPage(namePage.toLowerCase());
+
+    const coordinatesElem: number | undefined = document
+      .querySelector(`#${namePage.toLowerCase()}`)
+      ?.getBoundingClientRect().top;
+
+    if (coordinatesElem) {
+      window.scrollTo({
+        top: coordinatesElem + window.pageYOffset - 100,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <footer className="footer">
+    <footer id="contact" className="footer">
       <div className="footer__hireMeBlock">
         <h2 className="hireMeBlock__title">Lets Connect there</h2>
         <button className="hireMeBlock__btn">
@@ -46,17 +64,47 @@ export const Footer: FC<{}> = () => {
         </div>
         <div className="footerInfo__secondColumn">
           <h2 className="secondColumn__title footer_title">Navigation</h2>
-          <p className="secondColumn__text  footer_text">Home</p>
-          <p className="secondColumn__text  footer_text">Skills</p>
-          <p className="secondColumn__text  footer_text">Portfolio</p>
-          <p className="secondColumn__text  footer_text">Service</p>
-          <p className="secondColumn__text  footer_text">About me</p>
+          <p
+            onClick={(event) => changeSelectedPage(event)}
+            className="secondColumn__text  footer_text"
+          >
+            Home
+          </p>
+          <p
+            onClick={(event) => changeSelectedPage(event)}
+            className="secondColumn__text  footer_text"
+          >
+            About
+          </p>
+          <p
+            onClick={(event) => changeSelectedPage(event)}
+            className="secondColumn__text  footer_text"
+          >
+            Project
+          </p>
+          <p
+            onClick={(event) => changeSelectedPage(event)}
+            className="secondColumn__text  footer_text"
+          >
+            Service
+          </p>
+          <p
+            onClick={(event) => changeSelectedPage(event)}
+            className="secondColumn__text  footer_text"
+          >
+            Contact
+          </p>
         </div>
         <div className="footerInfo__thirdColumn">
           <h2 className="thirdColumn__title footer_title">Contact</h2>
-          <p className="thirdColumn__text footer_text">+91 7738443636</p>
-          <p className="thirdColumn__text footer_text">urgumandrei@gmail.com</p>
-          <p className="thirdColumn__text footer_text">@urzhumtsew</p>
+          <a href="mailto: urgumandrei@gmail.com">
+            <p className="thirdColumn__text footer_text">
+              urgumandrei@gmail.com
+            </p>
+          </a>
+          <a href="https://t.me/urzhumtsew" target="_black">
+            <p className="thirdColumn__text footer_text">@urzhumtsew</p>
+          </a>
         </div>
         <div className="footerInfo__fourthColumn">
           <h2 className="fourthColumn__title footer_title">

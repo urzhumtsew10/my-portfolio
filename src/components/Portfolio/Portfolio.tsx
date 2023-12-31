@@ -34,7 +34,7 @@ export const Portfolio: FC<{}> = () => {
   ];
 
   return (
-    <div className="portfolioBlock">
+    <div id="project" className="portfolioBlock">
       <div className="portfolioBlock__mainBlock">
         <h2 className="mainBlock__title">Portfolio</h2>
         <button className="mainBlock__btn">See All</button>

@@ -12,10 +12,11 @@ import { HireMe } from "../HireMe/HireMe";
 import { Portfolio } from "../Portfolio/Portfolio";
 import { Ticker } from "../Ticker/Ticker";
 import { ProjectIdea } from "../ProjectIdea/ProjectIdea";
+import { useInView } from "react-intersection-observer";
 
 const Main: FC<{}> = () => {
   return (
-    <div className="mainSection">
+    <div id="home" className="mainSection">
       <div className="mainSection__greeting">
         <p className="greeting__text">Hello!</p>
         <img className="greeting__img" src={glow} alt="glow" />

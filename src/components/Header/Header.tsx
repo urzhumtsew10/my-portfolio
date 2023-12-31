@@ -1,10 +1,4 @@
-import React, {
-  BaseSyntheticEvent,
-  FC,
-  RefObject,
-  useRef,
-  useState,
-} from "react";
+import React, { BaseSyntheticEvent, FC, useRef, useState } from "react";
 import "../Header/Header.scss";
 
 const Header: FC<{}> = () => {
@@ -14,6 +8,25 @@ const Header: FC<{}> = () => {
   const changeSelectedPage = (event: BaseSyntheticEvent) => {
     const namePage: string = event.target.innerText;
     setSelectPage(namePage.toLowerCase());
+
+    const coordinatesElem: number | undefined = document
+      .querySelector(`#${namePage.toLowerCase()}`)
+      ?.getBoundingClientRect().top;
+
+    if (coordinatesElem && window.screen.width > 767) {
+      window.scrollTo({
+        top: coordinatesElem + window.pageYOffset - 100,
+        behavior: "smooth",
+      });
+    }
+    if (window.screen.width < 767 && coordinatesElem) {
+      window.scrollTo({
+        top: coordinatesElem + window.pageYOffset - 50,
+        behavior: "smooth",
+      });
+      setIsOpenMenu(false);
+      document.body.style.overflow = "inherit";
+    }
   };
 
   const toggleBurgerMenu = () => {
@@ -23,11 +36,6 @@ const Header: FC<{}> = () => {
     } else {
       document.body.style.overflow = "inherit";
     }
-  };
-
-  const scrollToSection = () => {
-    setIsOpenMenu(false);
-    document.body.style.overflow = "inherit";
   };
 
   return (
@@ -90,22 +98,37 @@ const Header: FC<{}> = () => {
       </div>
       <div className={`menuMobile ${isOpenMenu && "active"}`}>
         <div className="menuMobile__mobileHeaderContent">
-          <p onClick={scrollToSection} className="mobileHeaderContent__item">
+          <p onClick={changeSelectedPage} className="mobileHeaderContent__item">
             Home
           </p>
-          <p onClick={scrollToSection} className="mobileHeaderContent__item">
+          <p
+            onClick={(event) => changeSelectedPage(event)}
+            className="mobileHeaderContent__item"
+          >
             About
           </p>
-          <p onClick={scrollToSection} className="mobileHeaderContent__item">
+          <p
+            onClick={(event) => changeSelectedPage(event)}
+            className="mobileHeaderContent__item"
+          >
             Service
           </p>
-          <p onClick={scrollToSection} className="mobileHeaderContent__item">
+          <p
+            onClick={(event) => changeSelectedPage(event)}
+            className="mobileHeaderContent__item"
+          >
             Resume
           </p>
-          <p onClick={scrollToSection} className="mobileHeaderContent__item">
+          <p
+            onClick={(event) => changeSelectedPage(event)}
+            className="mobileHeaderContent__item"
+          >
             Project
           </p>
-          <p onClick={scrollToSection} className="mobileHeaderContent__item">
+          <p
+            onClick={(event) => changeSelectedPage(event)}
+            className="mobileHeaderContent__item"
+          >
             Contact
           </p>
         </div>
