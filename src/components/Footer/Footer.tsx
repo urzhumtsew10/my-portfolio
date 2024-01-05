@@ -62,11 +62,10 @@ export const Footer: FC<{}> = () => {
             <p className="logo__text">Urzhumtsew</p>
           </div>
           <p className="firstColumn__text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue{" "}
-            <br />
-            interdum ligula a dignissim. Lorem ipsum dolor sit amet, consectetur{" "}
-            <br />
-            adipiscing elit. Sed lobortis orci elementum egestas lobortis
+            If you are in need of my services contact me on one of these
+            networks. Describe clearly and briefly my task, it would not be bad
+            to have a layout of the site or 2-3 links to sites that you like. I
+            will contact you within two days.
           </p>
           <div className="firstColumn__socialNetworks">
             <a href="https://www.instagram.com/urzhumtsew/" target="_blank">

@@ -61,7 +61,17 @@ const Main: FC<{}> = () => {
   return (
     <div id="home" className="mainSection">
       <div className="mainSection__greeting">
-        <p className="greeting__text">Hello!</p>
+        <select name="language" id="landuage">
+          <option value="eu">
+            <p className="greeting__text">Hello!</p>
+          </option>
+          <option value="ru">
+            <p className="greeting__text">Привет!</p>
+          </option>
+          <option value="ua">
+            <p className="greeting__text">Привіт!</p>
+          </option>
+        </select>
         <img className="greeting__img" src={glow} alt="glow" />
       </div>
       <div className="mainSection__aboutMe">
