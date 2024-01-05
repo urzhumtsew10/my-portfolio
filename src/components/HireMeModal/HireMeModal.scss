@@ -202,6 +202,13 @@ input::-webkit-inner-spin-button {
     right: calc(10px + (15 - 10) * ((100vw - 320px) / (767 - 320)));
   }
   .hireMeForm__label {
-    font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (767 - 320)));
+    font-size: calc(11px + (18 - 11) * ((100vw - 320px) / (767 - 320)));
+  }
+  .hireMeForm__input {
+    font-size: 16px;
+  }
+  .label__errorText {
+    right: calc(0px + (5 - 0) * ((100vw - 320px) / (767 - 320)));
+    font-size: calc(11px + (15 - 11) * ((100vw - 320px) / (767 - 320)));
   }
 }

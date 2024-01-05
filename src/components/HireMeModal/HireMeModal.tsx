@@ -99,7 +99,7 @@ export const HireMeModal: FC<{}> = () => {
             <p className="label__errorText">{errors.description?.message}</p>
             <textarea
               {...register("description", {
-                required: "Description is required",
+                required: "Overview is required",
               })}
               className="hireMeForm__textarea"
               name="description"
