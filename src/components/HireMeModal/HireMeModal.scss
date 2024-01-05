@@ -1,0 +1,207 @@
+@import "../../index.scss";
+
+.hireMeModal {
+  transition: 0.3s;
+  z-index: 6;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: -10;
+}
+.hireMeModal.active {
+  opacity: 1;
+  z-index: 6;
+}
+.hireMeModal__contentModal {
+  transition: 0.3s;
+  position: relative;
+  width: 550px;
+  height: 550px;
+  background-color: rgba(104, 104, 104, 0.2);
+  backdrop-filter: blur(7.5px);
+  border: 2px solid rgba(255, 255, 255, 0.432);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: perspective(550px) translate(0, -100%) rotateX(45deg);
+}
+.hireMeModal__contentModal.error {
+  border: 2px solid rgb(243, 145, 145);
+}
+.hireMeModal__contentModal.success {
+  border: 2px solid rgb(0, 255, 0);
+}
+.hireMeModal.active .hireMeModal__contentModal {
+  transform: perspective(550px) translate(0, 0) rotateX(0deg);
+}
+
+.contentModal__imgClose {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  transition: 0.3s;
+}
+.contentModal__imgClose:hover {
+  transform: scale(1.09);
+}
+.contentModal__title {
+  margin-top: 7px;
+  font-size: 32px;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 0px 0px 15px #ffffff88;
+}
+.contentModal__hireMeForm {
+  width: 100%;
+  padding: 0 25px 0 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hireMeForm__label {
+  position: relative;
+  width: 100%;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+.label__errorText {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgb(243, 145, 145);
+}
+.hireMeForm__input {
+  transition: 0.3s;
+  margin-top: 5px;
+  padding-left: 15px;
+  height: 40px;
+  border-radius: 10px;
+
+  border: 2px solid rgba(255, 255, 255, 0.432);
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0px 0px 20px #ffffff2b;
+}
+.hireMeForm__input:focus,
+.flexBlock__input:focus {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0px 0px 20px #ffffff00;
+}
+.flexBlock__input {
+  transition: 0.3s;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.432);
+  width: 100px;
+  height: 40px;
+
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+.flexBlock__input::placeholder {
+  color: #fff;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.hireMeForm__flexBlock {
+  position: relative;
+  padding: 0 20px 0 20px;
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hireMeForm__textarea {
+  transition: 0.3s;
+  margin-top: 5px;
+  width: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.432);
+  resize: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  outline: none;
+  padding: 5px;
+  height: 100px;
+  box-shadow: 0px 0px 20px #ffffff37;
+}
+.hireMeForm__textarea:focus {
+  background-color: #fff;
+  border: none;
+  color: #000;
+}
+.hireMeFrom__btn {
+  position: absolute;
+  bottom: 10px;
+  width: 150px;
+  height: 45px;
+  background-color: #fff;
+  border-radius: 10px;
+
+  font-size: 20px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.hireMeFrom__btnSended {
+  position: absolute;
+  bottom: 10px;
+  width: 150px;
+  height: 45px;
+  background-color: transparent;
+  border-radius: 10px;
+  border: 1px solid rgb(0, 255, 0);
+  color: rgb(0, 255, 0);
+  box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.285);
+
+  font-size: 20px;
+  font-weight: 600;
+}
+.hireMeFrom__btn:hover {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  box-shadow: 0px 0px 10px #ffffff7f;
+}
+@media (max-width: 767px) {
+  .hireMeModal__contentModal {
+    width: calc(310px + (550 - 310) * ((100vw - 320px) / (767 - 320)));
+    height: calc(490px + (550 - 490) * ((100vw - 320px) / (767 - 320)));
+  }
+  .contentModal__title {
+    font-size: calc(25px + (32 - 25) * ((100vw - 320px) / (767 - 320)));
+  }
+  .contentModal__imgClose {
+    width: calc(30px + (32 - 30) * ((100vw - 320px) / (767 - 320)));
+    height: calc(30px + (32 - 30) * ((100vw - 320px) / (767 - 320)));
+    right: calc(10px + (15 - 10) * ((100vw - 320px) / (767 - 320)));
+  }
+  .hireMeForm__label {
+    font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (767 - 320)));
+  }
+}

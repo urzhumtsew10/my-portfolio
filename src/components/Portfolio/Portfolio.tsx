@@ -1,13 +1,16 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import "../Portfolio/Portfolio.scss";
 import { ProjectCard } from "./ProjectCard";
+import { useAppDispatch } from "../../store/hooks";
+import { headerSlice } from "../../store/reducers/HeaderSlice";
+import { useInView } from "react-intersection-observer";
 
 export const Portfolio: FC<{}> = () => {
   const projectsList = [
     {
       id: 1,
       img: "project-01.png",
-      category: "Online Store",
+      category: "Fullstack app",
       technology: "React.js",
       data: "3 Dec, 2023",
       description: "Electrical store: React/Express/MongoDB.",
@@ -25,7 +28,7 @@ export const Portfolio: FC<{}> = () => {
     {
       id: 3,
       img: "project-03.png",
-      category: "Online store",
+      category: "Fullstack app",
       technology: "JavaScript",
       data: "30 Aug, 2023",
       description: "Online store clothes: JScript/Express/MongoDB.",
@@ -33,14 +36,39 @@ export const Portfolio: FC<{}> = () => {
     },
   ];
 
+  const { ref, inView } = useInView({
+    threshold: 0.3,
+  });
+
+  const dispatch = useAppDispatch();
+  const { setSelectHeaderItem } = headerSlice.actions;
+
+  useEffect(() => {
+    if (inView) {
+      dispatch(setSelectHeaderItem("project"));
+    }
+  }, [inView]);
+
+  const [isSeeAll, setIsSeeAll] = useState(false);
+
+  const showAllProjects = () => {
+    setIsSeeAll(true);
+  };
+
+  const projectListSlice = isSeeAll ? projectsList : projectsList.slice(0, 3);
+
   return (
-    <div id="project" className="portfolioBlock">
+    <div ref={ref} id="project" className="portfolioBlock">
       <div className="portfolioBlock__mainBlock">
         <h2 className="mainBlock__title">Portfolio</h2>
-        <button className="mainBlock__btn">See All</button>
+        {!isSeeAll && (
+          <button onClick={showAllProjects} className="mainBlock__btn">
+            See All
+          </button>
+        )}
       </div>
       <div className="portfolioBlock__myProjects">
-        {projectsList.map(
+        {projectListSlice.map(
           ({ id, img, category, technology, data, description, url }) => (
             <ProjectCard
               key={id}

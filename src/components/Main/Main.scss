@@ -110,11 +110,15 @@
   color: #fff;
 }
 .actionsBlock__text {
+  transition: 0.3s;
   cursor: pointer;
   margin-right: 30px;
   font-size: 25px;
   font-weight: 300;
   color: #fff;
+}
+.actionsBlock__text:hover {
+  transform: scale(1.09);
 }
 .actionsBlock__img {
   width: 42px;

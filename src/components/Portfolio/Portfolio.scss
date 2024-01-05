@@ -41,7 +41,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 30px;
   justify-items: center;
 }
 .myProject__projectCard {
@@ -128,7 +128,7 @@
       auto-fit,
       calc(360px + (460 - 360) * ((100vw - 767px) / (1530 - 767)))
     );
-    gap: calc(10px + (15 - 10) * ((100vw - 767px) / (1530 - 767)));
+    gap: calc(10px + (30 - 10) * ((100vw - 767px) / (1530 - 767)));
   }
   .myProject__projectCard {
     width: calc(330px + (416 - 330) * ((100vw - 767px) / (1530 - 767)));

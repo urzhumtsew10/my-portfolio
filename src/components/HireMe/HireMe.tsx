@@ -1,13 +1,30 @@
-import { FC } from "react";
+import { FC, SetStateAction, useEffect } from "react";
 import "../HireMe/HireMe.scss";
 import my_photo from "../../img/my-photo2.png";
 import { useInView } from "react-intersection-observer";
+import { useDispatch } from "react-redux";
+import { modalSlice } from "../../store/reducers/ModalSlice";
+import { headerSlice } from "../../store/reducers/HeaderSlice";
 
 export const HireMe: FC<{}> = () => {
   const { ref, inView } = useInView({
-    threshold: 0,
-    triggerOnce: true,
+    threshold: 0.3,
   });
+
+  const dispatch = useDispatch();
+  const { setModalHireMe } = modalSlice.actions;
+  const { setSelectHeaderItem } = headerSlice.actions;
+
+  useEffect(() => {
+    if (inView) {
+      dispatch(setSelectHeaderItem("resume"));
+    }
+  }, [inView]);
+
+  const openHireMeModal = () => {
+    dispatch(setModalHireMe(true));
+    document.body.style.overflow = "hidden";
+  };
 
   return (
     <div id="resume" ref={ref} className="hireMeBlock">
@@ -33,7 +50,9 @@ export const HireMe: FC<{}> = () => {
             <p className="achievement__name">Happy clients</p>
           </div>
         </div>
-        <button className="blockMyInfo__btn">Hire me</button>
+        <button onClick={openHireMeModal} className="blockMyInfo__btn">
+          Hire me
+        </button>
       </div>
     </div>
   );

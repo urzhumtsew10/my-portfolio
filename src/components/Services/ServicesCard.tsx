@@ -1,6 +1,8 @@
 import { FC } from "react";
 import arrow from "../../img/arrow.svg";
 import { useInView } from "react-intersection-observer";
+import { useAppDispatch } from "../../store/hooks";
+import { modalSlice } from "../../store/reducers/ModalSlice";
 
 export const ServicesCard: FC<{
   img: string;
@@ -10,6 +12,15 @@ export const ServicesCard: FC<{
     threshold: 0,
     triggerOnce: true,
   });
+
+  const dispatch = useAppDispatch();
+  const { setModalService, setSelectService } = modalSlice.actions;
+
+  const openServiceModal = () => {
+    dispatch(setSelectService(title));
+    dispatch(setModalService(true));
+    document.body.style.overflow = "hidden";
+  };
 
   return (
     <div
@@ -27,7 +38,7 @@ export const ServicesCard: FC<{
           alt="layout"
         />
       </div>
-      <button className="cardButton__btn">
+      <button onClick={openServiceModal} className="cardButton__btn">
         <img className="cardButton__img" src={arrow} alt="arrow" />
       </button>
     </div>

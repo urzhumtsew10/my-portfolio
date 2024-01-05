@@ -57,11 +57,11 @@
 }
 @keyframes animation-skills-card {
   0% {
-    margin-bottom: 100px;
+    margin-left: -100%;
     opacity: 0;
   }
   100% {
-    margin-bottom: 0;
+    margin-left: 0;
     opacity: 1;
   }
 }

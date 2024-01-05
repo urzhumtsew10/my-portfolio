@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState } from "react";
+import React, { FC, useEffect } from "react";
 import "../Main/Main.scss";
 import glow from "../../img/glow.svg";
 import my_photo from "../../img/my-photo.png";
@@ -12,9 +12,52 @@ import { HireMe } from "../HireMe/HireMe";
 import { Portfolio } from "../Portfolio/Portfolio";
 import { Ticker } from "../Ticker/Ticker";
 import { ProjectIdea } from "../ProjectIdea/ProjectIdea";
+import { HireMeModal } from "../HireMeModal/HireMeModal";
+import { useAppDispatch } from "../../store/hooks";
+import { modalSlice } from "../../store/reducers/ModalSlice";
+import { headerSlice } from "../../store/reducers/HeaderSlice";
 import { useInView } from "react-intersection-observer";
+import { ServiceModal } from "../ServiceModal/ServiceModal";
 
 const Main: FC<{}> = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.3,
+  });
+
+  const dispatch = useAppDispatch();
+  const { setModalHireMe } = modalSlice.actions;
+  const { setSelectHeaderItem } = headerSlice.actions;
+
+  useEffect(() => {
+    if (inView) {
+      dispatch(setSelectHeaderItem("home"));
+    }
+  }, [inView]);
+
+  const openHireMeModal = () => {
+    document.body.style.overflow = "hidden";
+    dispatch(setModalHireMe(true));
+  };
+
+  const changeSelectedPage = () => {
+    const coordinatesElem: number | undefined = document
+      .querySelector(`#project`)
+      ?.getBoundingClientRect().top;
+
+    if (coordinatesElem && window.screen.width > 767) {
+      window.scrollTo({
+        top: coordinatesElem + window.pageYOffset - 100,
+        behavior: "smooth",
+      });
+    }
+    if (window.screen.width < 767 && coordinatesElem) {
+      window.scrollTo({
+        top: coordinatesElem + window.pageYOffset - 50,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div id="home" className="mainSection">
       <div className="mainSection__greeting">
@@ -28,15 +71,17 @@ const Main: FC<{}> = () => {
         </h1>
         <img className="aboutMe__img" src={glow} alt="glow" />
       </div>
-      <div className="mainSection__myImage">
+      <div ref={ref} className="mainSection__myImage">
         <img className="myImage__photo" src={my_photo} alt="my photo" />
         <img className="myImage__ellipse" src={ellipse} alt="ellipse" />
         <div className="myImage__actionsBlock">
-          <button className="actionsBlock__btn">
+          <button onClick={changeSelectedPage} className="actionsBlock__btn">
             <p className="actionsBlock__buttonText">Portfolio</p>
             <img className="actionsBlock__img" src={arrow} alt="arrow" />
           </button>
-          <p className="actionsBlock__text">Hire me</p>
+          <p onClick={openHireMeModal} className="actionsBlock__text">
+            Hire me
+          </p>
         </div>
       </div>
       <div className="mainSection__notation">
@@ -63,6 +108,8 @@ const Main: FC<{}> = () => {
       <Portfolio />
       <Ticker />
       <ProjectIdea />
+      <HireMeModal />
+      <ServiceModal />
     </div>
   );
 };

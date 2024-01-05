@@ -1,13 +1,19 @@
-import React, { BaseSyntheticEvent, FC, useRef, useState } from "react";
+import React, { BaseSyntheticEvent, FC, useState } from "react";
 import "../Header/Header.scss";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { headerSlice } from "../../store/reducers/HeaderSlice";
 
 const Header: FC<{}> = () => {
-  const [selectPage, setSelectPage] = useState("home");
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+
+  const { selectHeaderItem } = useAppSelector((state) => state.headerReducer);
+  const dispatch = useAppDispatch();
+  const { setSelectHeaderItem } = headerSlice.actions;
 
   const changeSelectedPage = (event: BaseSyntheticEvent) => {
     const namePage: string = event.target.innerText;
-    setSelectPage(namePage.toLowerCase());
+    console.log(namePage);
+    dispatch(setSelectHeaderItem(namePage.toLowerCase()));
 
     const coordinatesElem: number | undefined = document
       .querySelector(`#${namePage.toLowerCase()}`)
@@ -41,7 +47,7 @@ const Header: FC<{}> = () => {
   return (
     <header className="header">
       <div className="header__controlBlock">
-        <div className={`controlBlock__hoverPage ${selectPage}`}></div>
+        <div className={`controlBlock__hoverPage ${selectHeaderItem}`}></div>
         <ul className="controlBlock__leftList">
           <li
             onClick={(event) => changeSelectedPage(event)}
@@ -53,13 +59,13 @@ const Header: FC<{}> = () => {
             onClick={(event) => changeSelectedPage(event)}
             className="leftList__item"
           >
-            About
+            Service
           </li>
           <li
             onClick={(event) => changeSelectedPage(event)}
             className="leftList__item"
           >
-            Service
+            About
           </li>
         </ul>
         <div className="header__logo">AU</div>

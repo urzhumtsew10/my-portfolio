@@ -1,7 +1,9 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import "../Skills/Skills.scss";
 import { SkillCard } from "./SkillCard";
 import { useInView } from "react-intersection-observer";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { headerSlice } from "../../store/reducers/HeaderSlice";
 
 export const Skills: FC<{}> = () => {
   const skillsList = [
@@ -24,10 +26,18 @@ export const Skills: FC<{}> = () => {
     "Postman",
   ];
 
+  const dispatch = useAppDispatch();
+  const { setSelectHeaderItem } = headerSlice.actions;
+
   const { ref, inView } = useInView({
-    threshold: 0,
-    triggerOnce: true,
+    threshold: 0.3,
   });
+
+  useEffect(() => {
+    if (inView) {
+      dispatch(setSelectHeaderItem("about"));
+    }
+  }, [inView]);
 
   return (
     <div id="about" className="skillsBlock">

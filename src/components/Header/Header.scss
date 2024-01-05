@@ -53,11 +53,11 @@
 .controlBlock__hoverPage.home {
   left: calc(17px + (10 - 17) * ((100vw - 767px) / (1530 - 767)));
 }
-.controlBlock__hoverPage.about {
-  left: calc(107px + (135 - 107) * ((100vw - 767px) / (1530 - 767)));
-}
 .controlBlock__hoverPage.service {
-  left: calc(202px + (270 - 202) * ((100vw - 767px) / (1530 - 767)));
+  left: calc(112px + (142 - 112) * ((100vw - 767px) / (1530 - 767)));
+}
+.controlBlock__hoverPage.about {
+  left: calc(198px + (266 - 198) * ((100vw - 767px) / (1530 - 767)));
 }
 .controlBlock__hoverPage.resume {
   left: calc(415px + (875 - 415) * ((100vw - 767px) / (1530 - 767)));

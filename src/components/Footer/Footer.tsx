@@ -1,16 +1,37 @@
-import { BaseSyntheticEvent, FC, useState } from "react";
+import { BaseSyntheticEvent, FC, useEffect, useState } from "react";
 import "../Footer/Footer.scss";
 import arrow from "../../img/arrow.svg";
 import icon_instagram from "../../img/instagram.svg";
 import icon_telegram from "../../img/telegram.svg";
 import icon_send from "../../img/icon-send.svg";
+import { modalSlice } from "../../store/reducers/ModalSlice";
+import { useAppDispatch } from "../../store/hooks";
+import { headerSlice } from "../../store/reducers/HeaderSlice";
+import { useInView } from "react-intersection-observer";
 
 export const Footer: FC<{}> = () => {
-  const [selectPage, setSelectPage] = useState("home");
+  const { ref, inView } = useInView({
+    threshold: 0.3,
+  });
+
+  const dispatch = useAppDispatch();
+  const { setModalHireMe } = modalSlice.actions;
+  const { setSelectHeaderItem } = headerSlice.actions;
+
+  useEffect(() => {
+    if (inView) {
+      dispatch(setSelectHeaderItem("contact"));
+    }
+  }, [inView]);
+
+  const openHireMeModal = () => {
+    dispatch(setModalHireMe(true));
+    document.body.style.overflow = "hidden";
+  };
 
   const changeSelectedPage = (event: BaseSyntheticEvent) => {
     const namePage: string = event.target.innerText;
-    setSelectPage(namePage.toLowerCase());
+    dispatch(setSelectHeaderItem(namePage.toLowerCase()));
 
     const coordinatesElem: number | undefined = document
       .querySelector(`#${namePage.toLowerCase()}`)
@@ -25,10 +46,10 @@ export const Footer: FC<{}> = () => {
   };
 
   return (
-    <footer id="contact" className="footer">
+    <footer ref={ref} id="contact" className="footer">
       <div className="footer__hireMeBlock">
         <h2 className="hireMeBlock__title">Lets Connect there</h2>
-        <button className="hireMeBlock__btn">
+        <button onClick={openHireMeModal} className="hireMeBlock__btn">
           Hire me <img className="btn__arrow" src={arrow} alt="arrow" />
         </button>
       </div>
@@ -104,6 +125,9 @@ export const Footer: FC<{}> = () => {
           </a>
           <a href="https://t.me/urzhumtsew" target="_black">
             <p className="thirdColumn__text footer_text">@urzhumtsew</p>
+          </a>
+          <a href="https://www.instagram.com/urzhumtsew/" target="_black">
+            <p className="thirdColumn__text footer_text">urzhumtsew</p>
           </a>
         </div>
         <div className="footerInfo__fourthColumn">
