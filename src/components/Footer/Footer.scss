@@ -100,6 +100,9 @@
   filter: invert(100%);
   transition: 0.3s;
 }
+.socialNetworks__img.--icon {
+  filter: invert(0%);
+}
 .socialNetworks__img:hover {
   transform: scale(1.2);
 }

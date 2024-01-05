@@ -2,6 +2,10 @@ import React, { BaseSyntheticEvent, FC, useState } from "react";
 import "../Header/Header.scss";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { headerSlice } from "../../store/reducers/HeaderSlice";
+import icon_instagram from "../../img/instagram.svg";
+import icon_telegram from "../../img/telegram.svg";
+import icon_linkedin from "../../img/icon-linkedin.svg";
+import icon_github from "../../img/icon-github.svg";
 
 const Header: FC<{}> = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -104,39 +108,85 @@ const Header: FC<{}> = () => {
       </div>
       <div className={`menuMobile ${isOpenMenu && "active"}`}>
         <div className="menuMobile__mobileHeaderContent">
-          <p onClick={changeSelectedPage} className="mobileHeaderContent__item">
-            Home
-          </p>
-          <p
-            onClick={(event) => changeSelectedPage(event)}
-            className="mobileHeaderContent__item"
-          >
-            About
-          </p>
-          <p
-            onClick={(event) => changeSelectedPage(event)}
-            className="mobileHeaderContent__item"
-          >
-            Service
-          </p>
-          <p
-            onClick={(event) => changeSelectedPage(event)}
-            className="mobileHeaderContent__item"
-          >
-            Resume
-          </p>
-          <p
-            onClick={(event) => changeSelectedPage(event)}
-            className="mobileHeaderContent__item"
-          >
-            Project
-          </p>
-          <p
-            onClick={(event) => changeSelectedPage(event)}
-            className="mobileHeaderContent__item"
-          >
-            Contact
-          </p>
+          <div className="mobileHeaderContent__menuList">
+            <p
+              onClick={changeSelectedPage}
+              className="mobileHeaderContent__item"
+            >
+              Home
+            </p>
+            <p
+              onClick={(event) => changeSelectedPage(event)}
+              className="mobileHeaderContent__item"
+            >
+              About
+            </p>
+            <p
+              onClick={(event) => changeSelectedPage(event)}
+              className="mobileHeaderContent__item"
+            >
+              Service
+            </p>
+            <p
+              onClick={(event) => changeSelectedPage(event)}
+              className="mobileHeaderContent__item"
+            >
+              Resume
+            </p>
+            <p
+              onClick={(event) => changeSelectedPage(event)}
+              className="mobileHeaderContent__item"
+            >
+              Project
+            </p>
+            <p
+              onClick={(event) => changeSelectedPage(event)}
+              className="mobileHeaderContent__item"
+            >
+              Contact
+            </p>
+          </div>
+          <ul className="mobileHeaderContent__networksList">
+            <li className="networkList__item">
+              <a href="https://www.instagram.com/urzhumtsew/" target="_blank">
+                <img
+                  className="networksList__itemImg --icon"
+                  src={icon_instagram}
+                  alt="icon"
+                />
+              </a>
+            </li>
+            <li className="networkList__item">
+              <a href="https://t.me/urzhumtsew" target="_blank">
+                <img
+                  className="networksList__itemImg --icon"
+                  src={icon_telegram}
+                  alt="icon"
+                />
+              </a>
+            </li>
+            <li className="networkList__item">
+              <a
+                href="https://www.linkedin.com/in/andrew-urzhumtsew-843339280/"
+                target="_blank"
+              >
+                <img
+                  className="networksList__itemImg"
+                  src={icon_linkedin}
+                  alt="icon"
+                />
+              </a>
+            </li>
+            <li className="networkList__item">
+              <a href="https://github.com/urzhumtsew10" target="_blank">
+                <img
+                  className="networksList__itemImg"
+                  src={icon_github}
+                  alt="icon"
+                />
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </header>

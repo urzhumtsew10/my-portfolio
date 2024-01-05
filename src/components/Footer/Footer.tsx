@@ -3,6 +3,8 @@ import "../Footer/Footer.scss";
 import arrow from "../../img/arrow.svg";
 import icon_instagram from "../../img/instagram.svg";
 import icon_telegram from "../../img/telegram.svg";
+import icon_linkedin from "../../img/icon-linkedin.svg";
+import icon_github from "../../img/icon-github.svg";
 import icon_send from "../../img/icon-send.svg";
 import { modalSlice } from "../../store/reducers/ModalSlice";
 import { useAppDispatch } from "../../store/hooks";
@@ -67,17 +69,34 @@ export const Footer: FC<{}> = () => {
             adipiscing elit. Sed lobortis orci elementum egestas lobortis
           </p>
           <div className="firstColumn__socialNetworks">
-            <a href="https://www.instagram.com/urzhumtsew/" target="_black">
+            <a href="https://www.instagram.com/urzhumtsew/" target="_blank">
               <img
                 className="socialNetworks__img"
                 src={icon_instagram}
                 alt="icon"
               />
             </a>
-            <a href="https://t.me/urzhumtsew" target="_black">
+            <a href="https://t.me/urzhumtsew" target="_blank">
               <img
                 className="socialNetworks__img"
                 src={icon_telegram}
+                alt="icon"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/andrew-urzhumtsew-843339280/"
+              target="_blank"
+            >
+              <img
+                className="socialNetworks__img --icon"
+                src={icon_linkedin}
+                alt="icon"
+              />
+            </a>
+            <a href="https://github.com/urzhumtsew10" target="_blank">
+              <img
+                className="socialNetworks__img --icon"
+                src={icon_github}
                 alt="icon"
               />
             </a>
