@@ -126,10 +126,11 @@
   .inputBlock__input {
     margin: 0;
     width: calc(170px + (600 - 170) * ((100vw - 320px) / (767 - 320)));
-    font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (767 - 320)));
+    font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (767 - 320)));
   }
   .inputBlock__btn {
     width: calc(100px + (126 - 100) * ((100vw - 320px) / (767 - 320)));
+    font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (767 - 320)));
   }
   .content__img {
     width: calc(20px + (24 - 20) * ((100vw - 320px) / (767 - 320)));

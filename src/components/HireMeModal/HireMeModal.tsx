@@ -5,6 +5,7 @@ import { modalSlice } from "../../store/reducers/ModalSlice";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../store/hooks";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 export const HireMeModal: FC<{}> = () => {
   const { modalHireMe } = useAppSelector((state) => state.modalReducer);
@@ -42,6 +43,8 @@ export const HireMeModal: FC<{}> = () => {
     }, 3000);
   };
 
+  const { t } = useTranslation();
+
   return (
     <div className={`hireMeModal ${modalHireMe && "active"}`}>
       <div
@@ -55,13 +58,13 @@ export const HireMeModal: FC<{}> = () => {
           src={icon_close}
           alt="icon close"
         />
-        <h2 className="contentModal__title">Write More Details</h2>
+        <h2 className="contentModal__title">{t("details")}</h2>
         <form
           onSubmit={handleSubmit(trySendOrder)}
           className="contentModal__hireMeForm"
         >
           <label className="hireMeForm__label" htmlFor="name">
-            What's your name and surname?
+            {t("nameQ")}
             <p className="label__errorText">{errors?.name?.message}</p>
             <input
               {...register("name", { required: "Name is required" })}
@@ -71,7 +74,7 @@ export const HireMeModal: FC<{}> = () => {
             />
           </label>
           <label className="hireMeForm__label" htmlFor="userContact">
-            How can I connect with you?
+            {t("contactQ")}
             <p className="label__errorText">{errors?.userContact?.message}</p>
             <input
               {...register("userContact", { required: "Contact is required" })}
@@ -85,17 +88,17 @@ export const HireMeModal: FC<{}> = () => {
               {...register("price")}
               className="flexBlock__input"
               type="number"
-              placeholder="price($)"
+              placeholder={`${t("price")}($)`}
             />
             <input
               {...register("time")}
               className="flexBlock__input"
               type="text"
-              placeholder="time"
+              placeholder={t("time")}
             />
           </div>
           <label className="hireMeForm__label" htmlFor="description">
-            Write please about your project
+            {t("description")}
             <p className="label__errorText">{errors.description?.message}</p>
             <textarea
               {...register("description", {
@@ -106,8 +109,10 @@ export const HireMeModal: FC<{}> = () => {
               id="description"
             ></textarea>
           </label>
-          {!isSend && <button className="hireMeFrom__btn">Send</button>}
-          {isSend && <button className="hireMeFrom__btnSended">Sended</button>}
+          {!isSend && <button className="hireMeFrom__btn">{t("send")}</button>}
+          {isSend && (
+            <button className="hireMeFrom__btnSended">{t("sended")}</button>
+          )}
         </form>
       </div>
     </div>

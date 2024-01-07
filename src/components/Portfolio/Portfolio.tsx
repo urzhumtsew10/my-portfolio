@@ -4,16 +4,18 @@ import { ProjectCard } from "./ProjectCard";
 import { useAppDispatch } from "../../store/hooks";
 import { headerSlice } from "../../store/reducers/HeaderSlice";
 import { useInView } from "react-intersection-observer";
+import { useTranslation } from "react-i18next";
 
 export const Portfolio: FC<{}> = () => {
+  const { t } = useTranslation();
   const projectsList = [
     {
       id: 1,
       img: "project-01.png",
       category: "Fullstack app",
       technology: "React.js",
-      data: "3 Dec, 2023",
-      description: "Electrical store: React/Express/MongoDB.",
+      data: `3 ${t("december")}, 2023`,
+      description: `${t("electricStore")}: React/Express/MongoDB.`,
       url: "https://electricity-store.vercel.app/",
     },
     {
@@ -21,8 +23,8 @@ export const Portfolio: FC<{}> = () => {
       img: "project-02.png",
       category: "Layout&Landing",
       technology: "JavaScript",
-      data: "20 Apr, 2023",
-      description: "Chinese food restaurant: HTML/CSS/JavaScript.",
+      data: `20 ${t("april")}, 2023`,
+      description: `${t("chFood")}: HTML/CSS/JavaScript.`,
       url: "https://chinese-food.netlify.app/",
     },
     {
@@ -30,8 +32,8 @@ export const Portfolio: FC<{}> = () => {
       img: "project-03.png",
       category: "Fullstack app",
       technology: "JavaScript",
-      data: "30 Aug, 2023",
-      description: "Online store clothes: JScript/Express/MongoDB.",
+      data: `30 ${t("august")}, 2023`,
+      description: `${t("onlineClothes")}: JScript/Express/MongoDB.`,
       url: "https://clothes-frontend-lilac.vercel.app/",
     },
   ];
@@ -60,10 +62,10 @@ export const Portfolio: FC<{}> = () => {
   return (
     <div ref={ref} id="project" className="portfolioBlock">
       <div className="portfolioBlock__mainBlock">
-        <h2 className="mainBlock__title">Portfolio</h2>
+        <h2 className="mainBlock__title">{t("portfolio")}</h2>
         {!isSeeAll && (
           <button onClick={showAllProjects} className="mainBlock__btn">
-            See All
+            {t("seeAll")}
           </button>
         )}
       </div>

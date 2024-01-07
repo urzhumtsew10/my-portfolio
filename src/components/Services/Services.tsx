@@ -5,12 +5,19 @@ import { ServicesCard } from "./ServicesCard";
 import { headerSlice } from "../../store/reducers/HeaderSlice";
 import { useAppDispatch } from "../../store/hooks";
 import { useInView } from "react-intersection-observer";
+import { useTranslation } from "react-i18next";
 
 const Services: FC<{}> = () => {
+  const { t } = useTranslation();
+
   const servicesList = [
-    { title: "Layout", img: "layout.png" },
-    { title: "Landing page", img: "landing-page.png" },
-    { title: "Fullstack app", img: "online-store.png" },
+    { title: "Layout", text: t("layout"), img: "layout.png" },
+    { title: "Landing page", text: t("landingPage"), img: "landing-page.png" },
+    {
+      title: "Fullstack app",
+      text: t("fullstackApp"),
+      img: "online-store.png",
+    },
   ];
 
   const { ref, inView } = useInView({
@@ -31,16 +38,13 @@ const Services: FC<{}> = () => {
       <img className="contentServices__lights" src={lights} alt="lights" />
       <div className="contentServices__titleBlock">
         <h2 className="titleBlock__titleServices">
-          My <span className="titleServices__span">Services</span>
+          {t("my")} <span className="titleServices__span">{t("services")}</span>
         </h2>
-        <p className="titleBlock__text">
-          Here you can choose the type of service you need and write more
-          details about the order
-        </p>
+        <p className="titleBlock__text">{t("serviceText")}</p>
       </div>
       <div className="services__serviceCardsBlock">
-        {servicesList.map(({ img, title }) => (
-          <ServicesCard key={title} img={img} title={title} />
+        {servicesList.map(({ img, title, text }) => (
+          <ServicesCard key={title} img={img} title={title} text={text} />
         ))}
       </div>
     </div>

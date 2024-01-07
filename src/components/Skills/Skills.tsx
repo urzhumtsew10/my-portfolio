@@ -4,8 +4,11 @@ import { SkillCard } from "./SkillCard";
 import { useInView } from "react-intersection-observer";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { headerSlice } from "../../store/reducers/HeaderSlice";
+import { useTranslation } from "react-i18next";
 
 export const Skills: FC<{}> = () => {
+  const { t } = useTranslation();
+
   const skillsList = [
     "React.js",
     "Redux toolkit",
@@ -42,7 +45,8 @@ export const Skills: FC<{}> = () => {
   return (
     <div id="about" className="skillsBlock">
       <h2 className="skillsBlock__title">
-        My <span className="skillsBlock__title__span">Skills</span>
+        {t("my")}{" "}
+        <span className="skillsBlock__title__span">{t("skills")}</span>
       </h2>
       <div ref={ref} className="skillsBlock__skillsList">
         {skillsList.map((name) => (

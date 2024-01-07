@@ -164,5 +164,6 @@
   .mainBlock__btn {
     width: calc(115px + (144 - 115) * ((100vw - 320px) / (767 - 320)));
     height: calc(55px + (66 - 55) * ((100vw - 320px) / (767 - 320)));
+    font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (767 - 320)));
   }
 }

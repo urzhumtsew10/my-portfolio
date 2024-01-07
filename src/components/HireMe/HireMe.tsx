@@ -5,11 +5,14 @@ import { useInView } from "react-intersection-observer";
 import { useDispatch } from "react-redux";
 import { modalSlice } from "../../store/reducers/ModalSlice";
 import { headerSlice } from "../../store/reducers/HeaderSlice";
+import { useTranslation } from "react-i18next";
 
 export const HireMe: FC<{}> = () => {
   const { ref, inView } = useInView({
     threshold: 0.3,
   });
+
+  const { t } = useTranslation();
 
   const dispatch = useDispatch();
   const { setModalHireMe } = modalSlice.actions;
@@ -33,25 +36,22 @@ export const HireMe: FC<{}> = () => {
       </div>
       <div className={`hireMeBlock__blockMyInfo ${inView && "active"}`}>
         <h2 className="blockMyInfo__title">
-          Why <span className="blockMyInfo__title__span">Hire me</span>?
+          {t("why")}{" "}
+          <span className="blockMyInfo__title__span">{t("hireMe")}</span>?
         </h2>
-        <p className="blockMyInfo__text">
-          I have experience working with websites of different types and
-          complexities, I quickly find common ground and requirements from me, I
-          develop high-quality, optimized and easily maintainable code.
-        </p>
+        <p className="blockMyInfo__text">{t("hireText")}</p>
         <div className="blockMyInfo__achievement">
           <div className="achievement">
             <h2 className="achievement__count">100+</h2>
-            <p className="achievement__name">Project completed</p>
+            <p className="achievement__name">{t("project")}</p>
           </div>
           <div className="achievement">
             <h2 className="achievement__count">100+</h2>
-            <p className="achievement__name">Happy clients</p>
+            <p className="achievement__name">{t("clients")}</p>
           </div>
         </div>
         <button onClick={openHireMeModal} className="blockMyInfo__btn">
-          Hire me
+          {t("hireMe")}
         </button>
       </div>
     </div>

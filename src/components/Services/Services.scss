@@ -200,6 +200,8 @@
   }
   .serviceCard__titleCard {
     height: calc(85px + (100 - 85) * ((100vw - 320px) / (767 - 320)));
+    font-size: calc(27px + (32 - 27) * ((100vw - 320px) / (767 - 320)));
+    padding-left: calc(25px + (37 - 25) * ((100vw - 320px) / (767 - 320)));
   }
   .serviceCard__frontLayer {
     height: calc(250px + (307 - 250) * ((100vw - 320px) / (767 - 320)));

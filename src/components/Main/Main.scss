@@ -134,6 +134,7 @@
   height: 36px;
 }
 .notation__text {
+  max-width: 450px;
   margin-top: 24px;
   font-size: 20px;
   font-weight: 500;
@@ -173,6 +174,7 @@
     left: calc(33px + (71 - 33) * ((100vw - 767px) / (1530 - 767)));
   }
   .notation__text {
+    max-width: calc(226px + (450 - 226) * ((100vw - 767px) / (1530 - 767)));
     font-size: calc(15px + (20 - 15) * ((100vw - 767px) / (1530 - 767)));
   }
   .mainSection__myExperience {

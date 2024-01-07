@@ -101,6 +101,7 @@
     column-gap: calc(20px + (20 - 20) * ((100vw - 320px) / (767 - 320)));
   }
   .skillsBlock__title {
+    font-size: calc(55px + (64 - 55) * ((100vw - 320px) / (767 - 320)));
     margin-top: calc(75px + (85 - 75) * ((100vw - 320px) / (767 - 320)));
   }
 }

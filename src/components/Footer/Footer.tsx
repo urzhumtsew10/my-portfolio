@@ -10,11 +10,14 @@ import { modalSlice } from "../../store/reducers/ModalSlice";
 import { useAppDispatch } from "../../store/hooks";
 import { headerSlice } from "../../store/reducers/HeaderSlice";
 import { useInView } from "react-intersection-observer";
+import { useTranslation } from "react-i18next";
 
 export const Footer: FC<{}> = () => {
   const { ref, inView } = useInView({
     threshold: 0.3,
   });
+
+  const { t } = useTranslation();
 
   const dispatch = useAppDispatch();
   const { setModalHireMe } = modalSlice.actions;
@@ -50,9 +53,10 @@ export const Footer: FC<{}> = () => {
   return (
     <footer ref={ref} id="contact" className="footer">
       <div className="footer__hireMeBlock">
-        <h2 className="hireMeBlock__title">Lets Connect there</h2>
+        <h2 className="hireMeBlock__title">{t("connect")}</h2>
         <button onClick={openHireMeModal} className="hireMeBlock__btn">
-          Hire me <img className="btn__arrow" src={arrow} alt="arrow" />
+          {t("hireMe")}
+          <img className="btn__arrow" src={arrow} alt="arrow" />
         </button>
       </div>
       <div className="footer__footerInfo">
@@ -61,12 +65,7 @@ export const Footer: FC<{}> = () => {
             <div className="logo">AU</div>
             <p className="logo__text">Urzhumtsew</p>
           </div>
-          <p className="firstColumn__text">
-            If you are in need of my services contact me on one of these
-            networks. Describe clearly and briefly my task, it would not be bad
-            to have a layout of the site or 2-3 links to sites that you like. I
-            will contact you within two days.
-          </p>
+          <p className="firstColumn__text">{t("footerText")}</p>
           <div className="firstColumn__socialNetworks">
             <a href="https://www.instagram.com/urzhumtsew/" target="_blank">
               <img
@@ -102,7 +101,9 @@ export const Footer: FC<{}> = () => {
           </div>
         </div>
         <div className="footerInfo__secondColumn">
-          <h2 className="secondColumn__title footer_title">Navigation</h2>
+          <h2 className="secondColumn__title footer_title">
+            {t("navigation")}
+          </h2>
           <p
             onClick={(event) => changeSelectedPage(event)}
             className="secondColumn__text  footer_text"
@@ -135,7 +136,7 @@ export const Footer: FC<{}> = () => {
           </p>
         </div>
         <div className="footerInfo__thirdColumn">
-          <h2 className="thirdColumn__title footer_title">Contact</h2>
+          <h2 className="thirdColumn__title footer_title">{t("contact")}</h2>
           <a href="mailto: urgumandrei@gmail.com">
             <p className="thirdColumn__text footer_text">
               urgumandrei@gmail.com
@@ -149,14 +150,12 @@ export const Footer: FC<{}> = () => {
           </a>
         </div>
         <div className="footerInfo__fourthColumn">
-          <h2 className="fourthColumn__title footer_title">
-            Get the latest information
-          </h2>
+          <h2 className="fourthColumn__title footer_title">{t("info")}</h2>
           <div className="fourthColumn__footerInputBlock">
             <input
               className="footerInputBlock__input"
               type="email"
-              placeholder="Email Address"
+              placeholder={`${t("email")}`}
             />
             <button className="footerInputBlock__btn">
               <img className="btn__img" src={icon_send} alt="icon" />

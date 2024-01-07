@@ -6,17 +6,19 @@ import icon_instagram from "../../img/instagram.svg";
 import icon_telegram from "../../img/telegram.svg";
 import icon_linkedin from "../../img/icon-linkedin.svg";
 import icon_github from "../../img/icon-github.svg";
+import { useTranslation } from "react-i18next";
 
 const Header: FC<{}> = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+
+  const { t } = useTranslation();
 
   const { selectHeaderItem } = useAppSelector((state) => state.headerReducer);
   const dispatch = useAppDispatch();
   const { setSelectHeaderItem } = headerSlice.actions;
 
   const changeSelectedPage = (event: BaseSyntheticEvent) => {
-    const namePage: string = event.target.innerText;
-    console.log(namePage);
+    const namePage: string = event.target.dataset.section;
     dispatch(setSelectHeaderItem(namePage.toLowerCase()));
 
     const coordinatesElem: number | undefined = document
@@ -54,18 +56,21 @@ const Header: FC<{}> = () => {
         <div className={`controlBlock__hoverPage ${selectHeaderItem}`}></div>
         <ul className="controlBlock__leftList">
           <li
+            data-section="home"
             onClick={(event) => changeSelectedPage(event)}
             className="leftList__item"
           >
             Home
           </li>
           <li
+            data-section="service"
             onClick={(event) => changeSelectedPage(event)}
             className="leftList__item"
           >
             Service
           </li>
           <li
+            data-section="about"
             onClick={(event) => changeSelectedPage(event)}
             className="leftList__item"
           >
@@ -75,18 +80,21 @@ const Header: FC<{}> = () => {
         <div className="header__logo">AU</div>
         <ul className="controlBlock__rightList">
           <li
+            data-section="resume"
             onClick={(event) => changeSelectedPage(event)}
             className="rightList__item"
           >
             Resume
           </li>
           <li
+            data-section="project"
             onClick={(event) => changeSelectedPage(event)}
             className="rightList__item"
           >
             Project
           </li>
           <li
+            data-section="contact"
             onClick={(event) => changeSelectedPage(event)}
             className="rightList__item"
           >
@@ -110,40 +118,46 @@ const Header: FC<{}> = () => {
         <div className="menuMobile__mobileHeaderContent">
           <div className="mobileHeaderContent__menuList">
             <p
-              onClick={changeSelectedPage}
-              className="mobileHeaderContent__item"
-            >
-              Home
-            </p>
-            <p
+              data-section="home"
               onClick={(event) => changeSelectedPage(event)}
               className="mobileHeaderContent__item"
             >
-              About
+              {t("home")}
             </p>
             <p
+              data-section="home"
               onClick={(event) => changeSelectedPage(event)}
               className="mobileHeaderContent__item"
             >
-              Service
+              {t("about")}
             </p>
             <p
+              data-section="about"
               onClick={(event) => changeSelectedPage(event)}
               className="mobileHeaderContent__item"
             >
-              Resume
+              {t("service")}
             </p>
             <p
+              data-section="service"
               onClick={(event) => changeSelectedPage(event)}
               className="mobileHeaderContent__item"
             >
-              Project
+              {t("resume")}
             </p>
             <p
+              data-section="resume"
               onClick={(event) => changeSelectedPage(event)}
               className="mobileHeaderContent__item"
             >
-              Contact
+              {t("projects")}
+            </p>
+            <p
+              data-section="contact"
+              onClick={(event) => changeSelectedPage(event)}
+              className="mobileHeaderContent__item"
+            >
+              {t("contact")}
             </p>
           </div>
           <ul className="mobileHeaderContent__networksList">

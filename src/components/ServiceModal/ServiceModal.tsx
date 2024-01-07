@@ -1,10 +1,12 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import "../ServiceModal/ServiceModal.scss";
 import icon_close from "../../img/icon-close.svg";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { modalSlice } from "../../store/reducers/ModalSlice";
+import { useTranslation } from "react-i18next";
 
 export const ServiceModal: FC<{}> = () => {
+  const { t, i18n } = useTranslation();
   const { modalService, selectService } = useAppSelector(
     (state) => state.modalReducer
   );
@@ -35,10 +37,10 @@ export const ServiceModal: FC<{}> = () => {
           {selectService.description}
         </p>
         <a href={`${selectService.url}`} target="_black">
-          <button className="modalContent__exampleBtn">Example</button>
+          <button className="modalContent__exampleBtn">{t("example")}</button>
         </a>
         <button onClick={openHireMeModal} className="modalContent__hireMeBtn">
-          Hire Me
+          {t("hireMe")}
         </button>
       </div>
     </div>

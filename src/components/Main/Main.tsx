@@ -1,4 +1,5 @@
 import React, { FC, useEffect } from "react";
+import { useTranslation, Trans } from "react-i18next";
 import "../Main/Main.scss";
 import glow from "../../img/glow.svg";
 import my_photo from "../../img/my-photo.png";
@@ -58,27 +59,37 @@ const Main: FC<{}> = () => {
     }
   };
 
+  const { t, i18n } = useTranslation();
+
+  const changeLanguages = (event: any) => {
+    i18n.changeLanguage(event.target.value);
+  };
   return (
     <div id="home" className="mainSection">
       <div className="mainSection__greeting">
-        <select name="language" id="landuage">
-          <option value="eu">
-            <p className="greeting__text">Hello!</p>
+        <select
+          onChange={(event) => changeLanguages(event)}
+          name="language"
+          id="landuage"
+        >
+          <option className="greeting__text" value="en">
+            Hello!
           </option>
-          <option value="ru">
-            <p className="greeting__text">Привет!</p>
+          <option className="greeting__text" value="ru">
+            Привет!
           </option>
-          <option value="ua">
-            <p className="greeting__text">Привіт!</p>
+          <option className="greeting__text" value="ua">
+            Привіт!
           </option>
         </select>
         <img className="greeting__img" src={glow} alt="glow" />
       </div>
       <div className="mainSection__aboutMe">
         <h1 className="aboutMe__title">
-          I'm <span className="title__span">Andrey</span>, <br /> Frontend
-          Developer
+          {t("I")} <span className="title__span">{t("name")}</span> , <br />{" "}
+          {t("developer")}
         </h1>
+
         <img className="aboutMe__img" src={glow} alt="glow" />
       </div>
       <div ref={ref} className="mainSection__myImage">
@@ -86,20 +97,17 @@ const Main: FC<{}> = () => {
         <img className="myImage__ellipse" src={ellipse} alt="ellipse" />
         <div className="myImage__actionsBlock">
           <button onClick={changeSelectedPage} className="actionsBlock__btn">
-            <p className="actionsBlock__buttonText">Portfolio</p>
+            <p className="actionsBlock__buttonText">{t("portfolio")}</p>
             <img className="actionsBlock__img" src={arrow} alt="arrow" />
           </button>
           <p onClick={openHireMeModal} className="actionsBlock__text">
-            Hire me
+            {t("hireMe")}
           </p>
         </div>
       </div>
       <div className="mainSection__notation">
         <img className="notation__img" src={commas} alt="commas" />
-        <p className="notation__text">
-          Exclusively developed websites by me <br /> ensure pleasant use and
-          code quality. <br /> Highly Recommended
-        </p>
+        <p className="notation__text">{t("notationText")}</p>
       </div>
       <div className="mainSection__myExperience">
         <div className="myExperience__stars">
@@ -109,8 +117,8 @@ const Main: FC<{}> = () => {
           <img className="stars__img" src={star} alt="star" />
           <img className="stars__img" src={star} alt="star" />
         </div>
-        <p className="myExperience__aboutExperience">3 Years</p>
-        <p className="aboutExperience__span">Experience</p>
+        <p className="myExperience__aboutExperience">3 {t("years")}</p>
+        <p className="aboutExperience__span">{t("experience")}</p>
       </div>
       <Services />
       <Skills />
