@@ -194,11 +194,11 @@ input::-webkit-inner-spin-button {
     height: calc(490px + (550 - 490) * ((100vw - 320px) / (767 - 320)));
   }
   .contentModal__title {
-    font-size: calc(25px + (32 - 25) * ((100vw - 320px) / (767 - 320)));
+    font-size: calc(22px + (32 - 22) * ((100vw - 320px) / (767 - 320)));
   }
   .contentModal__imgClose {
-    width: calc(30px + (32 - 30) * ((100vw - 320px) / (767 - 320)));
-    height: calc(30px + (32 - 30) * ((100vw - 320px) / (767 - 320)));
+    width: calc(25px + (32 - 25) * ((100vw - 320px) / (767 - 320)));
+    height: calc(25px + (32 - 25) * ((100vw - 320px) / (767 - 320)));
     right: calc(10px + (15 - 10) * ((100vw - 320px) / (767 - 320)));
   }
   .hireMeForm__label {

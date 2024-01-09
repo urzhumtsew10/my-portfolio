@@ -19,6 +19,7 @@ import { modalSlice } from "../../store/reducers/ModalSlice";
 import { headerSlice } from "../../store/reducers/HeaderSlice";
 import { useInView } from "react-intersection-observer";
 import { ServiceModal } from "../ServiceModal/ServiceModal";
+import { SwitcherLng } from "../SwitcherLng/SwitcherLng";
 
 const Main: FC<{}> = () => {
   const { ref, inView } = useInView({
@@ -59,34 +60,17 @@ const Main: FC<{}> = () => {
     }
   };
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
-  const changeLanguages = (event: any) => {
-    i18n.changeLanguage(event.target.value);
-  };
   return (
     <div id="home" className="mainSection">
       <div className="mainSection__greeting">
-        <select
-          onChange={(event) => changeLanguages(event)}
-          name="language"
-          id="landuage"
-        >
-          <option className="greeting__text" value="en">
-            Hello!
-          </option>
-          <option className="greeting__text" value="ru">
-            Привет!
-          </option>
-          <option className="greeting__text" value="ua">
-            Привіт!
-          </option>
-        </select>
+        <p className="greeting__text">Hello!</p>
         <img className="greeting__img" src={glow} alt="glow" />
       </div>
       <div className="mainSection__aboutMe">
         <h1 className="aboutMe__title">
-          {t("I")} <span className="title__span">{t("name")}</span> , <br />{" "}
+          {t("I")} <span className="title__span">{t("name")}</span>, <br />{" "}
           {t("developer")}
         </h1>
 
@@ -128,6 +112,7 @@ const Main: FC<{}> = () => {
       <ProjectIdea />
       <HireMeModal />
       <ServiceModal />
+      <SwitcherLng />
     </div>
   );
 };

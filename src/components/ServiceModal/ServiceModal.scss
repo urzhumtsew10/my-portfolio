@@ -101,4 +101,12 @@
     padding: calc(5px + (15 - 5) * ((100vw - 320px) / (767 - 320)));
     margin-top: calc(15px + (70 - 15) * ((100vw - 320px) / (767 - 320)));
   }
+  .modalContent__closeImg {
+    width: calc(25px + (32 - 25) * ((100vw - 320px) / (767 - 320)));
+    height: calc(25px + (32 - 25) * ((100vw - 320px) / (767 - 320)));
+    right: calc(10px + (15 - 10) * ((100vw - 320px) / (767 - 320)));
+  }
+  .modalContent__titleService {
+    font-size: calc(25px + (30 - 25) * ((100vw - 320px) / (767 - 320)));
+  }
 }
