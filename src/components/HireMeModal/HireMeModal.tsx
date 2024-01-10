@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../store/hooks";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import axios from "axios";
 
 export const HireMeModal: FC<{}> = () => {
   const { modalHireMe } = useAppSelector((state) => state.modalReducer);
@@ -35,11 +36,11 @@ export const HireMeModal: FC<{}> = () => {
     setIsSend(false);
   };
 
-  const trySendOrder: SubmitHandler<HireMeFields> = (data) => {
-    console.log(data);
+  const trySendOrder: SubmitHandler<HireMeFields> = async (data) => {
+    axios.post("https://my-portfolio-api-coral.vercel.app/order", data);
     setIsSend(true);
     setTimeout(() => {
-      dispatch(setModalHireMe(false));
+      closeHireMeModal();
     }, 3000);
   };
 
@@ -85,13 +86,13 @@ export const HireMeModal: FC<{}> = () => {
           </label>
           <div className="hireMeForm__flexBlock">
             <input
-              {...register("price")}
+              {...register("price", { required: true })}
               className="flexBlock__input"
               type="number"
               placeholder={`${t("price")}($)`}
             />
             <input
-              {...register("time")}
+              {...register("time", { required: true })}
               className="flexBlock__input"
               type="text"
               placeholder={t("time")}

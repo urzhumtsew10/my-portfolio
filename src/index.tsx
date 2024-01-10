@@ -5,13 +5,16 @@ import App from "./components/App/App";
 import { Provider } from "react-redux";
 import { setupStore } from "./store/store";
 import "./i18n";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
 root.render(
-  <Provider store={setupStore()}>
-    <App />
-  </Provider>
+  <BrowserRouter>
+    <Provider store={setupStore()}>
+      <App />
+    </Provider>
+  </BrowserRouter>
 );

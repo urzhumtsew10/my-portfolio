@@ -21,6 +21,8 @@ const Header: FC<{}> = () => {
     const namePage: string = event.target.dataset.section;
     dispatch(setSelectHeaderItem(namePage.toLowerCase()));
 
+    console.log(document.querySelector(`#${namePage.toLowerCase()}`));
+
     const coordinatesElem: number | undefined = document
       .querySelector(`#${namePage.toLowerCase()}`)
       ?.getBoundingClientRect().top;
@@ -125,28 +127,28 @@ const Header: FC<{}> = () => {
               {t("home")}
             </p>
             <p
-              data-section="home"
+              data-section="about"
               onClick={(event) => changeSelectedPage(event)}
               className="mobileHeaderContent__item"
             >
               {t("about")}
             </p>
             <p
-              data-section="about"
+              data-section="service"
               onClick={(event) => changeSelectedPage(event)}
               className="mobileHeaderContent__item"
             >
               {t("service")}
             </p>
             <p
-              data-section="service"
+              data-section="resume"
               onClick={(event) => changeSelectedPage(event)}
               className="mobileHeaderContent__item"
             >
               {t("resume")}
             </p>
             <p
-              data-section="resume"
+              data-section="project"
               onClick={(event) => changeSelectedPage(event)}
               className="mobileHeaderContent__item"
             >
