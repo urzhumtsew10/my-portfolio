@@ -1,4 +1,4 @@
-import { BaseSyntheticEvent, FC, useEffect, useState } from "react";
+import { BaseSyntheticEvent, FC, useEffect, useRef, useState } from "react";
 import "../Footer/Footer.scss";
 import arrow from "../../img/arrow.svg";
 import icon_instagram from "../../img/instagram.svg";
@@ -22,6 +22,14 @@ export const Footer: FC<{}> = () => {
   const dispatch = useAppDispatch();
   const { setModalHireMe } = modalSlice.actions;
   const { setSelectHeaderItem } = headerSlice.actions;
+
+  const inputEmailRef = useRef<HTMLInputElement | null>(null);
+
+  const sendEmail = () => {
+    if (inputEmailRef.current) {
+      inputEmailRef.current.value = "";
+    }
+  };
 
   useEffect(() => {
     if (inView) {
@@ -153,11 +161,12 @@ export const Footer: FC<{}> = () => {
           <h2 className="fourthColumn__title footer_title">{t("info")}</h2>
           <div className="fourthColumn__footerInputBlock">
             <input
+              ref={inputEmailRef}
               className="footerInputBlock__input"
               type="email"
               placeholder={`${t("email")}`}
             />
-            <button className="footerInputBlock__btn">
+            <button onClick={sendEmail} className="footerInputBlock__btn">
               <img className="btn__img" src={icon_send} alt="icon" />
             </button>
           </div>

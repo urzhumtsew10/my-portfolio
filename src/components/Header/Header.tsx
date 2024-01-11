@@ -21,8 +21,6 @@ const Header: FC<{}> = () => {
     const namePage: string = event.target.dataset.section;
     dispatch(setSelectHeaderItem(namePage.toLowerCase()));
 
-    console.log(document.querySelector(`#${namePage.toLowerCase()}`));
-
     const coordinatesElem: number | undefined = document
       .querySelector(`#${namePage.toLowerCase()}`)
       ?.getBoundingClientRect().top;

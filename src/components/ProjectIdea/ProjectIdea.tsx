@@ -1,14 +1,26 @@
-import { FC } from "react";
+import {
+  FC,
+  InputHTMLAttributes,
+  MutableRefObject,
+  RefObject,
+  useRef,
+} from "react";
 import "../ProjectIdea/ProjectIdea.scss";
 import icon_email from "../../img/icon-email.svg";
 import icon_award from "../../img/award.svg";
 import icon_rating from "../../img/rating.svg";
 import icon_shield_tick from "../../img/shield-tick.svg";
-import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
 
 export const ProjectIdea: FC<{}> = () => {
   const { t } = useTranslation();
+  const inputEmailRef = useRef<HTMLInputElement | null>(null);
+
+  const sendEmail = () => {
+    if (inputEmailRef.current) {
+      inputEmailRef.current.value = "";
+    }
+  };
 
   return (
     <div className="projectIdeaBlock">
@@ -22,11 +34,14 @@ export const ProjectIdea: FC<{}> = () => {
             <img className="imgBlock__img" src={icon_email} alt="email" />
           </div>
           <input
+            ref={inputEmailRef}
             className="inputBlock__input"
             type="email"
             placeholder={`${t("enter")} ${t("email")}`}
           />
-          <button className="inputBlock__btn">{t("send")}</button>
+          <button onClick={sendEmail} className="inputBlock__btn">
+            {t("send")}
+          </button>
         </div>
         <div className="projectIdea__blockInfo">
           <div className="blockInfo__content">

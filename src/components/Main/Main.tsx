@@ -23,7 +23,7 @@ import { SwitcherLng } from "../SwitcherLng/SwitcherLng";
 
 const Main: FC<{}> = () => {
   const { ref, inView } = useInView({
-    threshold: 0.3,
+    threshold: 0.5,
   });
 
   const dispatch = useAppDispatch();
