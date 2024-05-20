@@ -1,4 +1,4 @@
-import { BaseSyntheticEvent, FC, useEffect, useRef, useState } from "react";
+import { BaseSyntheticEvent, FC, useRef } from "react";
 import "../Footer/Footer.scss";
 import arrow from "../../img/arrow.svg";
 import icon_instagram from "../../img/instagram.svg";
@@ -9,14 +9,9 @@ import icon_send from "../../img/icon-send.svg";
 import { modalSlice } from "../../store/reducers/ModalSlice";
 import { useAppDispatch } from "../../store/hooks";
 import { headerSlice } from "../../store/reducers/HeaderSlice";
-import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
 
 export const Footer: FC<{}> = () => {
-  const { ref, inView } = useInView({
-    threshold: 0.3,
-  });
-
   const { t } = useTranslation();
 
   const dispatch = useAppDispatch();
@@ -30,12 +25,6 @@ export const Footer: FC<{}> = () => {
       inputEmailRef.current.value = "";
     }
   };
-
-  useEffect(() => {
-    if (inView) {
-      dispatch(setSelectHeaderItem("contact"));
-    }
-  }, [inView]);
 
   const openHireMeModal = () => {
     dispatch(setModalHireMe(true));
@@ -59,7 +48,7 @@ export const Footer: FC<{}> = () => {
   };
 
   return (
-    <footer ref={ref} id="contact" className="footer">
+    <footer id="contact" className="footer">
       <div className="footer__hireMeBlock">
         <h2 className="hireMeBlock__title">{t("connect")}</h2>
         <button onClick={openHireMeModal} className="hireMeBlock__btn">

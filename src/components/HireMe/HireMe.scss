@@ -128,7 +128,7 @@
     margin-right: calc(145px + (176 - 145) * ((100vw - 767px) / (1530 - 767)));
   }
   .blockMyInfo__btn {
-    width: calc(220px + (233 - 220) * ((100vw - 767px) / (1530 - 767)));
+    width: calc(290px + (233 - 290) * ((100vw - 767px) / (1530 - 767)));
     height: calc(100px + (108 - 100) * ((100vw - 767px) / (1530 - 767)));
   }
   .hireMeBlock {
@@ -162,8 +162,9 @@
     font-size: calc(43px + (52 - 43) * ((100vw - 320px) / (767 - 320)));
   }
   .blockMyInfo__text {
+    margin-top: 20px;
     text-align: center;
-    max-width: 285px;
+    max-width: 325px;
   }
   .achievement {
     margin-right: 0;

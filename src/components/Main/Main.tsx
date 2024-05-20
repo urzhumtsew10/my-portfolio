@@ -16,25 +16,12 @@ import { ProjectIdea } from "../ProjectIdea/ProjectIdea";
 import { HireMeModal } from "../HireMeModal/HireMeModal";
 import { useAppDispatch } from "../../store/hooks";
 import { modalSlice } from "../../store/reducers/ModalSlice";
-import { headerSlice } from "../../store/reducers/HeaderSlice";
-import { useInView } from "react-intersection-observer";
 import { ServiceModal } from "../ServiceModal/ServiceModal";
 import { SwitcherLng } from "../SwitcherLng/SwitcherLng";
 
 const Main: FC<{}> = () => {
-  const { ref, inView } = useInView({
-    threshold: 0.5,
-  });
-
   const dispatch = useAppDispatch();
   const { setModalHireMe } = modalSlice.actions;
-  const { setSelectHeaderItem } = headerSlice.actions;
-
-  useEffect(() => {
-    if (inView) {
-      dispatch(setSelectHeaderItem("home"));
-    }
-  }, [inView]);
 
   const openHireMeModal = () => {
     document.body.style.overflow = "hidden";
@@ -76,7 +63,7 @@ const Main: FC<{}> = () => {
 
         <img className="aboutMe__img" src={glow} alt="glow" />
       </div>
-      <div ref={ref} className="mainSection__myImage">
+      <div id="home" className="mainSection__myImage">
         <img className="myImage__photo" src={my_photo} alt="my photo" />
         <img className="myImage__ellipse" src={ellipse} alt="ellipse" />
         <div className="myImage__actionsBlock">
@@ -112,7 +99,7 @@ const Main: FC<{}> = () => {
       <ProjectIdea />
       <HireMeModal />
       <ServiceModal />
-      <SwitcherLng />
+      {/* <SwitcherLng /> */}
     </div>
   );
 };

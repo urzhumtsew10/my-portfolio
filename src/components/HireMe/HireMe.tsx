@@ -1,28 +1,15 @@
-import { FC, SetStateAction, useEffect } from "react";
+import { FC } from "react";
 import "../HireMe/HireMe.scss";
 import my_photo from "../../img/my-photo2.png";
-import { useInView } from "react-intersection-observer";
 import { useDispatch } from "react-redux";
 import { modalSlice } from "../../store/reducers/ModalSlice";
-import { headerSlice } from "../../store/reducers/HeaderSlice";
 import { useTranslation } from "react-i18next";
 
 export const HireMe: FC<{}> = () => {
-  const { ref, inView } = useInView({
-    threshold: 0.3,
-  });
-
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
   const { setModalHireMe } = modalSlice.actions;
-  const { setSelectHeaderItem } = headerSlice.actions;
-
-  useEffect(() => {
-    if (inView) {
-      dispatch(setSelectHeaderItem("resume"));
-    }
-  }, [inView]);
 
   const openHireMeModal = () => {
     dispatch(setModalHireMe(true));
@@ -30,11 +17,11 @@ export const HireMe: FC<{}> = () => {
   };
 
   return (
-    <div id="resume" ref={ref} className="hireMeBlock">
-      <div className={`hireMeBlock__blockMyPhoto ${inView && "active"}`}>
+    <div id="resume" className="hireMeBlock">
+      <div className="hireMeBlock__blockMyPhoto">
         <img className="blockMyPhoto__img" src={my_photo} alt="my photo" />
       </div>
-      <div className={`hireMeBlock__blockMyInfo ${inView && "active"}`}>
+      <div className="hireMeBlock__blockMyInfo">
         <h2 className="blockMyInfo__title">
           {t("why")}{" "}
           <span className="blockMyInfo__title__span">{t("hireMe")}</span>?

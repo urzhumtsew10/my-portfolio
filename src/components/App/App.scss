@@ -1,4 +1,10 @@
 @import "../../index.scss";
+body {
+  @media (min-width: 1920px) {
+    max-width: 1920px;
+    margin: 0 auto 0 auto;
+  }
+}
 .myPhoto {
   height: 636px;
 }

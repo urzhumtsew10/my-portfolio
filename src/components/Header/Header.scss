@@ -35,14 +35,20 @@
 }
 .rightList__item,
 .leftList__item {
+  position: relative;
+  transition: 0.3s;
   z-index: 1;
   cursor: pointer;
   font-size: 20px;
   font-weight: 400;
   color: #fff;
 }
-
+.rightList__item:hover,
+.leftList__item:hover {
+  color: #fd853a;
+}
 .controlBlock__hoverPage {
+  display: none;
   position: absolute;
   width: 136px;
   height: 66px;
@@ -274,6 +280,7 @@
   }
   .rightList__item,
   .leftList__item {
+    transition: 0.3s;
     font-size: calc(18px + (20 - 18) * ((100vw - 767px) / (1530 - 767)));
   }
   .controlBlock__hoverPage {

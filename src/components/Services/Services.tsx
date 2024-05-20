@@ -1,10 +1,7 @@
-import React, { FC, useEffect, useRef } from "react";
+import React, { FC } from "react";
 import "../Services/Services.scss";
 import lights from "../../img/lights-yellow.png";
 import { ServicesCard } from "./ServicesCard";
-import { headerSlice } from "../../store/reducers/HeaderSlice";
-import { useAppDispatch } from "../../store/hooks";
-import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
 
 const Services: FC<{}> = () => {
@@ -20,21 +17,8 @@ const Services: FC<{}> = () => {
     },
   ];
 
-  const { ref, inView } = useInView({
-    threshold: 0.3,
-  });
-
-  const { setSelectHeaderItem } = headerSlice.actions;
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    if (inView) {
-      dispatch(setSelectHeaderItem("service"));
-    }
-  }, [inView]);
-
   return (
-    <div ref={ref} id="service" className="services__contentServices">
+    <div id="service" className="services__contentServices">
       <img className="contentServices__lights" src={lights} alt="lights" />
       <div className="contentServices__titleBlock">
         <h2 className="titleBlock__titleServices">

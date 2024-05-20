@@ -1,6 +1,5 @@
 import { FC } from "react";
 import arrow from "../../img/arrow.svg";
-import { useInView } from "react-intersection-observer";
 import { useAppDispatch } from "../../store/hooks";
 import { modalSlice } from "../../store/reducers/ModalSlice";
 import { useTranslation } from "react-i18next";
@@ -10,11 +9,6 @@ export const ServicesCard: FC<{
   title: string;
   text: string;
 }> = ({ img, title, text }) => {
-  const { ref, inView } = useInView({
-    threshold: 0,
-    triggerOnce: true,
-  });
-
   const { i18n } = useTranslation();
 
   const dispatch = useAppDispatch();
@@ -27,10 +21,7 @@ export const ServicesCard: FC<{
   };
 
   return (
-    <div
-      ref={ref}
-      className={`serviceCardsBlock__serviceCard ${inView && "active"}`}
-    >
+    <div className="serviceCardsBlock__serviceCard">
       <div className="serviceCard__titleCard">{text}</div>
       <div className="serviceCard__lastLayer"></div>
       <div className="serviceCard__middleLayer"></div>

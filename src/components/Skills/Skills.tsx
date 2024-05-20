@@ -11,6 +11,7 @@ export const Skills: FC<{}> = () => {
 
   const skillsList = [
     "React.js",
+    "Next.js",
     "Redux toolkit",
     "RTK Query",
     "React Router",
@@ -27,20 +28,8 @@ export const Skills: FC<{}> = () => {
     "OOP",
     "NPM",
     "Postman",
+    "Firebase",
   ];
-
-  const dispatch = useAppDispatch();
-  const { setSelectHeaderItem } = headerSlice.actions;
-
-  const { ref, inView } = useInView({
-    threshold: 0.3,
-  });
-
-  useEffect(() => {
-    if (inView) {
-      dispatch(setSelectHeaderItem("about"));
-    }
-  }, [inView]);
 
   return (
     <div id="about" className="skillsBlock">
@@ -48,9 +37,9 @@ export const Skills: FC<{}> = () => {
         {t("my")}{" "}
         <span className="skillsBlock__title__span">{t("skills")}</span>
       </h2>
-      <div ref={ref} className="skillsBlock__skillsList">
+      <div className="skillsBlock__skillsList">
         {skillsList.map((name) => (
-          <SkillCard key={name} name={name} inView={inView} />
+          <SkillCard key={name} name={name} />
         ))}
       </div>
     </div>

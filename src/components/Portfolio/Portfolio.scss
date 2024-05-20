@@ -77,8 +77,9 @@
   transform: scale(1.08);
 }
 .projectCard__projectCategory {
+  padding: 0 15px 0 15px;
   margin-top: 35px;
-  width: 196px;
+  width: fit-content;
   height: 54px;
   border-radius: 24px;
   background: #f2f4f7;
@@ -131,13 +132,16 @@
     gap: calc(10px + (30 - 10) * ((100vw - 767px) / (1530 - 767)));
   }
   .myProject__projectCard {
-    width: calc(330px + (416 - 330) * ((100vw - 767px) / (1530 - 767)));
+    width: calc(360px + (416 - 360) * ((100vw - 767px) / (1530 - 767)));
   }
   .projectData__info {
     font-size: calc(30px + (32 - 30) * ((100vw - 767px) / (1530 - 767)));
   }
 }
 @media (max-width: 767px) {
+  .portfolioBlock {
+    margin-bottom: calc(50px + (200 - 50) * ((100vw - 320px) / (767 - 320)));
+  }
   .projectImg__button {
     width: calc(90px + (110 - 90) * ((100vw - 320px) / (767 - 320)));
     height: calc(90px + (110 - 90) * ((100vw - 320px) / (767 - 320)));
@@ -145,7 +149,6 @@
     right: calc(-15px + (-20 - -15) * ((100vw - 320px) / (767 - 320)));
   }
   .projectCard__projectCategory {
-    width: calc(160px + (196 - 160) * ((100vw - 320px) / (767 - 320)));
     height: calc(50px + (54 - 50) * ((100vw - 320px) / (767 - 320)));
     font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (767 - 320)));
   }

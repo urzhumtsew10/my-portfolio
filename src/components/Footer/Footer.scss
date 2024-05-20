@@ -224,11 +224,13 @@
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     row-gap: 40px;
+    column-gap: 30px;
     padding-top: calc(35px + (55 - 35) * ((100vw - 320px) / (767 - 320)));
     padding-bottom: calc(35px + (55 - 35) * ((100vw - 320px) / (767 - 320)));
   }
   .hireMeBlock__title {
     font-size: calc(22px + (45 - 22) * ((100vw - 320px) / (767 - 320)));
+    width: calc(150px + (400 - 150) * ((100vw - 320px) / (767 - 320)));
   }
   .hireMeBlock__btn {
     font-size: calc(16px + (25 - 16) * ((100vw - 320px) / (767 - 320)));
@@ -265,14 +267,20 @@
     margin-bottom: calc(15px + (30 - 15) * ((100vw - 320px) / (767 - 320)));
   }
   .footerInputBlock__input {
-    width: calc(80px + (206 - 80) * ((100vw - 320px) / (767 - 320)));
-    height: calc(40px + (51 - 40) * ((100vw - 320px) / (767 - 320)));
+    width: calc(85px + (206 - 85) * ((100vw - 320px) / (767 - 320)));
+    height: calc(35px + (51 - 35) * ((100vw - 320px) / (767 - 320)));
     font-size: calc(10px + (16 - 10) * ((100vw - 320px) / (767 - 320)));
     padding-left: calc(8px + (14 - 8) * ((100vw - 320px) / (767 - 320)));
+    border-top-left-radius: calc(
+      10px + (15 - 10) * ((100vw - 320px) / (767 - 320))
+    );
+    border-bottom-left-radius: calc(
+      10px + (15 - 10) * ((100vw - 320px) / (767 - 320))
+    );
   }
   .footerInputBlock__btn {
     width: calc(35px + (46 - 35) * ((100vw - 320px) / (767 - 320)));
-    height: calc(40px + (51 - 40) * ((100vw - 320px) / (767 - 320)));
+    height: calc(35px + (51 - 35) * ((100vw - 320px) / (767 - 320)));
   }
   .textBlock__text {
     margin-top: calc(50px + (85 - 50) * ((100vw - 320px) / (767 - 320)));

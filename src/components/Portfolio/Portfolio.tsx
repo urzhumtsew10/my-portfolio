@@ -38,19 +38,6 @@ export const Portfolio: FC<{}> = () => {
     },
   ];
 
-  const { ref, inView } = useInView({
-    threshold: 0.3,
-  });
-
-  const dispatch = useAppDispatch();
-  const { setSelectHeaderItem } = headerSlice.actions;
-
-  useEffect(() => {
-    if (inView) {
-      dispatch(setSelectHeaderItem("project"));
-    }
-  }, [inView]);
-
   const [isSeeAll, setIsSeeAll] = useState(false);
 
   const showAllProjects = () => {
@@ -60,7 +47,7 @@ export const Portfolio: FC<{}> = () => {
   const projectListSlice = isSeeAll ? projectsList : projectsList.slice(0, 3);
 
   return (
-    <div ref={ref} id="project" className="portfolioBlock">
+    <div id="project" className="portfolioBlock">
       <div className="portfolioBlock__mainBlock">
         <h2 className="mainBlock__title">{t("portfolio")}</h2>
         {!isSeeAll && (

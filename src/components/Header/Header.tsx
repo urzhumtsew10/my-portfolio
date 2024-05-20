@@ -7,6 +7,7 @@ import icon_telegram from "../../img/telegram.svg";
 import icon_linkedin from "../../img/icon-linkedin.svg";
 import icon_github from "../../img/icon-github.svg";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-scroll";
 
 const Header: FC<{}> = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -18,24 +19,7 @@ const Header: FC<{}> = () => {
   const { setSelectHeaderItem } = headerSlice.actions;
 
   const changeSelectedPage = (event: BaseSyntheticEvent) => {
-    const namePage: string = event.target.dataset.section;
-    dispatch(setSelectHeaderItem(namePage.toLowerCase()));
-
-    const coordinatesElem: number | undefined = document
-      .querySelector(`#${namePage.toLowerCase()}`)
-      ?.getBoundingClientRect().top;
-
-    if (coordinatesElem && window.screen.width > 767) {
-      window.scrollTo({
-        top: coordinatesElem + window.pageYOffset - 100,
-        behavior: "smooth",
-      });
-    }
-    if (window.screen.width < 767 && coordinatesElem) {
-      window.scrollTo({
-        top: coordinatesElem + window.pageYOffset - 50,
-        behavior: "smooth",
-      });
+    if (window.screen.width < 767) {
       setIsOpenMenu(false);
       document.body.style.overflow = "inherit";
     }
@@ -55,51 +39,62 @@ const Header: FC<{}> = () => {
       <div className="header__controlBlock">
         <div className={`controlBlock__hoverPage ${selectHeaderItem}`}></div>
         <ul className="controlBlock__leftList">
-          <li
-            data-section="home"
-            onClick={(event) => changeSelectedPage(event)}
-            className="leftList__item"
-          >
-            Home
-          </li>
-          <li
-            data-section="service"
-            onClick={(event) => changeSelectedPage(event)}
-            className="leftList__item"
-          >
-            Service
-          </li>
-          <li
-            data-section="about"
-            onClick={(event) => changeSelectedPage(event)}
-            className="leftList__item"
-          >
-            About
-          </li>
+          <Link to="home" spy={true} smooth={true} offset={-100} duration={500}>
+            <li
+              onClick={(event) => changeSelectedPage(event)}
+              className="leftList__item"
+            >
+              {t("home")}
+            </li>
+          </Link>
+          <Link to="service" spy={true} smooth={true} offset={0} duration={500}>
+            <li
+              data-section="service"
+              onClick={(event) => changeSelectedPage(event)}
+              className="leftList__item"
+            >
+              {t("service")}
+            </li>
+          </Link>
+          <Link to="about" spy={true} smooth={true} offset={0} duration={500}>
+            <li
+              data-section="about"
+              onClick={(event) => changeSelectedPage(event)}
+              className="leftList__item"
+            >
+              {t("about")}
+            </li>
+          </Link>
         </ul>
         <div className="header__logo">AU</div>
         <ul className="controlBlock__rightList">
-          <li
-            data-section="resume"
-            onClick={(event) => changeSelectedPage(event)}
-            className="rightList__item"
-          >
-            Resume
-          </li>
-          <li
-            data-section="project"
-            onClick={(event) => changeSelectedPage(event)}
-            className="rightList__item"
-          >
-            Project
-          </li>
-          <li
-            data-section="contact"
-            onClick={(event) => changeSelectedPage(event)}
-            className="rightList__item"
-          >
-            Contact
-          </li>
+          <Link to="resume" spy={true} smooth={true} offset={0} duration={500}>
+            <li
+              data-section="resume"
+              onClick={(event) => changeSelectedPage(event)}
+              className="rightList__item"
+            >
+              {t("resume")}
+            </li>
+          </Link>
+          <Link to="project" spy={true} smooth={true} offset={0} duration={500}>
+            <li
+              data-section="project"
+              onClick={(event) => changeSelectedPage(event)}
+              className="rightList__item"
+            >
+              {t("projects")}
+            </li>
+          </Link>
+          <Link to="contact" spy={true} smooth={true} offset={0} duration={500}>
+            <li
+              data-section="contact"
+              onClick={(event) => changeSelectedPage(event)}
+              className="rightList__item"
+            >
+              {t("contact")}
+            </li>
+          </Link>
         </ul>
       </div>
       <div className="header__headerMobile">
@@ -117,48 +112,84 @@ const Header: FC<{}> = () => {
       <div className={`menuMobile ${isOpenMenu && "active"}`}>
         <div className="menuMobile__mobileHeaderContent">
           <div className="mobileHeaderContent__menuList">
-            <p
-              data-section="home"
-              onClick={(event) => changeSelectedPage(event)}
-              className="mobileHeaderContent__item"
+            <Link
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
             >
-              {t("home")}
-            </p>
-            <p
-              data-section="about"
-              onClick={(event) => changeSelectedPage(event)}
-              className="mobileHeaderContent__item"
+              <p
+                onClick={(event) => changeSelectedPage(event)}
+                className="mobileHeaderContent__item"
+              >
+                {t("home")}
+              </p>
+            </Link>
+            <Link
+              to="service"
+              spy={true}
+              smooth={true}
+              offset={-50}
+              duration={500}
             >
-              {t("about")}
-            </p>
-            <p
-              data-section="service"
-              onClick={(event) => changeSelectedPage(event)}
-              className="mobileHeaderContent__item"
+              <p
+                onClick={(event) => changeSelectedPage(event)}
+                className="mobileHeaderContent__item"
+              >
+                {t("service")}
+              </p>
+            </Link>
+            <Link to="about" spy={true} smooth={true} offset={0} duration={500}>
+              <p
+                onClick={(event) => changeSelectedPage(event)}
+                className="mobileHeaderContent__item"
+              >
+                {t("about")}
+              </p>
+            </Link>
+            <Link
+              to="resume"
+              spy={true}
+              smooth={true}
+              offset={-75}
+              duration={500}
             >
-              {t("service")}
-            </p>
-            <p
-              data-section="resume"
-              onClick={(event) => changeSelectedPage(event)}
-              className="mobileHeaderContent__item"
+              <p
+                onClick={(event) => changeSelectedPage(event)}
+                className="mobileHeaderContent__item"
+              >
+                {t("resume")}
+              </p>
+            </Link>
+            <Link
+              to="project"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
             >
-              {t("resume")}
-            </p>
-            <p
-              data-section="project"
-              onClick={(event) => changeSelectedPage(event)}
-              className="mobileHeaderContent__item"
+              <p
+                onClick={(event) => changeSelectedPage(event)}
+                className="mobileHeaderContent__item"
+              >
+                {t("projects")}
+              </p>
+            </Link>
+            <Link
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
             >
-              {t("projects")}
-            </p>
-            <p
-              data-section="contact"
-              onClick={(event) => changeSelectedPage(event)}
-              className="mobileHeaderContent__item"
-            >
-              {t("contact")}
-            </p>
+              <p
+                onClick={(event) => changeSelectedPage(event)}
+                className="mobileHeaderContent__item"
+              >
+                {t("contact")}
+              </p>
+            </Link>
           </div>
           <ul className="mobileHeaderContent__networksList">
             <li className="networkList__item">

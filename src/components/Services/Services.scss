@@ -55,30 +55,6 @@
   backdrop-filter: blur(7.5px);
   border: 2px solid rgba(255, 255, 255, 0.432);
   border-radius: 50px;
-  opacity: 0;
-}
-.serviceCardsBlock__serviceCard.active {
-  animation-name: animation-service-cards;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-}
-.serviceCardsBlock__serviceCard:nth-child(1) {
-  animation-delay: 0s;
-}
-.serviceCardsBlock__serviceCard:nth-child(2) {
-  animation-delay: 0.5s;
-}
-.serviceCardsBlock__serviceCard:nth-child(3) {
-  animation-delay: 1s;
-}
-@keyframes animation-service-cards {
-  0% {
-    width: 100px;
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 .serviceCard__titleCard {
   position: absolute;
