@@ -27,15 +27,15 @@ export const Portfolio: FC<{}> = () => {
       description: `${t("cinema")}: React/NestJS/Firebase.`,
       url: "https://cinema-urzhumtsew.vercel.app/",
     },
-    {
-      id: 3,
-      img: "project-02.png",
-      category: "Layout&Landing",
-      technology: "Javascript",
-      data: `20 ${t("april")}, 2023`,
-      description: `${t("chFood")}: HTML/CSS/JS.`,
-      url: "https://chinese-food.netlify.app/",
-    },
+    // {
+    //   id: 3,
+    //   img: "project-02.png",
+    //   category: "Layout&Landing",
+    //   technology: "Javascript",
+    //   data: `20 ${t("april")}, 2023`,
+    //   description: `${t("chFood")}: HTML/CSS/JS.`,
+    //   url: "https://chinese-food.netlify.app/",
+    // },
   ];
 
   const [isSeeAll, setIsSeeAll] = useState(false);
