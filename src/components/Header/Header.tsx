@@ -1,7 +1,6 @@
 import React, { BaseSyntheticEvent, FC, useState } from "react";
 import "../Header/Header.scss";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { headerSlice } from "../../store/reducers/HeaderSlice";
+import { useAppSelector } from "../../store/hooks";
 import icon_instagram from "../../img/instagram.svg";
 import icon_telegram from "../../img/telegram.svg";
 import icon_linkedin from "../../img/icon-linkedin.svg";
@@ -15,8 +14,6 @@ const Header: FC<{}> = () => {
   const { t } = useTranslation();
 
   const { selectHeaderItem } = useAppSelector((state) => state.headerReducer);
-  const dispatch = useAppDispatch();
-  const { setSelectHeaderItem } = headerSlice.actions;
 
   const changeSelectedPage = (event: BaseSyntheticEvent) => {
     if (window.screen.width < 767) {

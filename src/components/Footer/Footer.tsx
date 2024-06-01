@@ -140,10 +140,10 @@ export const Footer: FC<{}> = () => {
             </p>
           </a>
           <a href="https://t.me/urzhumtsew" target="_black">
-            <p className="thirdColumn__text footer_text">@urzhumtsew</p>
+            <p className="thirdColumn__text footer_text">telegram</p>
           </a>
           <a href="https://www.instagram.com/urzhumtsew/" target="_black">
-            <p className="thirdColumn__text footer_text">urzhumtsew</p>
+            <p className="thirdColumn__text footer_text">instagram</p>
           </a>
         </div>
         <div className="footerInfo__fourthColumn">

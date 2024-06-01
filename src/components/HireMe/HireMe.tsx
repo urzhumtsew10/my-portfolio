@@ -1,6 +1,6 @@
 import { FC } from "react";
 import "../HireMe/HireMe.scss";
-import my_photo from "../../img/my-photo2.png";
+import my_photo from "../../img/my-photo02.png";
 import { useDispatch } from "react-redux";
 import { modalSlice } from "../../store/reducers/ModalSlice";
 import { useTranslation } from "react-i18next";

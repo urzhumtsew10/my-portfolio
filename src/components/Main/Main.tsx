@@ -2,7 +2,7 @@ import React, { FC, useEffect } from "react";
 import { useTranslation, Trans } from "react-i18next";
 import "../Main/Main.scss";
 import glow from "../../img/glow.svg";
-import my_photo from "../../img/my-photo.png";
+import my_photo from "../../img/my-photo02.png";
 import ellipse from "../../img/ellipse.svg";
 import commas from "../../img/commas.svg";
 import star from "../../img/icon-star.svg";

@@ -11,7 +11,6 @@ export const Skills: FC<{}> = () => {
 
   const skillsList = [
     "React.js",
-    "Next.js",
     "Redux toolkit",
     "RTK Query",
     "React Router",

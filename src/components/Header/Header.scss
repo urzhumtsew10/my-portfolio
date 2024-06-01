@@ -42,10 +42,32 @@
   font-size: 20px;
   font-weight: 400;
   color: #fff;
+  width: fit-content;
 }
-.rightList__item:hover,
-.leftList__item:hover {
-  color: #fd853a;
+.leftList__item,
+.rightList__item {
+  position: relative;
+}
+
+.leftList__item::before,
+.rightList__item::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #fd853a;
+  bottom: -3px;
+  left: 0px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.leftList__item:hover::before,
+.rightList__item:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
 }
 .controlBlock__hoverPage {
   display: none;

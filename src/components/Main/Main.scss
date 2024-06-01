@@ -65,7 +65,7 @@
   z-index: 3;
   position: absolute;
   bottom: 0;
-  height: 675px;
+  height: 560px;
   animation: animation-photo 2s linear infinite;
 }
 @keyframes animation-photo {
@@ -182,7 +182,7 @@
     right: calc(35px + (71 - 35) * ((100vw - 767px) / (1530 - 767)));
   }
   .myImage__photo {
-    height: calc(610px + (675 - 610) * ((100vw - 767px) / (1530 - 767)));
+    height: calc(560px + (560 - 560) * ((100vw - 767px) / (1530 - 767)));
     animation: none;
     animation: animation-photo-mobile 2s linear infinite;
   }
@@ -221,7 +221,7 @@
     height: calc(303px + (520 - 303) * ((100vw - 320px) / (767 - 320)));
   }
   .myImage__photo {
-    height: calc(350px + (610 - 350) * ((100vw - 320px) / (767 - 320)));
+    height: calc(315px + (560 - 315) * ((100vw - 320px) / (767 - 320)));
   }
   .myImage__ellipse {
     width: calc(300px + (695 - 300) * ((100vw - 320px) / (767 - 320)));
