@@ -37,8 +37,8 @@ export const HireMeModal: FC<{}> = () => {
   };
 
   const trySendOrder: SubmitHandler<HireMeFields> = async (data) => {
-    axios.post("https://my-portfolio-api-coral.vercel.app/order", data);
-    setIsSend(true);
+    const res = await axios.post("http://localhost:3030/order", data);
+    if (res.data) setIsSend(true);
     setTimeout(() => {
       closeHireMeModal();
     }, 3000);

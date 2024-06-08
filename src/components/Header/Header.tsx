@@ -46,46 +46,47 @@ const Header: FC<{}> = () => {
           </Link>
           <Link to="service" spy={true} smooth={true} offset={0} duration={500}>
             <li
-              data-section="service"
               onClick={(event) => changeSelectedPage(event)}
               className="leftList__item"
             >
               {t("service")}
             </li>
           </Link>
-          <Link to="about" spy={true} smooth={true} offset={0} duration={500}>
+          <Link to="skill" spy={true} smooth={true} offset={0} duration={500}>
             <li
-              data-section="about"
               onClick={(event) => changeSelectedPage(event)}
               className="leftList__item"
             >
-              {t("about")}
+              {t("skill")}
             </li>
           </Link>
         </ul>
         <div className="header__logo">AU</div>
         <ul className="controlBlock__rightList">
-          <Link to="resume" spy={true} smooth={true} offset={0} duration={500}>
+          <Link to="hire" spy={true} smooth={true} offset={-50} duration={500}>
             <li
-              data-section="resume"
               onClick={(event) => changeSelectedPage(event)}
               className="rightList__item"
             >
-              {t("resume")}
+              {t("hire")}
             </li>
           </Link>
-          <Link to="project" spy={true} smooth={true} offset={0} duration={500}>
+          <Link
+            to="portfolio"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}
+          >
             <li
-              data-section="project"
               onClick={(event) => changeSelectedPage(event)}
               className="rightList__item"
             >
-              {t("projects")}
+              {t("portfolio")}
             </li>
           </Link>
           <Link to="contact" spy={true} smooth={true} offset={0} duration={500}>
             <li
-              data-section="contact"
               onClick={(event) => changeSelectedPage(event)}
               className="rightList__item"
             >
@@ -137,16 +138,16 @@ const Header: FC<{}> = () => {
                 {t("service")}
               </p>
             </Link>
-            <Link to="about" spy={true} smooth={true} offset={0} duration={500}>
+            <Link to="skill" spy={true} smooth={true} offset={0} duration={500}>
               <p
                 onClick={(event) => changeSelectedPage(event)}
                 className="mobileHeaderContent__item"
               >
-                {t("about")}
+                {t("skill")}
               </p>
             </Link>
             <Link
-              to="resume"
+              to="hire"
               spy={true}
               smooth={true}
               offset={-75}
@@ -156,11 +157,11 @@ const Header: FC<{}> = () => {
                 onClick={(event) => changeSelectedPage(event)}
                 className="mobileHeaderContent__item"
               >
-                {t("resume")}
+                {t("hire")}
               </p>
             </Link>
             <Link
-              to="project"
+              to="portfolio"
               spy={true}
               smooth={true}
               offset={0}
@@ -170,7 +171,7 @@ const Header: FC<{}> = () => {
                 onClick={(event) => changeSelectedPage(event)}
                 className="mobileHeaderContent__item"
               >
-                {t("projects")}
+                {t("portfolio")}
               </p>
             </Link>
             <Link

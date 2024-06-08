@@ -111,25 +111,25 @@ export const Footer: FC<{}> = () => {
             onClick={(event) => changeSelectedPage(event)}
             className="secondColumn__text  footer_text"
           >
-            About
-          </p>
-          <p
-            onClick={(event) => changeSelectedPage(event)}
-            className="secondColumn__text  footer_text"
-          >
-            Project
-          </p>
-          <p
-            onClick={(event) => changeSelectedPage(event)}
-            className="secondColumn__text  footer_text"
-          >
             Service
           </p>
           <p
             onClick={(event) => changeSelectedPage(event)}
             className="secondColumn__text  footer_text"
           >
-            Contact
+            Skill
+          </p>
+          <p
+            onClick={(event) => changeSelectedPage(event)}
+            className="secondColumn__text  footer_text"
+          >
+            Hire
+          </p>
+          <p
+            onClick={(event) => changeSelectedPage(event)}
+            className="secondColumn__text  footer_text"
+          >
+            Portfolio
           </p>
         </div>
         <div className="footerInfo__thirdColumn">

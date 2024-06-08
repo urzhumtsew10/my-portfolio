@@ -70,6 +70,8 @@ i18next
           sended: "Sended",
           price: "price",
           time: "time",
+          skill: "Skills",
+          hire: "Hire me",
         },
       },
       ru: {
@@ -134,6 +136,8 @@ i18next
           sended: "Отправлено",
           price: "Цена",
           time: "Сроки",
+          skill: "Навыки",
+          hire: "Нанять меня",
         },
       },
       ua: {
@@ -198,6 +202,8 @@ i18next
           sended: "Відправлено",
           price: "Ціна",
           time: "Терміни",
+          skill: "Навички",
+          hire: "Найняти мене",
         },
       },
     },

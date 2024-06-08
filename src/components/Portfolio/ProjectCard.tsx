@@ -1,5 +1,5 @@
 import { FC } from "react";
-import arrow from "../../img/arrow.svg";
+import { ReactComponent as Arrow } from "../../img/arrow.svg";
 
 export const ProjectCard: FC<{
   img: string;
@@ -14,7 +14,7 @@ export const ProjectCard: FC<{
   };
 
   return (
-    <div className="myProject__projectCard">
+    <div onClick={openProject} className="myProject__projectCard">
       <div className="projectCard__projectImg">
         <img
           className="projectImg__img"
@@ -22,7 +22,7 @@ export const ProjectCard: FC<{
           alt="photo"
         />
         <button onClick={openProject} className="projectImg__button">
-          <img className="button__arrow" src={arrow} alt="arrow" />
+          <Arrow className="button__arrow" />
         </button>
       </div>
       <div className="projectCard__projectCategory">{category}</div>

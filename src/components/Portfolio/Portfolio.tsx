@@ -1,9 +1,6 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import "../Portfolio/Portfolio.scss";
 import { ProjectCard } from "./ProjectCard";
-import { useAppDispatch } from "../../store/hooks";
-import { headerSlice } from "../../store/reducers/HeaderSlice";
-import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
 
 export const Portfolio: FC<{}> = () => {
@@ -27,15 +24,15 @@ export const Portfolio: FC<{}> = () => {
       description: `${t("cinema")}: React/NestJS/Firebase.`,
       url: "https://cinema-urzhumtsew.vercel.app/",
     },
-    // {
-    //   id: 3,
-    //   img: "project-02.png",
-    //   category: "Layout&Landing",
-    //   technology: "Javascript",
-    //   data: `20 ${t("april")}, 2023`,
-    //   description: `${t("chFood")}: HTML/CSS/JS.`,
-    //   url: "https://chinese-food.netlify.app/",
-    // },
+    {
+      id: 3,
+      img: "project-02.png",
+      category: "Layout&Landing",
+      technology: "Javascript",
+      data: `20 ${t("april")}, 2023`,
+      description: `${t("chFood")}: HTML/CSS/JS.`,
+      url: "https://chef-food-urzhumtsew.netlify.app/",
+    },
   ];
 
   const [isSeeAll, setIsSeeAll] = useState(false);
@@ -47,7 +44,7 @@ export const Portfolio: FC<{}> = () => {
   const projectListSlice = isSeeAll ? projectsList : projectsList.slice(0, 3);
 
   return (
-    <div id="project" className="portfolioBlock">
+    <div id="portfolio" className="portfolioBlock">
       <div className="portfolioBlock__mainBlock">
         <h2 className="mainBlock__title">{t("portfolio")}</h2>
         {!isSeeAll && (

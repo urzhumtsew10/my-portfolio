@@ -55,6 +55,25 @@
   backdrop-filter: blur(7.5px);
   border: 2px solid rgba(255, 255, 255, 0.432);
   border-radius: 50px;
+
+  animation: animation-service-card linear;
+  animation-timeline: view();
+  animation-range-start: cover;
+  animation-range-end: 520px;
+}
+@keyframes animation-service-card {
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+
+    // transform: rotate(-45deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+
+    // transform: rotate(0deg);
+  }
 }
 .serviceCard__titleCard {
   position: absolute;
@@ -114,13 +133,50 @@
   border-radius: 50%;
   background-color: #1d2939;
 }
+.cardButton__btn::after {
+  transition: all 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 30px;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background-color: #ffffffe0;
+}
 .cardButton__img {
+  position: relative;
+  z-index: 2;
   width: 72px;
   height: 72px;
   transition: 0.3s;
+  path {
+    transition: all 0.3s ease-in-out;
+    stroke: #fff;
+  }
 }
-.cardButton__btn:hover .cardButton__img {
-  transform: scale(1.2);
+.serviceCardsBlock__serviceCard:hover {
+  cursor: pointer;
+  .cardButton__btn::after {
+    left: 0;
+    bottom: 0;
+    border-radius: 49%;
+    @media (min-width: 1530px) {
+      width: 121px;
+      height: 121px;
+    }
+    @media (min-width: 768px) and (max-width: 1530px) {
+      width: calc(110px + (121 - 110) * ((100vw - 767px) / (1530 - 767)));
+      height: calc(110px + (121 - 110) * ((100vw - 767px) / (1530 - 767)));
+    }
+    @media (min-width: 320px) and (max-width: 767px) {
+      width: calc(90px + (110 - 90) * ((100vw - 320px) / (767 - 320)));
+      height: calc(90px + (110 - 90) * ((100vw - 320px) / (767 - 320)));
+    }
+  }
+  .cardButton__img * {
+    stroke: #1d2939;
+  }
 }
 @media (max-width: 1530px) {
   .services__serviceCardsBlock {

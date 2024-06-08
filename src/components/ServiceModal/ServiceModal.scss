@@ -20,7 +20,7 @@
   z-index: 6;
 }
 .serviceModal__modalContent {
-  padding: 0 20px 0 20px;
+  padding: 30px 20px 0 20px;
   transition: 0.3s;
   position: relative;
   width: 550px;
@@ -50,7 +50,6 @@
   transform: scale(1.09);
 }
 .modalContent__titleService {
-  margin-top: 10px;
   font-size: 30px;
   font-weight: 500;
   color: #fff;

@@ -31,7 +31,7 @@ export const Skills: FC<{}> = () => {
   ];
 
   return (
-    <div id="about" className="skillsBlock">
+    <div id="skill" className="skillsBlock">
       <h2 className="skillsBlock__title">
         {t("my")}{" "}
         <span className="skillsBlock__title__span">{t("skills")}</span>

@@ -69,12 +69,44 @@
   background-color: $color_dark_blue;
   border-radius: 57px;
 }
+.projectImg__button::after {
+  transition: all 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 30px;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background-color: #ffffffe0;
+}
 .button__arrow {
+  position: relative;
+  z-index: 2;
   width: 72px;
   transition: 0.3s;
+  path {
+    transition: all 0.3s ease-in-out;
+    stroke: #fff;
+  }
 }
-.button__arrow:hover {
-  transform: scale(1.08);
+.myProject__projectCard:hover {
+  cursor: pointer;
+  .projectImg__button::after {
+    left: -1px;
+    bottom: -1px;
+    @media (min-width: 768px) {
+      width: 112px;
+      height: 112px;
+    }
+    @media (min-width: 320px) and (max-width: 767px) {
+      width: calc(92px + (112 - 92) * ((100vw - 320px) / (767 - 320)));
+      height: calc(92px + (112 - 92) * ((100vw - 320px) / (767 - 320)));
+    }
+  }
+  .button__arrow * {
+    stroke: $color_dark_blue;
+  }
 }
 .projectCard__projectCategory {
   padding: 0 15px 0 15px;

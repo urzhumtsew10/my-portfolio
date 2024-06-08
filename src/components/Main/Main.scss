@@ -95,6 +95,7 @@
   justify-content: space-between;
 }
 .actionsBlock__btn {
+  transition: all 0.3s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,10 +106,29 @@
   border-radius: 50px;
 }
 .actionsBlock__buttonText {
+  transition: all 0.3s ease-in-out;
   font-size: 25px;
   font-weight: 500;
   color: #fff;
 }
+.actionsBlock__img {
+  transition: 0.5s;
+  width: 42px;
+  height: 42px;
+}
+.actionsBlock__img path {
+  transition: stroke 0.4s ease;
+}
+.actionsBlock__btn:hover {
+  background-color: #ffffff81;
+  .actionsBlock__buttonText {
+    color: $color_orange;
+  }
+  .actionsBlock__img * {
+    stroke: $color_orange;
+  }
+}
+
 .actionsBlock__text {
   transition: 0.3s;
   cursor: pointer;
@@ -119,10 +139,6 @@
 }
 .actionsBlock__text:hover {
   transform: scale(1.09);
-}
-.actionsBlock__img {
-  width: 42px;
-  height: 42px;
 }
 .mainSection__notation {
   position: absolute;

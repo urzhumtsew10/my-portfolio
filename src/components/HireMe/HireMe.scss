@@ -19,21 +19,6 @@
   display: flex;
   justify-content: center;
 }
-.hireMeBlock__blockMyPhoto.active {
-  animation-name: animation-my-photo;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-}
-@keyframes animation-my-photo {
-  0% {
-    opacity: 0;
-    margin-right: 300px;
-  }
-  100% {
-    opacity: 1;
-    margin-right: 0;
-  }
-}
 .blockMyPhoto__img {
   position: absolute;
   bottom: 0;
@@ -43,20 +28,29 @@
   margin-left: 200px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  animation: animation-hireme linear forwards;
+  animation-timeline: view();
+  animation-range-end: contain 50px;
 }
-.hireMeBlock__blockMyInfo.active {
-  animation-name: animation-my-info;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-}
-@keyframes animation-my-info {
-  0% {
-    opacity: 0;
-    margin-left: 300px;
+@media (min-width: 768px) {
+  @keyframes animation-hireme {
+    from {
+      padding-top: 550px;
+    }
+    to {
+      padding-top: 0px;
+    }
   }
-  100% {
-    opacity: 1;
-    // margin-left: 200px;
+}
+@media (max-width: 767px) {
+  @keyframes animation-hireme {
+    from {
+      transform: translateX(-580px);
+    }
+    to {
+      transform: translateX(0px);
+    }
   }
 }
 .blockMyInfo__title {

@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import { FC, useEffect, memo } from "react";
 import { useTranslation, Trans } from "react-i18next";
 import "../Main/Main.scss";
 import glow from "../../img/glow.svg";
@@ -6,7 +6,7 @@ import my_photo from "../../img/my-photo02.png";
 import ellipse from "../../img/ellipse.svg";
 import commas from "../../img/commas.svg";
 import star from "../../img/icon-star.svg";
-import arrow from "../../img/arrow.svg";
+import { ReactComponent as Arrow } from "../../img/arrow.svg";
 import Services from "../Services/Services";
 import { Skills } from "../Skills/Skills";
 import { HireMe } from "../HireMe/HireMe";
@@ -18,6 +18,7 @@ import { useAppDispatch } from "../../store/hooks";
 import { modalSlice } from "../../store/reducers/ModalSlice";
 import { ServiceModal } from "../ServiceModal/ServiceModal";
 import { SwitcherLng } from "../SwitcherLng/SwitcherLng";
+import { Link } from "react-scroll";
 
 const Main: FC<{}> = () => {
   const dispatch = useAppDispatch();
@@ -67,10 +68,18 @@ const Main: FC<{}> = () => {
         <img className="myImage__photo" src={my_photo} alt="my photo" />
         <img className="myImage__ellipse" src={ellipse} alt="ellipse" />
         <div className="myImage__actionsBlock">
-          <button onClick={changeSelectedPage} className="actionsBlock__btn">
-            <p className="actionsBlock__buttonText">{t("portfolio")}</p>
-            <img className="actionsBlock__img" src={arrow} alt="arrow" />
-          </button>
+          <Link
+            to="portfolio"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}
+          >
+            <button onClick={changeSelectedPage} className="actionsBlock__btn">
+              <p className="actionsBlock__buttonText">{t("portfolio")}</p>
+              <Arrow className="actionsBlock__img" />
+            </button>
+          </Link>
           <p onClick={openHireMeModal} className="actionsBlock__text">
             {t("hireMe")}
           </p>
@@ -104,4 +113,4 @@ const Main: FC<{}> = () => {
   );
 };
 
-export default React.memo(Main);
+export default memo(Main);

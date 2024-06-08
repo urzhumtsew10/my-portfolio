@@ -30,7 +30,7 @@
   color: #fff;
   font-size: 25px;
   font-weight: 500;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 .btn__arrow {
   width: 42px;
@@ -46,9 +46,9 @@
 }
 @include animation-btn-hover(
   "btn-footerHireMe",
-  #fff,
+  #ffffffe0,
   $color_orange,
-  $color_orange
+  #ffffff00
 );
 .footer__footerInfo {
   margin-top: 55px;

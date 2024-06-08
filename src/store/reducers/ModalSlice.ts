@@ -24,19 +24,19 @@ const servicesData: Service[] = [
       title: "Layout",
       description:
         "A layout is the repetition of a page you submit or several sites that you like (into one). Changing headlines, text, photos or colors to suit you",
-      url: "https://chinese-food.netlify.app/",
+      url: "https://chef-food-urzhumtsew.netlify.app/",
     },
     ru: {
       title: "Верстка",
       description:
         "Верстка - это повторение страницы, которую вы представляете, или нескольких сайтов, которые вам нравятся (в одном). Изменение заголовков, текста, фотографий или цветов в соответствии с вашими потребностями",
-      url: "https://chinese-food.netlify.app/",
+      url: "https://chef-food-urzhumtsew.netlify.app/",
     },
     ua: {
       title: "Верстка",
       description:
         "Верстка - це повторення сторінки, яку ви надсилаєте, або декількох сайтів, які вам подобаються (в один). Зміна заголовків, тексту, фотографій або кольорів, щоб задовольнити вас",
-      url: "https://chinese-food.netlify.app/",
+      url: "https://chef-food-urzhumtsew.netlify.app/",
     },
   },
   {
@@ -45,19 +45,19 @@ const servicesData: Service[] = [
       title: "Landing page",
       description:
         "Landing page, this is a one-page website or application, where all content is placed on a single page for convenience add a navigation menu that easily helps to navigate through the desired sections of the site. Also landing pages contain Content Manager System thanks to which site administrators can change the content without changing the code ",
-      url: "https://chinese-food.netlify.app/",
+      url: "https://chef-food-urzhumtsew.netlify.app/",
     },
     ru: {
       title: "Одностраничный сайт",
       description:
         "Landing page, это одностраничный веб-сайт или приложение, где все содержимое размещается на одной странице для удобства добавить меню навигации, которая легко помогает перемещаться через нужные разделы сайта. Кроме того, на страницах, содержащих Content Manager System, администраторы сайта могут изменять содержимое без изменения кода",
-      url: "https://chinese-food.netlify.app/",
+      url: "https://chef-food-urzhumtsew.netlify.app/",
     },
     ua: {
       title: "Односторінковий сайт",
       description:
         "Landing page, це односторінковий сайт або додаток, де весь контент розміщується на одній сторінці, для зручності додайте навігаційне меню, яке легко допомагає зорієнтуватися в потрібних розділах сайту. Також цільові сторінки містять систему Content Manager, завдяки якій адміністратори сайту можуть змінювати контент без зміни коду",
-      url: "https://chinese-food.netlify.app/",
+      url: "https://chef-food-urzhumtsew.netlify.app/",
     },
   },
   {

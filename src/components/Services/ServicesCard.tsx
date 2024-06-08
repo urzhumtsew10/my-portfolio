@@ -1,5 +1,5 @@
 import { FC } from "react";
-import arrow from "../../img/arrow.svg";
+import { ReactComponent as Arrow } from "../../img/arrow.svg";
 import { useAppDispatch } from "../../store/hooks";
 import { modalSlice } from "../../store/reducers/ModalSlice";
 import { useTranslation } from "react-i18next";
@@ -21,7 +21,7 @@ export const ServicesCard: FC<{
   };
 
   return (
-    <div className="serviceCardsBlock__serviceCard">
+    <div onClick={openServiceModal} className="serviceCardsBlock__serviceCard">
       <div className="serviceCard__titleCard">{text}</div>
       <div className="serviceCard__lastLayer"></div>
       <div className="serviceCard__middleLayer"></div>
@@ -34,7 +34,7 @@ export const ServicesCard: FC<{
         />
       </div>
       <button onClick={openServiceModal} className="cardButton__btn">
-        <img className="cardButton__img" src={arrow} alt="arrow" />
+        <Arrow className="cardButton__img" />
       </button>
     </div>
   );

@@ -35,6 +35,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .imgEllipse {
   width: 30px;
   height: 30px;
@@ -43,11 +44,11 @@
 .skillsList__skillCard {
   display: flex;
   align-items: center;
-}
-.skillsList__skillCard.active {
-  animation-name: animation-skills-card;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
+  overflow: hidden;
+  animation: animation-skills-card linear;
+  animation-timeline: view();
+  animation-range-start: cover;
+  animation-range-end: 200px;
 }
 .skillsList__skillCard:nth-child(even) .imgEllipse {
   background-color: $color_orange;
@@ -56,12 +57,12 @@
   background-color: $color_dark_blue;
 }
 @keyframes animation-skills-card {
-  0% {
-    margin-left: -100%;
+  from {
+    transform: translate(-100px);
     opacity: 0;
   }
-  100% {
-    margin-left: 0;
+  to {
+    transform: translate(0px);
     opacity: 1;
   }
 }
