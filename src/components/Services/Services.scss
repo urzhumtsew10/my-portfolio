@@ -55,16 +55,12 @@
   backdrop-filter: blur(7.5px);
   border: 2px solid rgba(255, 255, 255, 0.432);
   border-radius: 50px;
-
-  animation: animation-service-card linear;
-  animation-timeline: view();
-  animation-range-start: cover;
-  @media (min-width: 768px) {
-    animation-range-end: 520px;
-  }
-  @media (min-width: 320px) and (max-width: 767.5px) {
-    animation-range-end: 575px;
-  }
+  opacity: 0;
+  transform: translateY(200px);
+}
+.serviceCardsBlock__serviceCard.active {
+  animation: animation-service-card linear forwards;
+  animation-duration: 1s;
 }
 @keyframes animation-service-card {
   from {

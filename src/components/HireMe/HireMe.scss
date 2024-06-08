@@ -29,30 +29,31 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+}
+.hireMeBlock__blockMyInfo.active {
   animation: animation-hireme linear forwards;
-  animation-timeline: view();
-  animation-range-end: contain 50px;
+  animation-duration: 1s;
 }
-@media (min-width: 768px) {
-  @keyframes animation-hireme {
-    from {
-      padding-top: 550px;
-    }
-    to {
-      padding-top: 0px;
-    }
-  }
-}
-@media (max-width: 767px) {
-  @keyframes animation-hireme {
-    from {
-      transform: translateX(-580px);
-    }
-    to {
-      transform: translateX(0px);
-    }
-  }
-}
+// @media (min-width: 768px) {
+//   @keyframes animation-hireme {
+//     from {
+//       padding-top: 550px;
+//     }
+//     to {
+//       padding-top: 0px;
+//     }
+//   }
+// }
+// @media (max-width: 767px) {
+//   @keyframes animation-hireme {
+//     from {
+//       transform: translateX(-580px);
+//     }
+//     to {
+//       transform: translateX(0px);
+//     }
+//   }
+// }
 .blockMyInfo__title {
   font-size: 64px;
   font-weight: 600;

@@ -45,10 +45,12 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  animation: animation-skills-card linear;
-  animation-timeline: view();
-  animation-range-start: cover;
-  animation-range-end: 200px;
+  transform: translate(-100px);
+  opacity: 0;
+}
+.skillsList__skillCard.active {
+  animation: animation-skills-card linear forwards;
+  animation-duration: 1s;
 }
 .skillsList__skillCard:nth-child(even) .imgEllipse {
   background-color: $color_orange;
