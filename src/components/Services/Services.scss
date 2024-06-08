@@ -59,20 +59,21 @@
   animation: animation-service-card linear;
   animation-timeline: view();
   animation-range-start: cover;
-  animation-range-end: 520px;
+  @media (min-width: 768px) {
+    animation-range-end: 520px;
+  }
+  @media (min-width: 320px) and (max-width: 767.5px) {
+    animation-range-end: 575px;
+  }
 }
 @keyframes animation-service-card {
   from {
     opacity: 0;
     transform: translateY(200px);
-
-    // transform: rotate(-45deg);
   }
   to {
     opacity: 1;
     transform: translateY(0px);
-
-    // transform: rotate(0deg);
   }
 }
 .serviceCard__titleCard {
