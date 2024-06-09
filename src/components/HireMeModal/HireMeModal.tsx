@@ -7,6 +7,7 @@ import { useAppSelector } from "../../store/hooks";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
+import { API_URL } from "../App/App";
 
 export const HireMeModal: FC<{}> = () => {
   const { modalHireMe } = useAppSelector((state) => state.modalReducer);
@@ -37,7 +38,7 @@ export const HireMeModal: FC<{}> = () => {
   };
 
   const trySendOrder: SubmitHandler<HireMeFields> = async (data) => {
-    const res = await axios.post("http://localhost:3030/order", data);
+    const res = await axios.post(`${API_URL}/order`, data);
     if (res.data) setIsSend(true);
     setTimeout(() => {
       closeHireMeModal();

@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
 export const SkillCard: FC<{
