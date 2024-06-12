@@ -20,16 +20,15 @@
   width: 200%;
   display: flex;
   align-items: center;
-  animation: animation-ticker 10s linear infinite;
 }
-@keyframes animation-ticker {
-  0% {
-    transform: translate(0%);
-  }
-  100% {
-    transform: translate(-101%);
-  }
-}
+// @keyframes animation-ticker {
+//   0% {
+//     transform: translate(0%);
+//   }
+//   100% {
+//     transform: translate(-101%);
+//   }
+// }
 .content__element {
   display: flex;
   align-items: center;
@@ -40,6 +39,9 @@
   margin: 0 15px 0 15px;
   width: 34px;
   height: 34px;
+}
+.content__star:last-child {
+  display: none;
 }
 .content__title {
   font-size: 48px;
