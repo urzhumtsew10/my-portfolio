@@ -10,6 +10,8 @@ import { modalSlice } from "../../store/reducers/ModalSlice";
 import { useAppDispatch } from "../../store/hooks";
 import { headerSlice } from "../../store/reducers/HeaderSlice";
 import { useTranslation } from "react-i18next";
+import axios from "axios";
+import { API_URL } from "../App/App";
 
 export const Footer: FC<{}> = () => {
   const { t } = useTranslation();
@@ -20,9 +22,19 @@ export const Footer: FC<{}> = () => {
 
   const inputEmailRef = useRef<HTMLInputElement | null>(null);
 
-  const sendEmail = () => {
+  const sendEmail = async () => {
     if (inputEmailRef.current) {
-      inputEmailRef.current.value = "";
+      const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (emailReg.test(inputEmailRef.current.value)) {
+        const res = await axios.post(`${API_URL}/email`, {
+          email: inputEmailRef.current.value,
+        });
+        inputEmailRef.current.value = "";
+        inputEmailRef.current.placeholder = "Enter Email Address";
+      } else {
+        inputEmailRef.current.value = "";
+        inputEmailRef.current.placeholder = "Email is invalid";
+      }
     }
   };
 
