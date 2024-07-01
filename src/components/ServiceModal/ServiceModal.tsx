@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import "../ServiceModal/ServiceModal.scss";
 import icon_close from "../../img/icon-close.svg";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
@@ -6,7 +6,7 @@ import { modalSlice } from "../../store/reducers/ModalSlice";
 import { useTranslation } from "react-i18next";
 
 export const ServiceModal: FC<{}> = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { modalService, selectService } = useAppSelector(
     (state) => state.modalReducer
   );
@@ -22,6 +22,8 @@ export const ServiceModal: FC<{}> = () => {
     dispatch(setModalService(false));
     dispatch(setModalHireMe(true));
   };
+
+  console.log(selectService);
 
   return (
     <div className={`serviceModal ${modalService && "active"}`}>

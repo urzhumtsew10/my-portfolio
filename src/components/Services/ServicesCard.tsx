@@ -24,7 +24,7 @@ export const ServicesCard: FC<{
   const { setModalService, setSelectService } = modalSlice.actions;
 
   const openServiceModal = () => {
-    dispatch(setSelectService({ title: title, language: i18n.language }));
+    dispatch(setSelectService({ title: title, language: "en" }));
     dispatch(setModalService(true));
     document.body.style.overflow = "hidden";
   };
