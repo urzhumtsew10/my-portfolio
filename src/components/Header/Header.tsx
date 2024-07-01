@@ -36,63 +36,87 @@ const Header: FC<{}> = () => {
       <div className="header__controlBlock">
         <div className={`controlBlock__hoverPage ${selectHeaderItem}`}></div>
         <ul className="controlBlock__leftList">
-          <Link to="home" spy={true} smooth={true} offset={-100} duration={500}>
-            <li
-              onClick={(event) => changeSelectedPage(event)}
-              className="leftList__item"
+          <li
+            onClick={(event) => changeSelectedPage(event)}
+            className="leftList__item"
+          >
+            <Link
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
             >
               {t("home")}
-            </li>
-          </Link>
-          <Link to="service" spy={true} smooth={true} offset={0} duration={500}>
-            <li
-              onClick={(event) => changeSelectedPage(event)}
-              className="leftList__item"
+            </Link>
+          </li>
+          <li
+            onClick={(event) => changeSelectedPage(event)}
+            className="leftList__item"
+          >
+            <Link
+              to="service"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
             >
               {t("service")}
-            </li>
-          </Link>
-          <Link to="skill" spy={true} smooth={true} offset={0} duration={500}>
-            <li
-              onClick={(event) => changeSelectedPage(event)}
-              className="leftList__item"
-            >
+            </Link>
+          </li>
+          <li
+            onClick={(event) => changeSelectedPage(event)}
+            className="leftList__item"
+          >
+            <Link to="skill" spy={true} smooth={true} offset={0} duration={500}>
               {t("skill")}
-            </li>
-          </Link>
+            </Link>
+          </li>
         </ul>
         <div className="header__logo">AU</div>
         <ul className="controlBlock__rightList">
-          <Link to="hire" spy={true} smooth={true} offset={-50} duration={500}>
-            <li
-              onClick={(event) => changeSelectedPage(event)}
-              className="rightList__item"
+          <li
+            onClick={(event) => changeSelectedPage(event)}
+            className="rightList__item"
+          >
+            <Link
+              to="hire"
+              spy={true}
+              smooth={true}
+              offset={-50}
+              duration={500}
             >
               {t("hire")}
-            </li>
-          </Link>
-          <Link
-            to="portfolio"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
+            </Link>
+          </li>
+          <li
+            onClick={(event) => changeSelectedPage(event)}
+            className="rightList__item"
           >
-            <li
-              onClick={(event) => changeSelectedPage(event)}
-              className="rightList__item"
+            <Link
+              to="portfolio"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
             >
               {t("portfolio")}
-            </li>
-          </Link>
-          <Link to="contact" spy={true} smooth={true} offset={0} duration={500}>
-            <li
-              onClick={(event) => changeSelectedPage(event)}
-              className="rightList__item"
+            </Link>
+          </li>
+          <li
+            onClick={(event) => changeSelectedPage(event)}
+            className="rightList__item"
+          >
+            <Link
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
             >
               {t("contact")}
-            </li>
-          </Link>
+            </Link>
+          </li>
         </ul>
       </div>
       <div className="header__headerMobile">

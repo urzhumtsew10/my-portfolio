@@ -145,29 +145,30 @@
   top: 433px;
   left: 71px;
 }
-.notation__img {
-  width: 36px;
-  height: 36px;
-}
 .notation__text {
   max-width: 450px;
-  margin-top: 24px;
+  padding-top: 50px;
   font-size: 20px;
   font-weight: 500;
+}
+.notation__text::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background-image: url("../../img/commas.svg");
+  width: 36px;
+  height: 36px;
 }
 .mainSection__myExperience {
   position: absolute;
   top: 433px;
   right: 71px;
 }
-.myExperience__stars {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  justify-items: center;
-  align-items: center;
+.stars__img {
+  margin-bottom: 10px;
 }
 .myExperience__aboutExperience {
-  margin-top: 10px;
   font-size: 47px;
   font-weight: 700;
   color: $color_black;

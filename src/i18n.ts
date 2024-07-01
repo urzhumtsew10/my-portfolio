@@ -10,7 +10,7 @@ i18next
     resources: {
       en: {
         translation: {
-          name: "Andrew",
+          name: "Andrey",
           I: "I'm",
           developer: "Frontend Developer",
           portfolio: "Portfolio",
