@@ -12,6 +12,7 @@ import { headerSlice } from "../../store/reducers/HeaderSlice";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import { API_URL } from "../App/App";
+import { Link } from "react-scroll";
 
 export const Footer: FC<{}> = () => {
   const { t } = useTranslation();
@@ -72,91 +73,144 @@ export const Footer: FC<{}> = () => {
         <div className="footerInfo__firstColumn">
           <div className="firstColumn__logo">
             <div className="logo">AU</div>
-            <p className="logo__text">Urzhumtsew</p>
+            <span className="logo__text">Urzhumtsew</span>
           </div>
           <p className="firstColumn__text">{t("footerText")}</p>
-          <div className="firstColumn__socialNetworks">
-            <a href="https://www.instagram.com/urzhumtsew/" target="_blank">
-              <img
-                className="socialNetworks__img"
-                src={icon_instagram}
-                alt="icon"
-              />
-            </a>
-            <a href="https://t.me/urzhumtsew" target="_blank">
-              <img
-                className="socialNetworks__img"
-                src={icon_telegram}
-                alt="icon"
-              />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/andrew-urzhumtsew-843339280/"
-              target="_blank"
-            >
-              <img
-                className="socialNetworks__img --icon"
-                src={icon_linkedin}
-                alt="icon"
-              />
-            </a>
-            <a href="https://github.com/urzhumtsew10" target="_blank">
-              <img
-                className="socialNetworks__img --icon"
-                src={icon_github}
-                alt="icon"
-              />
-            </a>
-          </div>
+          <ul className="firstColumn__socialNetworks">
+            <li>
+              <a href="https://www.instagram.com/urzhumtsew/" target="_blank">
+                <img
+                  className="socialNetworks__img"
+                  src={icon_instagram}
+                  alt="icon"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://t.me/urzhumtsew" target="_blank">
+                <img
+                  className="socialNetworks__img"
+                  src={icon_telegram}
+                  alt="icon"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/andrew-urzhumtsew-843339280/"
+                target="_blank"
+              >
+                <img
+                  className="socialNetworks__img --icon"
+                  src={icon_linkedin}
+                  alt="icon"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/urzhumtsew10" target="_blank">
+                <img
+                  className="socialNetworks__img --icon"
+                  src={icon_github}
+                  alt="icon"
+                />
+              </a>
+            </li>
+          </ul>
         </div>
         <div className="footerInfo__secondColumn">
           <h2 className="secondColumn__title footer_title">
             {t("navigation")}
           </h2>
-          <p
-            onClick={(event) => changeSelectedPage(event)}
-            className="secondColumn__text  footer_text"
-          >
-            Home
-          </p>
-          <p
-            onClick={(event) => changeSelectedPage(event)}
-            className="secondColumn__text  footer_text"
-          >
-            Service
-          </p>
-          <p
-            onClick={(event) => changeSelectedPage(event)}
-            className="secondColumn__text  footer_text"
-          >
-            Skill
-          </p>
-          <p
-            onClick={(event) => changeSelectedPage(event)}
-            className="secondColumn__text  footer_text"
-          >
-            Hire
-          </p>
-          <p
-            onClick={(event) => changeSelectedPage(event)}
-            className="secondColumn__text  footer_text"
-          >
-            Portfolio
-          </p>
+          <ul className="secondColumn__navList">
+            <li className="secondColumn__text  footer_text">
+              <Link
+                to="home"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
+              >
+                Home
+              </Link>
+            </li>
+            <li className="secondColumn__text  footer_text">
+              {" "}
+              <Link
+                to="service"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
+              >
+                Service
+              </Link>
+            </li>
+            <li className="secondColumn__text  footer_text">
+              {" "}
+              <Link
+                to="skill"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
+              >
+                Skills
+              </Link>
+            </li>
+            <li className="secondColumn__text  footer_text">
+              {" "}
+              <Link
+                to="hire"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
+              >
+                Hire Me
+              </Link>
+            </li>
+            <li className="secondColumn__text  footer_text">
+              {" "}
+              <Link
+                to="portfolio"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
+              >
+                Portfolio
+              </Link>
+            </li>
+          </ul>
         </div>
         <div className="footerInfo__thirdColumn">
           <h2 className="thirdColumn__title footer_title">{t("contact")}</h2>
-          <a href="mailto: urgumandrei@gmail.com">
-            <p className="thirdColumn__text footer_text">
-              urgumandrei@gmail.com
-            </p>
-          </a>
-          <a href="https://t.me/urzhumtsew" target="_black">
-            <p className="thirdColumn__text footer_text">telegram</p>
-          </a>
-          <a href="https://www.instagram.com/urzhumtsew/" target="_black">
-            <p className="thirdColumn__text footer_text">instagram</p>
-          </a>
+          <ul className="thirdColumn__socialList">
+            <li className="socialList__item">
+              <a className="footer_text" href="mailto: urgumandrei@gmail.com">
+                urgumandrei@gmail.com
+              </a>
+            </li>
+            <li className="socialList__item">
+              <a
+                className="footer_text"
+                href="https://t.me/urzhumtsew"
+                target="_black"
+              >
+                telegram
+              </a>
+            </li>
+            <li className="socialList__item">
+              <a
+                className="footer_text"
+                href="https://www.instagram.com/urzhumtsew/"
+                target="_black"
+              >
+                instagram
+              </a>
+            </li>
+          </ul>
         </div>
         <div className="footerInfo__fourthColumn">
           <h2 className="fourthColumn__title footer_title">{t("info")}</h2>
@@ -167,19 +221,20 @@ export const Footer: FC<{}> = () => {
               type="email"
               placeholder={`${t("email")}`}
             />
-            <button onClick={sendEmail} className="footerInputBlock__btn">
-              <img className="btn__img" src={icon_send} alt="icon" />
-            </button>
+            <button
+              onClick={sendEmail}
+              className="footerInputBlock__btn"
+            ></button>
           </div>
         </div>
       </div>
       <div className="footer__textBlock">
-        <p className="textBlock__text">
+        <span className="textBlock__text">
           Copyright© 2023 Jayesh. All Rights Reserved.
-        </p>
-        <p className="textBlock__text">
+        </span>
+        <span className="textBlock__text">
           User Terms & Conditions | Privacy Policy
-        </p>
+        </span>
       </div>
     </footer>
   );

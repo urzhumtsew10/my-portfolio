@@ -44,7 +44,7 @@ export const Portfolio: FC<{}> = () => {
   const projectListSlice = isSeeAll ? projectsList : projectsList.slice(0, 3);
 
   return (
-    <div id="portfolio" className="portfolioBlock">
+    <section id="portfolio" className="portfolioBlock">
       <div className="portfolioBlock__mainBlock">
         <h2 className="mainBlock__title">{t("portfolio")}</h2>
         {!isSeeAll && (
@@ -68,6 +68,6 @@ export const Portfolio: FC<{}> = () => {
           )
         )}
       </div>
-    </div>
+    </section>
   );
 };

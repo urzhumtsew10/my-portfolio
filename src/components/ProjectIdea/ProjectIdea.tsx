@@ -29,16 +29,14 @@ export const ProjectIdea: FC<{}> = () => {
   };
 
   return (
-    <div className="projectIdeaBlock">
+    <section className="projectIdeaBlock">
       <h2 className="projectIdeaBlock__title">
         {t("ideaText")} <br /> {t("idea")}?{" "}
         <span className="projectIdeaBlock__title__span">{t("discuss")}</span>
       </h2>
       <div className="projectIdeaBlock__projectIdea">
         <div className="projectIdea__inputBlock">
-          <div className="inputBlock__imgBlock">
-            <img className="imgBlock__img" src={icon_email} alt="email" />
-          </div>
+          <div className="inputBlock__imgBlock"></div>
           <input
             ref={inputEmailRef}
             className="inputBlock__input"
@@ -49,21 +47,21 @@ export const ProjectIdea: FC<{}> = () => {
             {t("send")}
           </button>
         </div>
-        <div className="projectIdea__blockInfo">
-          <div className="blockInfo__content">
+        <ul className="projectIdea__blockInfo">
+          <li className="blockInfo__content">
             <img className="content__img" src={icon_rating} alt="icon" />
             <p className="content__text">4.9/5 {t("rating")}</p>
-          </div>
-          <div className="blockInfo__content">
+          </li>
+          <li className="blockInfo__content">
             <img className="content__img" src={icon_award} alt="icon" />
             <p className="content__text">25+ {t("award")}</p>
-          </div>
-          <div className="blockInfo__content">
+          </li>
+          <li className="blockInfo__content">
             <img className="content__img" src={icon_shield_tick} alt="icon" />
             <p className="content__text">{t("certified")}</p>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
-    </div>
+    </section>
   );
 };

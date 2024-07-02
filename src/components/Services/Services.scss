@@ -1,6 +1,7 @@
 @import "../../index.scss";
 
 .services__contentServices {
+  padding: 116px 70.5px 0 70.5px;
   width: 100%;
   background-color: $color_black;
   border-radius: 50px;
@@ -16,7 +17,6 @@
   border-bottom-right-radius: 50px;
 }
 .contentServices__titleBlock {
-  margin: 116px 70.5px 0 70.5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -196,12 +196,12 @@
     width: calc(110px + (121 - 110) * ((100vw - 767px) / (1530 - 767)));
     height: calc(110px + (121 - 110) * ((100vw - 767px) / (1530 - 767)));
   }
-  .contentServices__titleBlock {
-    margin-top: calc(60px + (116 - 60) * ((100vw - 767px) / (1530 - 767)));
-    margin-left: calc(
+  .services__contentServices {
+    padding-top: calc(60px + (116 - 60) * ((100vw - 767px) / (1530 - 767)));
+    padding-left: calc(
       28.5px + (70.5 - 28.5) * ((100vw - 767px) / (1530 - 767))
     );
-    margin-right: calc(
+    padding-right: calc(
       28.5px + (70.5 - 28.5) * ((100vw - 767px) / (1530 - 767))
     );
   }

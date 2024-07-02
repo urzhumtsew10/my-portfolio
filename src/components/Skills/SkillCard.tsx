@@ -16,7 +16,7 @@ export const SkillCard: FC<{
   }, [skillIsVisible]);
 
   return (
-    <div
+    <li
       ref={skillRef}
       className={`skillsList__skillCard ${isVisible && "active"}`}
     >
@@ -24,6 +24,6 @@ export const SkillCard: FC<{
         <div className="imgEllipse"></div>
       </div>
       <p className="skillCard__name">{name}</p>
-    </div>
+    </li>
   );
 };

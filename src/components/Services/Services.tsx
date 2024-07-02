@@ -18,7 +18,7 @@ const Services: FC<{}> = () => {
   ];
 
   return (
-    <div id="service" className="services__contentServices">
+    <section id="service" className="services__contentServices">
       <img className="contentServices__lights" src={lights} alt="lights" />
       <div className="contentServices__titleBlock">
         <h2 className="titleBlock__titleServices">
@@ -31,7 +31,7 @@ const Services: FC<{}> = () => {
           <ServicesCard key={title} img={img} title={title} text={text} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

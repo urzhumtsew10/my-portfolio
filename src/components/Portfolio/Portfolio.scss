@@ -1,6 +1,7 @@
 @import "../../index.scss";
 
 .portfolioBlock {
+  padding-top: 100px;
   width: 100%;
   background-color: #fff;
   display: flex;
@@ -9,7 +10,6 @@
   margin-bottom: 200px;
 }
 .portfolioBlock__mainBlock {
-  margin-top: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -55,6 +55,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 35px;
 }
 .projectImg__img {
   width: 100%;
@@ -110,7 +111,6 @@
 }
 .projectCard__projectCategory {
   padding: 0 15px 0 15px;
-  margin-top: 35px;
   width: fit-content;
   height: 54px;
   border-radius: 24px;
@@ -118,15 +118,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
+  margin-bottom: 35px;
+}
+.projectCategory__text {
   font-size: 20px;
   font-weight: 400;
   color: #000;
 }
 .projectCard__projectData {
-  margin-top: 35px;
   display: flex;
   align-items: center;
+  margin-bottom: 35px;
 }
 .projectData__dataBlock {
   display: flex;
@@ -146,7 +148,6 @@
   color: $color_dark_blue;
 }
 .projectData__info {
-  margin-top: 35px;
   font-size: 32px;
   font-weight: 400;
   color: #344054;
@@ -182,6 +183,8 @@
   }
   .projectCard__projectCategory {
     height: calc(50px + (54 - 50) * ((100vw - 320px) / (767 - 320)));
+  }
+  .projectCategory__text {
     font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (767 - 320)));
   }
   .dataBlock__title {

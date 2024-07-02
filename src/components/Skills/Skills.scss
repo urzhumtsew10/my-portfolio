@@ -5,19 +5,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 85px;
 }
 .skillsBlock__title {
-  margin-top: 85px;
   font-size: 64px;
   font-weight: 500;
   color: $color_dark_blue;
+  margin-bottom: 75px;
 }
 .skillsBlock__title__span {
   color: $color_orange;
 }
 
 .skillsBlock__skillsList {
-  margin: 75px 0 0 0;
   width: 100%;
   padding-left: 100px;
   display: grid;
@@ -27,6 +27,7 @@
   column-gap: 200px;
 }
 .skillCard__img {
+  position: relative;
   width: 40px;
   height: 40px;
   border: 3px dotted $color_black;
@@ -36,11 +37,6 @@
   justify-content: center;
 }
 
-.imgEllipse {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-}
 .skillsList__skillCard {
   display: flex;
   align-items: center;
@@ -52,10 +48,24 @@
   animation: animation-skills-card linear forwards;
   animation-duration: 1s;
 }
-.skillsList__skillCard:nth-child(even) .imgEllipse {
+.skillsList__skillCard:nth-child(even)::before {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   background-color: $color_orange;
 }
-.skillsList__skillCard:nth-child(odd) .imgEllipse {
+.skillsList__skillCard:nth-child(odd)::before {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   background-color: $color_dark_blue;
 }
 @keyframes animation-skills-card {
@@ -92,19 +102,21 @@
   }
 }
 @media (max-width: 767px) {
+  .skillsBlock {
+    padding-top: calc(75px + (85 - 75) * ((100vw - 320px) / (767 - 320)));
+  }
   .skillsBlock__skillsList {
     grid-template-columns: repeat(
       auto-fit,
       calc(150px + (210 - 150) * ((100vw - 320px) / (767 - 320)))
     );
     column-gap: calc(10px + (50 - 10) * ((100vw - 320px) / (767 - 320)));
-    margin-top: calc(50px + (75 - 50) * ((100vw - 320px) / (767 - 320)));
   }
   .skillCard__name {
     column-gap: calc(20px + (20 - 20) * ((100vw - 320px) / (767 - 320)));
   }
   .skillsBlock__title {
+    margin-bottom: calc(50px + (75 - 50) * ((100vw - 320px) / (767 - 320)));
     font-size: calc(55px + (64 - 55) * ((100vw - 320px) / (767 - 320)));
-    margin-top: calc(75px + (85 - 75) * ((100vw - 320px) / (767 - 320)));
   }
 }

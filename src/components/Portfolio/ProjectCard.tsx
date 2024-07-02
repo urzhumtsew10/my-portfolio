@@ -25,15 +25,17 @@ export const ProjectCard: FC<{
           <Arrow className="button__arrow" />
         </button>
       </div>
-      <div className="projectCard__projectCategory">{category}</div>
+      <div className="projectCard__projectCategory">
+        <span className="projectCategory__text">{category}</span>
+      </div>
       <div className="projectCard__projectData">
         <div className="projectData__dataBlock">
           <div className="dataBlock__ellipse"></div>
-          <div className="dataBlock__title">{technology}</div>
+          <span className="dataBlock__title">{technology}</span>
         </div>
         <div className="projectData__dataBlock">
           <div className="dataBlock__ellipse"></div>
-          <div className="dataBlock__title">{data}</div>
+          <span className="dataBlock__title">{data}</span>
         </div>
       </div>
       <h3 className="projectData__info">{description}</h3>

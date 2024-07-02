@@ -34,45 +34,26 @@
   animation: animation-hireme linear forwards;
   animation-duration: 1s;
 }
-// @media (min-width: 768px) {
-//   @keyframes animation-hireme {
-//     from {
-//       padding-top: 550px;
-//     }
-//     to {
-//       padding-top: 0px;
-//     }
-//   }
-// }
-// @media (max-width: 767px) {
-//   @keyframes animation-hireme {
-//     from {
-//       transform: translateX(-580px);
-//     }
-//     to {
-//       transform: translateX(0px);
-//     }
-//   }
-// }
 .blockMyInfo__title {
   font-size: 64px;
   font-weight: 600;
   color: $color_dark_blue;
+  margin-bottom: 47px;
 }
 .blockMyInfo__title__span {
   color: $color_orange;
 }
 .blockMyInfo__text {
   max-width: 585px;
-  margin-top: 47px;
   font-size: 20px;
   font-weight: 400;
   color: #98a2b3;
+  margin-bottom: 47px;
 }
 .blockMyInfo__achievement {
-  margin-top: 47px;
   display: flex;
   align-items: center;
+  margin-bottom: 47px;
 }
 .achievement {
   margin-right: 176px;
@@ -80,18 +61,17 @@
   flex-direction: column;
 }
 .achievement__count {
+  margin-bottom: 10px;
   font-size: 36px;
   font-weight: 500;
   color: #1d2939;
 }
 .achievement__name {
-  margin-top: 10px;
   font-size: 20px;
   font-weight: 400;
   color: #667085;
 }
 .blockMyInfo__btn {
-  margin-top: 47px;
   width: 233px;
   height: 108px;
   border: 1px solid #151515;
@@ -142,6 +122,7 @@
     margin-left: 0;
     width: 100%;
     align-items: center;
+    padding-top: 10px;
   }
   .hireMeBlock__blockMyPhoto {
     width: calc(300px + (370 - 300) * ((100vw - 320px) / (767 - 320)));
@@ -153,11 +134,10 @@
 
   .blockMyInfo__title {
     text-align: center;
-    margin-top: 10px;
     font-size: calc(43px + (52 - 43) * ((100vw - 320px) / (767 - 320)));
+    margin-bottom: 20px;
   }
   .blockMyInfo__text {
-    margin-top: 20px;
     text-align: center;
     max-width: 325px;
   }

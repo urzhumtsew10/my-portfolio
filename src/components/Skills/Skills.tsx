@@ -31,16 +31,16 @@ export const Skills: FC<{}> = () => {
   ];
 
   return (
-    <div id="skill" className="skillsBlock">
+    <section id="skill" className="skillsBlock">
       <h2 className="skillsBlock__title">
         {t("my")}{" "}
         <span className="skillsBlock__title__span">{t("skills")}</span>
       </h2>
-      <div className="skillsBlock__skillsList">
+      <ul className="skillsBlock__skillsList">
         {skillsList.map((name) => (
           <SkillCard key={name} name={name} />
         ))}
-      </div>
-    </div>
+      </ul>
+    </section>
   );
 };

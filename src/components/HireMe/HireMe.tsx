@@ -27,7 +27,7 @@ export const HireMe: FC<{}> = () => {
   }, [achivesIsVisible]);
 
   return (
-    <div id="hire" className="hireMeBlock">
+    <section id="hire" className="hireMeBlock">
       <div className="hireMeBlock__blockMyPhoto">
         <img className="blockMyPhoto__img" src={my_photo} alt="my photo" />
       </div>
@@ -61,6 +61,6 @@ export const HireMe: FC<{}> = () => {
           {t("hireMe")}
         </button>
       </div>
-    </div>
+    </section>
   );
 };

@@ -38,11 +38,15 @@ export const HireMeModal: FC<{}> = () => {
   };
 
   const trySendOrder: SubmitHandler<HireMeFields> = async (data) => {
-    const res = await axios.post(`${API_URL}/order`, data);
-    if (res.data) setIsSend(true);
-    setTimeout(() => {
-      closeHireMeModal();
-    }, 3000);
+    try {
+      const res = await axios.post(`${API_URL}/order`, data);
+      if (res.data) setIsSend(true);
+      setTimeout(() => {
+        closeHireMeModal();
+      }, 3000);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const { t } = useTranslation();

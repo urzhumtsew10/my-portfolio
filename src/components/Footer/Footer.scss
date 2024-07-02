@@ -1,14 +1,13 @@
 @import "../../index.scss";
 
 .footer {
-  padding: 25px 71px 25px 71px;
+  padding: 60px 71px 25px 71px;
   width: 100%;
   height: 685px;
   border-radius: 27px 27px 0 0;
   background-color: #272727;
 }
 .footer__hireMeBlock {
-  margin-top: 35px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -66,6 +65,7 @@
 .firstColumn__logo {
   display: flex;
   align-items: center;
+  margin-bottom: 65px;
 }
 .logo {
   margin-right: 15px;
@@ -90,7 +90,11 @@
   font-size: 20px;
   font-weight: 400;
   color: #fcfcfd;
-  margin: 65px 0 34px 0;
+  margin-bottom: 34px;
+}
+.firstColumn__socialNetworks {
+  display: flex;
+  align-items: center;
 }
 .socialNetworks__img {
   cursor: pointer;
@@ -112,17 +116,19 @@
   flex-direction: column;
 }
 .footer_title {
-  margin-bottom: 8px;
   font-size: 20px;
   font-weight: 600;
   color: $color_orange;
 }
 .footer_text {
-  margin-top: 20px;
+  margin-bottom: 20px;
   font-size: 16px;
   font-weight: 400;
   color: #fcfcfd;
   transition: 0.3s;
+}
+.footer_text:last-child {
+  margin-bottom: 0;
 }
 .footer_text:hover {
   cursor: pointer;
@@ -131,8 +137,17 @@
 .footerInfo__thirdColumn {
   margin-right: 60px;
 }
+.secondColumn__title {
+  margin-bottom: 28px;
+}
 .thirdColumn__title {
   margin-bottom: 28px;
+}
+.socialList__item {
+  margin-bottom: 20px;
+}
+.socialList__item:last-child {
+  margin-bottom: 0;
 }
 .fourthColumn__footerInputBlock {
   display: flex;
@@ -153,17 +168,23 @@
   color: #000;
 }
 .footerInputBlock__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 46px;
   height: 51px;
   border-radius: 0 14px 14px 0;
   background-color: $color_orange;
 }
-.btn__img {
+.footerInputBlock__btn::before {
+  content: "";
+  background-image: url("../../img/icon-send.svg");
+  display: block;
   width: 24px;
   height: 24px;
   transition: 0.3s;
 }
-.btn__img:hover {
+.footerInputBlock__btn:hover:before {
   transform: scale(1.2);
 }
 .footer__textBlock {
@@ -197,6 +218,9 @@
   .footer_text {
     font-size: calc(14px + (16 - 14) * ((100vw - 767px) / (1530 - 767)));
   }
+  .firstColumn__logo {
+    margin-bottom: calc(35px + (64 - 35) * ((100vw - 767px) / (1530 - 767)));
+  }
   .logo__text {
     font-size: calc(20px + (25 - 20) * ((100vw - 767px) / (1530 - 767)));
   }
@@ -206,7 +230,6 @@
   }
   .firstColumn__text {
     font-size: calc(13px + (20 - 13) * ((100vw - 767px) / (1530 - 767)));
-    margin-top: calc(35px + (64 - 35) * ((100vw - 767px) / (1530 - 767)));
     margin-bottom: calc(30px + (34 - 30) * ((100vw - 767px) / (1530 - 767)));
   }
   .textBlock__text {
@@ -261,9 +284,11 @@
     font-size: calc(14px + (14 - 14) * ((100vw - 320px) / (767 - 320)));
     margin-top: calc(10px + (20 - 10) * ((100vw - 320px) / (767 - 320)));
   }
+  .firstColumn__logo {
+    margin-bottom: calc(15px + (35 - 15) * ((100vw - 320px) / (767 - 320)));
+  }
   .firstColumn__text {
     font-size: calc(10px + (13 - 10) * ((100vw - 320px) / (767 - 320)));
-    margin-top: calc(15px + (35 - 15) * ((100vw - 320px) / (767 - 320)));
     margin-bottom: calc(15px + (30 - 15) * ((100vw - 320px) / (767 - 320)));
   }
   .footerInputBlock__input {
