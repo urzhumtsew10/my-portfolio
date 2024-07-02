@@ -31,16 +31,18 @@
   font-weight: 500;
   transition: all 0.3s ease-in-out;
 }
-.btn__arrow {
+.hireMeBlock__btn::after {
+  content: "";
   width: 42px;
   height: 42px;
+  background-image: url("../../img/arrow.svg");
 }
 .hireMeBlock__btn:hover {
   animation-name: btn-footerHireMe;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-.hireMeBlock__btn:hover .btn__arrow {
+.hireMeBlock__btn:hover:after {
   display: none;
 }
 @include animation-btn-hover(

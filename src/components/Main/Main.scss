@@ -18,15 +18,19 @@
   align-items: center;
   justify-content: center;
 }
+.mainSection__greeting::before {
+  content: "";
+  position: absolute;
+  right: -23px;
+  top: -24px;
+  width: 33px;
+  height: 33px;
+  background-image: url("../../img/glow.svg");
+}
 .greeting__text {
   font-size: 20px;
   font-weight: 500;
   color: $color_black;
-}
-.greeting__img {
-  position: absolute;
-  right: -23px;
-  top: -24px;
 }
 .mainSection__aboutMe {
   position: relative;
@@ -40,12 +44,15 @@
 .title__span {
   color: $color_orange;
 }
-.aboutMe__img {
+.aboutMe__title::after {
+  content: "";
   position: absolute;
-  width: 70px;
-  bottom: -45px;
-  left: -55px;
-  transform: rotate(180deg);
+  left: -45px;
+  bottom: -20px;
+  width: 33px;
+  height: 33px;
+  transform: scale(2.5) rotate(-175deg);
+  background-image: url("../../img/glow.svg");
 }
 .mainSection__myImage {
   position: relative;
@@ -111,6 +118,12 @@
   font-weight: 500;
   color: #fff;
 }
+.actionsBlock__buttonText::after {
+  content: "";
+  transition: 0.5s;
+  width: 42px;
+  height: 42px;
+}
 .actionsBlock__img {
   transition: 0.5s;
   width: 42px;
@@ -165,6 +178,14 @@
   top: 433px;
   right: 71px;
 }
+.mainSection__myExperience::before {
+  content: "";
+  background-image: url("../../img/row-stars.svg");
+  display: block;
+  width: 160px;
+  height: 30px;
+  margin-bottom: 10px;
+}
 .stars__img {
   margin-bottom: 10px;
 }
@@ -182,9 +203,9 @@
   .aboutMe__title {
     font-size: calc(80px + (95 - 80) * ((100vw - 767px) / (1530 - 767)));
   }
-  .aboutMe__img {
-    bottom: calc(-45px + (-45 - -45) * ((100vw - 767px) / (1530 - 767)));
-    left: calc(-45px + (-55 - -45) * ((100vw - 767px) / (1530 - 767)));
+  .aboutMe__title::after {
+    bottom: calc(-25px + (-20 - -25) * ((100vw - 767px) / (1530 - 767)));
+    left: calc(-40px + (-45 - -40) * ((100vw - 767px) / (1530 - 767)));
   }
   .mainSection__notation {
     top: calc(390px + (433 - 390) * ((100vw - 767px) / (1530 - 767)));
@@ -230,7 +251,7 @@
   .aboutMe__title {
     font-size: calc(34px + (80 - 34) * ((100vw - 320px) / (767 - 320)));
   }
-  .aboutMe__img {
+  .aboutMe__title::after {
     display: none;
   }
   .mainSection__myImage {
@@ -252,11 +273,10 @@
   .greeting__text {
     font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (767 - 320)));
   }
-  .greeting__img {
-    width: calc(20px + (25 - 20) * ((100vw - 320px) / (767 - 320)));
-    height: calc(20px + (25 - 20) * ((100vw - 320px) / (767 - 320)));
-    right: calc(-15px + (-23 - -15) * ((100vw - 320px) / (767 - 320)));
-    top: calc(-15px + (-24 - -15) * ((100vw - 320px) / (767 - 320)));
+  .mainSection__greeting::before {
+    transform: scale(0.8);
+    right: calc(-20px + (-23 - -20) * ((100vw - 320px) / (767 - 320)));
+    top: calc(-20px + (-24 - -20) * ((100vw - 320px) / (767 - 320)));
   }
   .myImage__actionsBlock {
     bottom: calc(20px + (45 - 20) * ((100vw - 320px) / (767 - 320)));

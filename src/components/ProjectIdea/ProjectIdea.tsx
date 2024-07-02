@@ -19,6 +19,7 @@ export const ProjectIdea: FC<{}> = () => {
         const res = await axios.post(`${API_URL}/email`, {
           email: inputEmailRef.current.value,
         });
+        console.log(res.data);
         inputEmailRef.current.value = "";
         inputEmailRef.current.placeholder = "Enter Email Address";
       } else {

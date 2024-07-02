@@ -1,10 +1,8 @@
 import { FC, useEffect, memo } from "react";
 import { useTranslation } from "react-i18next";
 import "../Main/Main.scss";
-import glow from "../../img/glow.svg";
 import my_photo from "../../img/my-photo02.png";
 import ellipse from "../../img/ellipse.svg";
-import stars from "../../img/row-stars.svg";
 import { ReactComponent as Arrow } from "../../img/arrow.svg";
 import Services from "../Services/Services";
 import { Skills } from "../Skills/Skills";
@@ -58,15 +56,13 @@ const Main: FC<{}> = () => {
     <main>
       <section id="home" className="mainSection">
         <div className="mainSection__greeting">
-          <p className="greeting__text">Hello!</p>
-          <img className="greeting__img" src={glow} alt="glow" />
+          <span className="greeting__text">Hello!</span>
         </div>
         <div className="mainSection__aboutMe">
           <h1 className="aboutMe__title">
             {t("I")} <span className="title__span">{t("name")}</span>,{" "}
             <p>{t("developer")}</p>
           </h1>
-          <img className="aboutMe__img" src={glow} alt="glow" />
         </div>
         <div id="home" className="mainSection__myImage">
           <img className="myImage__photo" src={my_photo} alt="my photo" />
@@ -83,20 +79,21 @@ const Main: FC<{}> = () => {
                 onClick={changeSelectedPage}
                 className="actionsBlock__btn"
               >
-                <p className="actionsBlock__buttonText">{t("portfolio")}</p>
+                <span className="actionsBlock__buttonText">
+                  {t("portfolio")}
+                </span>
                 <Arrow className="actionsBlock__img" />
               </button>
             </Link>
-            <p onClick={openHireMeModal} className="actionsBlock__text">
+            <span onClick={openHireMeModal} className="actionsBlock__text">
               {t("hireMe")}
-            </p>
+            </span>
           </div>
         </div>
         <div className="mainSection__notation">
           <p className="notation__text">{t("notationText")}</p>
         </div>
         <div className="mainSection__myExperience">
-          <img className="stars__img" src={stars} alt="row of stars" />
           <p className="myExperience__aboutExperience">3 {t("years")}</p>
           <p className="aboutExperience__span">{t("experience")}</p>
         </div>

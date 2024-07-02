@@ -73,7 +73,9 @@ const Header: FC<{}> = () => {
             </Link>
           </li>
         </ul>
-        <div className="header__logo">AU</div>
+        <div className="header__logo">
+          <span>AU</span>
+        </div>
         <ul className="controlBlock__rightList">
           <li
             onClick={(event) => changeSelectedPage(event)}

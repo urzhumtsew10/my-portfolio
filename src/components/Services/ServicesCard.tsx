@@ -35,7 +35,7 @@ export const ServicesCard: FC<{
       onClick={openServiceModal}
       className={`serviceCardsBlock__serviceCard ${isVisible && "active"}`}
     >
-      <div className="serviceCard__titleCard">{text}</div>
+      <span className="serviceCard__titleCard">{text}</span>
       <div className="serviceCard__lastLayer"></div>
       <div className="serviceCard__middleLayer"></div>
       <div className="serviceCard__frontLayer"></div>

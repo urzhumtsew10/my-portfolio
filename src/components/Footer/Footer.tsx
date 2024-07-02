@@ -66,13 +66,14 @@ export const Footer: FC<{}> = () => {
         <h2 className="hireMeBlock__title">{t("connect")}</h2>
         <button onClick={openHireMeModal} className="hireMeBlock__btn">
           {t("hireMe")}
-          <img className="btn__arrow" src={arrow} alt="arrow" />
         </button>
       </div>
       <div className="footer__footerInfo">
         <div className="footerInfo__firstColumn">
           <div className="firstColumn__logo">
-            <div className="logo">AU</div>
+            <div className="logo">
+              <span>AU</span>
+            </div>
             <span className="logo__text">Urzhumtsew</span>
           </div>
           <p className="firstColumn__text">{t("footerText")}</p>
