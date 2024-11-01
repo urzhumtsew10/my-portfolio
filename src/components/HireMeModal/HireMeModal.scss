@@ -117,6 +117,9 @@
   font-weight: 500;
   color: #fff;
 }
+.flexBlock__input.error {
+  border-color: rgb(243, 145, 145);
+}
 .flexBlock__input::placeholder {
   color: #fff;
 }
@@ -157,6 +160,9 @@ input::-webkit-inner-spin-button {
   color: #000;
 }
 .hireMeFrom__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   bottom: 10px;
   width: 150px;
@@ -167,6 +173,9 @@ input::-webkit-inner-spin-button {
   font-size: 20px;
   font-weight: 600;
   transition: 0.3s;
+  &_text {
+    margin-right: 10px;
+  }
 }
 .hireMeFrom__btnSended {
   position: absolute;

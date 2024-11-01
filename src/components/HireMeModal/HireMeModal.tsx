@@ -8,12 +8,16 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import { API_URL } from "../App/App";
+import { squircle } from "ldrs";
 
 export const HireMeModal: FC<{}> = () => {
   const { modalHireMe } = useAppSelector((state) => state.modalReducer);
   const dispatch = useDispatch();
   const { setModalHireMe } = modalSlice.actions;
   const [isSend, setIsSend] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  squircle.register();
 
   interface HireMeFields {
     name: string;
@@ -38,14 +42,18 @@ export const HireMeModal: FC<{}> = () => {
   };
 
   const trySendOrder: SubmitHandler<HireMeFields> = async (data) => {
+    setIsLoading(true);
     try {
+      setIsSend(true);
       const res = await axios.post(`${API_URL}/order`, data);
       if (res.data) setIsSend(true);
       setTimeout(() => {
         closeHireMeModal();
-      }, 3000);
+      }, 5000);
     } catch (err) {
-      console.log(err);
+      console.error(err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -92,13 +100,13 @@ export const HireMeModal: FC<{}> = () => {
           <div className="hireMeForm__flexBlock">
             <input
               {...register("price", { required: true })}
-              className="flexBlock__input"
+              className={`flexBlock__input ${errors.price && "error"}`}
               type="number"
               placeholder={`${t("price")}($)`}
             />
             <input
               {...register("time", { required: true })}
-              className="flexBlock__input"
+              className={`flexBlock__input ${errors.time && "error"}`}
               type="text"
               placeholder={t("time")}
             />
@@ -115,7 +123,21 @@ export const HireMeModal: FC<{}> = () => {
               id="description"
             ></textarea>
           </label>
-          {!isSend && <button className="hireMeFrom__btn">{t("send")}</button>}
+          {!isSend && (
+            <button disabled={isLoading} className="hireMeFrom__btn">
+              <p className="hireMeFrom__btn_text">{t("send")}</p>
+              {isLoading && (
+                <l-squircle
+                  size="16"
+                  stroke="2"
+                  stroke-length="0.15"
+                  bg-opacity="0.1"
+                  speed="0.9"
+                  color="black"
+                ></l-squircle>
+              )}
+            </button>
+          )}
           {isSend && (
             <button className="hireMeFrom__btnSended">{t("sended")}</button>
           )}
